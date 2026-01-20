@@ -133,9 +133,10 @@ class NVMeTestGUI:
 
         test_script_frame = [
             [sg.Text('测试脚本:', size=(10, 1)), 
-             sg.Input('./test_script.ini', key='-SCRIPT_PATH-', size=(30, 1)),
-             sg.FileBrowse(file_types=(('INI Files', '*.ini'),))],
-            [sg.Button('加载脚本', key='-LOAD_SCRIPT-', size=(10, 1)),
+             sg.Input(key='-SCRIPT_PATH-', size=(30, 1), readonly=True)],
+            [sg.Button('选择文件', key='-SELECT_SCRIPT-', size=(10, 1)),
+             sg.Button('加载脚本', key='-LOAD_SCRIPT-', size=(10, 1)),
+             sg.Button('预览脚本', key='-PREVIEW_SCRIPT-', size=(10, 1)),
              sg.Button('验证脚本', key='-VALIDATE_SCRIPT-', size=(10, 1))],
             [sg.Text('脚本命令数:', size=(12, 1)), 
              sg.Text('0', key='-COMMAND_COUNT-', size=(5, 1), text_color='yellow')]
@@ -391,7 +392,60 @@ class NVMeTestGUI:
         else:
             error_msg = '测试脚本验证失败:\n' + '\n'.join(errors)
             self._log_to_monitor(error_msg, 'error')
-
+    
+    def _preview_script(self):
+        script_path = self.window['-SCRIPT_PATH-'].get()
+        
+        if not script_path or not os.path.exists(script_path):
+            self._log_to_monitor('请先选择脚本文件', 'warning')
+            return
+        
+        try:
+            with open(script_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            layout = [
+                [sg.Text('脚本预览', size=(20, 1), justification='center')],
+                [sg.HSeparator()],
+                [sg.Multiline(content, size=(60, 30), disabled=True, autoscroll=True)],
+                [sg.HSeparator()],
+                [sg.Button('关闭', key='-CLOSE_PREVIEW-', size=(10, 1))]
+            ]
+            
+            preview_window = sg.Window('脚本预览', layout, modal=True, size=(700, 500))
+            
+            while True:
+                event, values = preview_window.read()
+                
+                if event in (sg.WIN_CLOSED, '-CLOSE_PREVIEW-'):
+                    break
+            
+            preview_window.close()
+            
+            self._log_to_monitor(f'预览脚本: {script_path}', 'info')
+            
+        except Exception as e:
+            self.console_logger.error(f'预览脚本失败: {e}')
+            self._log_to_monitor(f'预览脚本失败: {e}', 'error')
+    
+    def _select_script(self):
+        try:
+            script_path = sg.popup_get_file(
+                '选择测试脚本文件',
+                initial_folder='./',
+                file_types=(('INI Files', '*.ini'),),
+                no_titlebar=True
+            )
+            
+            if script_path:
+                self.window['-SCRIPT_PATH-'].update(script_path)
+                self._log_to_monitor(f'已选择脚本: {script_path}', 'info')
+            else:
+                self._log_to_monitor('未选择脚本文件', 'warning')
+        except Exception as e:
+            self.console_logger.error(f'选择脚本失败: {e}')
+            self._log_to_monitor(f'选择脚本失败: {e}', 'error')
+    
     def _start_test(self):
         if not self.test_commands:
             self._log_to_monitor('请先加载测试脚本', 'warning')
@@ -504,6 +558,12 @@ class NVMeTestGUI:
             
             elif event == '-VALIDATE_SCRIPT-':
                 self._validate_script()
+            
+            elif event == '-SELECT_SCRIPT-':
+                self._select_script()
+            
+            elif event == '-PREVIEW_SCRIPT-':
+                self._preview_script()
             
             elif event == '-START_TEST-':
                 self._start_test()

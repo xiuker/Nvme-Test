@@ -1,3 +1,6 @@
+# git config --global user.name "hqs"
+# git config --global user.email "1578557654@qq.com"
+# git config --global init.defaultBranch main
 @echo off
 chcp 65001
 set GIT_PATH=C:\Program Files\Git\cmd\git.exe
