@@ -124,3 +124,15 @@
 2026-01-20 11:41:03 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
 2026-01-20 11:41:03 - nvme_test_console - INFO - 开始清理所有资源，共0个
 2026-01-20 11:41:03 - nvme_test_console - INFO - 资源清理完成
+2026-01-20 13:59:53 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-20 13:59:53 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-20 13:59:53 - nvme_test_console - INFO - 内存监控已启动
+2026-01-20 13:59:53 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-20 13:59:53 - nvme_test_console - DEBUG - 内存使用: RSS=114.23MB, VMS=338.29MB
+2026-01-20 14:00:42 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-20 14:00:42 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-20 14:00:43 - nvme_test_console - INFO - 实时监控已停止
+2026-01-20 14:00:48 - nvme_test_console - INFO - 内存监控已停止
+2026-01-20 14:00:48 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-20 14:00:48 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-20 14:00:48 - nvme_test_console - INFO - 资源清理完成

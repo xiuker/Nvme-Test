@@ -17,7 +17,6 @@ from test_result_analyzer import TestResultAnalyzer
 from html_report_generator import HTMLReportGenerator
 from real_time_monitor import RealTimeMonitor
 from thread_manager import ThreadPoolManager, ResourceCleaner, MemoryMonitor
-from version_manager import VersionManager
 
 
 class NVMeTestGUI:
@@ -46,7 +45,6 @@ class NVMeTestGUI:
         self.resource_cleaner = ResourceCleaner()
         self.resource_cleaner.set_logger(self.console_logger)
         self.memory_monitor = MemoryMonitor(logger=self.console_logger)
-        self.version_manager = VersionManager(self.console_logger)
         
         self._setup_signal_handlers()
         self._setup_exit_handlers()
@@ -179,20 +177,6 @@ class NVMeTestGUI:
              sg.Input(key='-REPORT_PATH-', size=(30, 1), readonly=True)]
         ]
 
-        version_frame = [
-            [sg.Text('版本管理', size=(20, 1), justification='center')],
-            [sg.HSeparator()],
-            [sg.Text('当前版本:', size=(12, 1)), 
-             sg.Text('1.0.0', key='-CURRENT_VERSION-', size=(10, 1), text_color='yellow')],
-            [sg.HSeparator()],
-            [sg.Button('创建版本', key='-CREATE_VERSION-', size=(15, 1)),
-             sg.Button('恢复版本', key='-RESTORE_VERSION-', size=(15, 1))],
-            [sg.Button('查看版本', key='-LIST_VERSIONS-', size=(15, 1))],
-            [sg.HSeparator()],
-            [sg.Text('版本说明:', size=(12, 1))],
-            [sg.Input(key='-VERSION_DESC-', size=(30, 1))]
-        ]
-
         left_column = [
             [sg.Frame('温箱控制', chamber_frame, size=(300, 250))],
             [sg.Frame('测试脚本', test_script_frame, size=(300, 120))],
@@ -201,8 +185,7 @@ class NVMeTestGUI:
 
         middle_column = [
             [sg.Frame('SSD信息', ssd_info_frame, size=(350, 350))],
-            [sg.Frame('测试报告', report_frame, size=(350, 150))],
-            [sg.Frame('版本管理', version_frame, size=(350, 150))]
+            [sg.Frame('测试报告', report_frame, size=(350, 150))]
         ]
 
         right_column = [
@@ -474,86 +457,6 @@ class NVMeTestGUI:
         else:
             self._log_to_monitor('报告文件不存在', 'warning')
     
-    def _create_version(self):
-        description = self.window['-VERSION_DESC-'].get()
-        if not description:
-            self._log_to_monitor('请输入版本说明', 'warning')
-            return
-        
-        success = self.version_manager.create_version(description)
-        if success:
-            self._log_to_monitor('版本创建成功', 'info')
-            self.window['-VERSION_DESC-'].update('')
-        else:
-            self._log_to_monitor('版本创建失败', 'error')
-    
-    def _restore_version(self):
-        versions = self.version_manager.list_versions()
-        if not versions:
-            self._log_to_monitor('没有可恢复的版本', 'warning')
-            return
-        
-        version_list = [f'{v["version"]} ({v["timestamp"]})' for v in versions]
-        
-        layout = [
-            [sg.Text('选择要恢复的版本:', size=(20, 1))],
-            [sg.Combo(version_list, key='-SELECT_VERSION-', size=(30, 1), readonly=True)],
-            [sg.Button('确定', key='-CONFIRM_RESTORE-', size=(10, 1)),
-             sg.Button('取消', key='-CANCEL_RESTORE-', size=(10, 1))]
-        ]
-        
-        restore_window = sg.Window('恢复版本', layout, modal=True)
-        
-        while True:
-            event, values = restore_window.read()
-            
-            if event in (sg.WIN_CLOSED, '-CANCEL_RESTORE-'):
-                break
-            
-            elif event == '-CONFIRM_RESTORE-':
-                selected_version_str = values['-SELECT_VERSION-']
-                version = selected_version_str.split(' (')[0]
-                success = self.version_manager.restore_version(version)
-                
-                if success:
-                    self._log_to_monitor(f'版本恢复成功: {version}', 'info')
-                    self.window['-CURRENT_VERSION-'].update(version)
-                else:
-                    self._log_to_monitor(f'版本恢复失败: {version}', 'error')
-                
-                break
-        
-        restore_window.close()
-    
-    def _list_versions(self):
-        versions = self.version_manager.list_versions()
-        
-        if not versions:
-            self._log_to_monitor('没有版本历史', 'warning')
-            return
-        
-        version_text = '版本历史:\n\n'
-        for v in versions:
-            version_text += f'版本: {v["version"]}\n'
-            version_text += f'时间: {v["timestamp"]}\n'
-            version_text += f'说明: {v["description"]}\n'
-            version_text += '-'*40 + '\n'
-        
-        layout = [
-            [sg.Multiline(version_text, size=(50, 20), disabled=True, autoscroll=True)],
-            [sg.Button('关闭', key='-CLOSE_VERSIONS-', size=(10, 1))]
-        ]
-        
-        versions_window = sg.Window('版本历史', layout, modal=True, size=(600, 400))
-        
-        while True:
-            event, values = versions_window.read()
-            
-            if event in (sg.WIN_CLOSED, '-CLOSE_VERSIONS-'):
-                break
-        
-        versions_window.close()
-    
     def _start_monitor(self):
         self.is_monitoring = True
         self.monitor_thread = self.thread_pool.submit(self._monitor_loop)
@@ -616,15 +519,6 @@ class NVMeTestGUI:
             
             elif event == '-OPEN_REPORT-':
                 self._open_report()
-            
-            elif event == '-CREATE_VERSION-':
-                self._create_version()
-            
-            elif event == '-RESTORE_VERSION-':
-                self._restore_version()
-            
-            elif event == '-LIST_VERSIONS-':
-                self._list_versions()
         
         self.window.close()
         self.console_logger.info('NVMe SSD测试系统关闭')
