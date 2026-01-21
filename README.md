@@ -53,8 +53,15 @@ NVMe SSD测试系统是一个用于自动化测试NVMe固态硬盘的综合测�
 1. 克隆或下载项目代码
 
 2. 安装Python依赖包
+
+**推荐方式：使用清华镜像源（速度快）**
+
+运行 `install_dependencies.bat` 脚本即可自动安装所有依赖库。
+
+或手动使用清华镜像源：
+
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 3. 配置系统参数

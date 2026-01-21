@@ -40,6 +40,7 @@ class NVMeTestGUI:
         self.test_thread = None
         self.monitor_thread = None
         self.is_monitoring = False
+        self.selected_hosts = []
         
         self.thread_pool = ThreadPoolManager(max_workers=20, logger=self.console_logger)
         self.resource_cleaner = ResourceCleaner()
@@ -135,14 +136,20 @@ class NVMeTestGUI:
             [sg.Text('测试脚本:', size=(10, 1)), 
              sg.Input(key='-SCRIPT_PATH-', size=(30, 1), readonly=True)],
             [sg.Button('选择文件', key='-SELECT_SCRIPT-', size=(10, 1)),
-             sg.Button('加载脚本', key='-LOAD_SCRIPT-', size=(10, 1)),
-             sg.Button('预览脚本', key='-PREVIEW_SCRIPT-', size=(10, 1)),
+             sg.Button('加载脚本', key='-LOAD_SCRIPT-', size=(10, 1))],
+            [sg.Button('预览脚本', key='-PREVIEW_SCRIPT-', size=(10, 1)),
              sg.Button('验证脚本', key='-VALIDATE_SCRIPT-', size=(10, 1))],
             [sg.Text('脚本命令数:', size=(12, 1)), 
              sg.Text('0', key='-COMMAND_COUNT-', size=(5, 1), text_color='yellow')]
         ]
 
         test_control_frame = [
+            [sg.Text('选择主板:', size=(12, 1))],
+            [sg.Checkbox('test_host_1', default=False, key='-CHECK_HOST_1-'),
+             sg.Checkbox('test_host_2', default=False, key='-CHECK_HOST_2-')],
+            [sg.Checkbox('test_host_3', default=False, key='-CHECK_HOST_3-'),
+             sg.Checkbox('test_host_4', default=False, key='-CHECK_HOST_4-')],
+            [sg.HSeparator()],
             [sg.Button('开始测试', key='-START_TEST-', size=(12, 1), button_color=('white', 'green')),
              sg.Button('暂停测试', key='-PAUSE_TEST-', size=(12, 1), button_color=('white', 'orange')),
              sg.Button('停止测试', key='-STOP_TEST-', size=(12, 1), button_color=('white', 'red'))],
@@ -162,6 +169,12 @@ class NVMeTestGUI:
             [sg.HSeparator()],
             [sg.Multiline('', key='-SSD_INFO-', size=(40, 10), disabled=True, autoscroll=True)]
         ]
+        
+        host_info_frame = [
+            [sg.Text('主板信息', size=(20, 1), justification='center')],
+            [sg.HSeparator()],
+            [sg.Multiline('', key='-HOST_INFO-', size=(40, 10), disabled=True, autoscroll=True)]
+        ]
 
         monitor_frame = [
             [sg.Text('实时监控日志', size=(20, 1), justification='center')],
@@ -179,13 +192,14 @@ class NVMeTestGUI:
         ]
 
         left_column = [
-            [sg.Frame('温箱控制', chamber_frame, size=(300, 250))],
-            [sg.Frame('测试脚本', test_script_frame, size=(300, 120))],
-            [sg.Frame('测试控制', test_control_frame, size=(300, 180))]
+            [sg.Frame('温箱控制', chamber_frame, size=(300, 180))],
+            [sg.Frame('测试脚本', test_script_frame, size=(300, 150))],
+            [sg.Frame('测试控制', test_control_frame, size=(300, 300))]
         ]
 
         middle_column = [
             [sg.Frame('SSD信息', ssd_info_frame, size=(350, 350))],
+            [sg.Frame('主板信息', host_info_frame, size=(350, 150))],
             [sg.Frame('测试报告', report_frame, size=(350, 150))]
         ]
 
@@ -319,7 +333,33 @@ class NVMeTestGUI:
             self.window['-SSD_INFO-'].update(info_text)
         except Exception as e:
             self.console_logger.error(f'更新SSD信息失败: {e}')
-
+    
+    def _update_host_info(self):
+        if not self.host_manager:
+            return
+        
+        try:
+            host_info_text = ''
+            
+            for host in self.host_manager.hosts:
+                host_info_text += f'主板名称: {host.name}\n'
+                host_info_text += f'IP地址: {host.ip}\n'
+                host_info_text += f'MAC地址: {host.mac}\n'
+                host_info_text += f'端口: {host.port}\n'
+                host_info_text += f'用户名: {host.username}\n'
+                host_info_text += f'连接超时: {host.connect_timeout}秒\n'
+                host_info_text += f'命令超时: {host.command_timeout}秒\n'
+                
+                is_online = host.is_online()
+                status = '在线' if is_online else '离线'
+                host_info_text += f'状态: {status}\n'
+                host_info_text += '-'*30 + '\n'
+            
+            self.window['-HOST_INFO-'].update(host_info_text)
+            
+        except Exception as e:
+            self.console_logger.error(f'更新主板信息失败: {e}')
+    
     def _start_chamber(self):
         if not self.chamber_controller:
             if not self._init_chamber_controller():
@@ -362,6 +402,15 @@ class NVMeTestGUI:
         temp_input = self.window['-TEMP_INPUT-'].get()
         try:
             temperature = float(temp_input)
+            
+            if temperature < 60:
+                self._log_to_monitor(f'温度过低，最低温度限制为60°C', 'warning')
+                return
+            
+            if temperature > 150:
+                self._log_to_monitor(f'温度过高，最高温度限制为150°C', 'warning')
+                return
+            
             success = self.chamber_controller.set_temperature(temperature)
             if success:
                 self._log_to_monitor(f'设定温度成功: {temperature}°C', 'info')
@@ -463,6 +512,7 @@ class NVMeTestGUI:
 
     def _run_test(self):
         try:
+            self._update_host_info()
             self.real_time_monitor.start_monitoring()
             success = self.test_executor.execute_commands(self.test_commands)
             self.real_time_monitor.stop_monitoring()
@@ -525,6 +575,7 @@ class NVMeTestGUI:
                 
                 if self.host_manager:
                     self._update_ssd_info()
+                    self._update_host_info()
                 
                 time.sleep(5)
             except Exception as e:
@@ -553,7 +604,27 @@ class NVMeTestGUI:
             elif event == '-SET_TEMP-':
                 self._set_temperature()
             
-            elif event == '-LOAD_SCRIPT-':
+            elif event == '-SELECTED_HOSTS-':
+                selected_hosts = []
+                
+                if values['-CHECK_HOST_1-']:
+                    selected_hosts.append('test_host_1')
+                if values['-CHECK_HOST_2-']:
+                    selected_hosts.append('test_host_2')
+                if values['-CHECK_HOST_3-']:
+                    selected_hosts.append('test_host_3')
+                if values['-CHECK_HOST_4-']:
+                    selected_hosts.append('test_host_4')
+                
+                if selected_hosts:
+                    self._log_to_monitor(f'已选择主板: {", ".join(selected_hosts)}', 'info')
+                else:
+                    self._log_to_monitor('未选择主板', 'warning')
+                
+                if self.test_executor:
+                    self.test_executor.set_selected_hosts(selected_hosts)
+            
+            elif event == '-START_TEST-':
                 self._load_script()
             
             elif event == '-VALIDATE_SCRIPT-':

@@ -67,19 +67,20 @@ class TestExecutor:
     def add_log_callback(self, callback: Callable):
         self.log_callbacks.append(callback)
 
-    def set_selected_host(self, selected_host: str):
-        self.selected_host = selected_host
-        self.console_logger.info(f'选择测试主板: {selected_host}')
-
+    def set_selected_hosts(self, selected_hosts: List[str]):
+        self.selected_hosts = selected_hosts
+        self.console_logger.info(f'选择测试主板: {", ".join(selected_hosts)}')
+    
     def _get_selected_hosts(self) -> List:
-        if self.selected_host == '全部':
+        if not self.selected_hosts or '全部' in self.selected_hosts:
             return self.host_manager.hosts
         
+        selected_hosts_list = []
         for host in self.host_manager.hosts:
-            if host.name == self.selected_host:
-                return [host]
+            if host.name in self.selected_hosts:
+                selected_hosts_list.append(host)
         
-        return []
+        return selected_hosts_list
 
     def _notify_progress(self):
         for callback in self.progress_callbacks:
