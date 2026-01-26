@@ -21,7 +21,7 @@ class CRC16Modbus:
 class ChamberController:
     def __init__(self, port: str, baudrate: int = 2400, bytesize: int = 8, 
                  parity: str = 'N', stopbits: int = 1, timeout: int = 2, 
-                 command_set: int = 1, logger: Optional[ConsoleLogger] = None):
+                 command_set: int = 1, logger: Optional[ConsoleLogger] = None, debug: bool = False):
         self.port = port
         self.baudrate = baudrate
         self.bytesize = bytesize
@@ -30,11 +30,11 @@ class ChamberController:
         self.timeout = timeout
         self.command_set = command_set
         self.logger = logger
+        self.debug = debug
         self.serial_conn = None
         self.current_temperature = 0.0
         self.target_temperature = 0.0
         self.hold_time = 0
-        self._connect()
 
     def _connect(self):
         try:
@@ -52,13 +52,35 @@ class ChamberController:
             if self.logger:
                 self.logger.error(f'温箱串口连接失败: {e}')
             raise
+    
+    def _disconnect(self):
+        try:
+            if self.serial_conn and self.serial_conn.is_open:
+                self.serial_conn.close()
+                if self.logger:
+                    self.logger.info(f'温箱串口已关闭: {self.port}')
+            self.serial_conn = None
+        except Exception as e:
+            if self.logger:
+                self.logger.error(f'关闭串口失败: {e}')
+            raise
 
     def _send_command(self, command: bytes) -> Optional[bytes]:
         try:
             if self.serial_conn and self.serial_conn.is_open:
+                if self.debug:
+                    self.logger.debug(f'发送串口数据: {command.hex(" ")}')
+                
                 self.serial_conn.write(command)
                 time.sleep(0.1)
                 response = self.serial_conn.readall()
+                
+                if self.debug:
+                    if response:
+                        self.logger.debug(f'接收串口数据: {response.hex(" ")}')
+                    else:
+                        self.logger.debug('接收串口数据: 无数据')
+                
                 return response
             return None
         except Exception as e:

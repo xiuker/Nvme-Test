@@ -1,0 +1,87 @@
+PCT测试结果 - 第1轮
+测试开始时间: 2026-01-23 16:17:57
+SSD路径: /dev/nvme1n1
+SSD SN: 202505202T9002
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme1n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 46 °C (319 K, 114 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 1%
+endurance group critical warning summary: 0
+Data Units Read				: 42433285 (21.73 TB)
+Data Units Written			: 61477353 (31.48 TB)
+host_read_commands			: 379049907
+host_write_commands			: 480990678
+controller_busy_time			: 397
+power_cycles				: 565
+power_on_hours				: 59
+unsafe_shutdowns			: 139
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 46 °C (319 K, 114 °F)
+Temperature Sensor 2			: 60 °C (333 K, 140 °F)
+Temperature Sensor 4			: 54 °C (327 K, 129 °F)
+Temperature Sensor 5			: 115 °C (388 K, 239 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 131072
+Thermal Management T2 Total Time	: 11667856
+
+
+============================================================
+FIO执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+
+============================================================
+FIO输出:
+============================================================
+test: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=34335: Fri Jan 23 11:17:09 2026
+  read: IOPS=2598, BW=2599MiB/s (2725MB/s)(1024MiB/394msec)
+    slat (usec): min=4, max=748, avg= 8.15, stdev=23.34
+    clat (usec): min=1584, max=90097, avg=47129.16, stdev=16908.70
+     lat (usec): min=1610, max=90107, avg=47137.32, stdev=16908.99
+    clat percentiles (usec):
+     |  1.00th=[ 4424],  5.00th=[11731], 10.00th=[21103], 20.00th=[44303],
+     | 30.00th=[44303], 40.00th=[44303], 50.00th=[44303], 60.00th=[44827],
+     | 70.00th=[55837], 80.00th=[62129], 90.00th=[67634], 95.00th=[70779],
+     | 99.00th=[86508], 99.50th=[87557], 99.90th=[89654], 99.95th=[89654],
+     | 99.99th=[89654]
+  write: IOPS=1906, BW=1907MiB/s (2000MB/s)(1024MiB/537msec); 0 zone resets
+    slat (usec): min=221, max=4804, avg=289.84, stdev=149.70
+    clat (msec): min=37, max=127, avg=63.95, stdev=16.46
+     lat (msec): min=38, max=127, avg=64.24, stdev=16.44
+    clat percentiles (msec):
+     |  1.00th=[   39],  5.00th=[   41], 10.00th=[   44], 20.00th=[   46],
+     | 30.00th=[   66], 40.00th=[   66], 50.00th=[   66], 60.00th=[   66],
+     | 70.00th=[   66], 80.00th=[   70], 90.00th=[   75], 95.00th=[  102],
+     | 99.00th=[  123], 99.50th=[  126], 99.90th=[  127], 99.95th=[  128],
+     | 99.99th=[  128]
+   bw (  MiB/s): min= 1794, max= 1794, per=94.08%, avg=1794.00, stdev= 0.00, samples=1
+   iops        : min= 1794, max= 1794, avg=1794.00, stdev= 0.00, samples=1
+  lat (msec)   : 2=0.05%, 4=0.34%, 10=1.66%, 20=2.73%, 50=39.99%
+  lat (msec)   : 100=52.59%, 250=2.64%
+  cpu          : usr=43.01%, sys=2.47%, ctx=1579, majf=0, minf=40
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=1024,1024,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=2599MiB/s (2725MB/s), 2599MiB/s-2599MiB/s (2725MB/s-2725MB/s), io=1024MiB (1074MB), run=394-394msec
+  WRITE: bw=1907MiB/s (2000MB/s), 1907MiB/s-1907MiB/s (2000MB/s-2000MB/s), io=1024MiB (1074MB), run=537-537msec
+
+Disk stats (read/write):
+  nvme1n1: ios=7039/8192, sectors=1780328/2097152, merge=0/0, ticks=301574/457278, in_queue=758852, util=87.06%
+
