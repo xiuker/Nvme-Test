@@ -1,0 +1,88 @@
+BIT测试结果
+测试开始时间: 2026-02-11 12:25:05
+SSD路径: /dev/nvme0n1
+SSD SN: 202505202T9002
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme0n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 30 °C (303 K, 86 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 1%
+endurance group critical warning summary: 0
+Data Units Read				: 44320451 (22.69 TB)
+Data Units Written			: 62998206 (32.26 TB)
+host_read_commands			: 386438702
+host_write_commands			: 486931510
+controller_busy_time			: 408
+power_cycles				: 594
+power_on_hours				: 72
+unsafe_shutdowns			: 139
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 30 °C (303 K, 86 °F)
+Temperature Sensor 2			: 30 °C (303 K, 86 °F)
+Temperature Sensor 4			: 39 °C (312 K, 102 °F)
+Temperature Sensor 5			: 115 °C (388 K, 239 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 131072
+Thermal Management T2 Total Time	: 11864464
+
+
+============================================================
+测试容量: 10%
+FIO执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=10%
+
+============================================================
+FIO输出:
+============================================================
+test: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=34129: Tue Feb 10 23:25:29 2026
+  read: IOPS=2915, BW=2916MiB/s (3057MB/s)(176GiB/61917msec)
+    slat (usec): min=5, max=800, avg= 9.23, stdev=15.98
+    clat (usec): min=1583, max=114424, avg=43728.80, stdev=5954.52
+     lat (usec): min=1590, max=114433, avg=43738.03, stdev=5954.59
+    clat percentiles (msec):
+     |  1.00th=[   23],  5.00th=[   43], 10.00th=[   43], 20.00th=[   43],
+     | 30.00th=[   44], 40.00th=[   44], 50.00th=[   44], 60.00th=[   44],
+     | 70.00th=[   44], 80.00th=[   44], 90.00th=[   46], 95.00th=[   48],
+     | 99.00th=[   71], 99.50th=[   83], 99.90th=[   94], 99.95th=[   97],
+     | 99.99th=[  106]
+  write: IOPS=1869, BW=1870MiB/s (1960MB/s)(176GiB/96565msec); 0 zone resets
+    slat (usec): min=199, max=20657, avg=279.59, stdev=120.90
+    clat (usec): min=1187, max=203556, avg=68170.26, stdev=13760.57
+     lat (usec): min=1489, max=203827, avg=68449.85, stdev=13761.90
+    clat percentiles (msec):
+     |  1.00th=[   26],  5.00th=[   65], 10.00th=[   66], 20.00th=[   66],
+     | 30.00th=[   66], 40.00th=[   66], 50.00th=[   66], 60.00th=[   66],
+     | 70.00th=[   66], 80.00th=[   70], 90.00th=[   72], 95.00th=[   86],
+     | 99.00th=[  140], 99.50th=[  153], 99.90th=[  171], 99.95th=[  178],
+     | 99.99th=[  192]
+   bw (  MiB/s): min= 1508, max= 1968, per=100.00%, avg=1870.79, stdev=86.48, samples=193
+   iops        : min= 1508, max= 1968, avg=1870.79, stdev=86.48, samples=193
+  lat (msec)   : 2=0.01%, 4=0.06%, 10=0.29%, 20=0.47%, 50=48.40%
+  lat (msec)   : 100=49.40%, 250=1.36%
+  cpu          : usr=47.26%, sys=2.25%, ctx=346277, majf=0, minf=4951
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=180531,180531,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=2916MiB/s (3057MB/s), 2916MiB/s-2916MiB/s (3057MB/s-3057MB/s), io=176GiB (189GB), run=61917-61917msec
+  WRITE: bw=1870MiB/s (1960MB/s), 1870MiB/s-1870MiB/s (1960MB/s-1960MB/s), io=176GiB (189GB), run=96565-96565msec
+
+Disk stats (read/write):
+  nvme0n1: ios=1442057/1444248, sectors=369144936/369727488, merge=0/0, ticks=62543777/98032406, in_queue=160576184, util=99.98%
+

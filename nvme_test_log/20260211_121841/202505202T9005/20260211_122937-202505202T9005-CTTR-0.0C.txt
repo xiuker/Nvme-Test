@@ -1,0 +1,210 @@
+CTTR测试结果
+测试开始时间: 2026-02-11 12:29:37
+SSD路径: /dev/nvme0n1
+SSD SN: 202505202T9005
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme0n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 40 °C (313 K, 104 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 0%
+endurance group critical warning summary: 0
+Data Units Read				: 15825156 (8.10 TB)
+Data Units Written			: 16440855 (8.42 TB)
+host_read_commands			: 82164757
+host_write_commands			: 84533688
+controller_busy_time			: 888
+power_cycles				: 245
+power_on_hours				: 160
+unsafe_shutdowns			: 11
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 40 °C (313 K, 104 °F)
+Temperature Sensor 2			: 42 °C (315 K, 107 °F)
+Temperature Sensor 4			: 49 °C (322 K, 120 °F)
+Temperature Sensor 5			: 123 °C (396 K, 253 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 65536
+Thermal Management T2 Total Time	: 65537
+
+
+============================================================
+退出状态: 1
+FIO执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=0 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=100%
+
+============================================================
+FIO输出:
+============================================================
+test: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+fio: pid=34349, err=84/file:io_u.c:2213, func=io_u_queued_complete, error=Invalid or incomplete multibyte or wide character
+
+test: (groupid=0, jobs=1): err=84 (file:io_u.c:2213, func=io_u_queued_complete, error=Invalid or incomplete multibyte or wide character): pid=34349: Tue Feb 10 23:30:00 2026
+  read: IOPS=1679, BW=1679MiB/s (1761MB/s)(176GiB/107584msec)
+    slat (usec): min=117, max=18535, avg=362.77, stdev=268.20
+    clat (usec): min=79, max=92725, avg=75593.56, stdev=2700.69
+     lat (usec): min=264, max=92965, avg=75956.33, stdev=2704.03
+    clat percentiles (usec):
+     |  1.00th=[70779],  5.00th=[71828], 10.00th=[72877], 20.00th=[73925],
+     | 30.00th=[74974], 40.00th=[74974], 50.00th=[76022], 60.00th=[76022],
+     | 70.00th=[76022], 80.00th=[77071], 90.00th=[77071], 95.00th=[78119],
+     | 99.00th=[87557], 99.50th=[88605], 99.90th=[90702], 99.95th=[90702],
+     | 99.99th=[91751]
+   bw (  MiB/s): min= 1478, max= 1812, per=100.00%, avg=1679.21, stdev=37.12, samples=215
+   iops        : min= 1478, max= 1812, avg=1679.21, stdev=37.13, samples=215
+  lat (usec)   : 100=0.01%, 500=0.01%, 750=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%, 20=0.01%, 50=0.03%
+  lat (msec)   : 100=99.95%
+  cpu          : usr=38.73%, sys=60.58%, ctx=293, majf=0, minf=596
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=180659,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=1679MiB/s (1761MB/s), 1679MiB/s-1679MiB/s (1761MB/s-1761MB/s), io=176GiB (189GB), run=107584-107584msec
+
+Disk stats (read/write):
+  nvme0n1: ios=1458771/0, sectors=369373184/0, merge=403/0, ticks=3169343/0, in_queue=3169343, util=73.01%
+
+
+错误:
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189300473856, length 1048576 (requested block: offset=189300473856, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189301522432, length 1048576 (requested block: offset=189301522432, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189302571008, length 1048576 (requested block: offset=189302571008, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189303619584, length 1048576 (requested block: offset=189303619584, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189304668160, length 1048576 (requested block: offset=189304668160, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189305716736, length 1048576 (requested block: offset=189305716736, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189306765312, length 1048576 (requested block: offset=189306765312, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189307813888, length 1048576 (requested block: offset=189307813888, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189308862464, length 1048576 (requested block: offset=189308862464, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189309911040, length 1048576 (requested block: offset=189309911040, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189310959616, length 1048576 (requested block: offset=189310959616, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189312008192, length 1048576 (requested block: offset=189312008192, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189313056768, length 1048576 (requested block: offset=189313056768, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189314105344, length 1048576 (requested block: offset=189314105344, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189315153920, length 1048576 (requested block: offset=189315153920, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189316202496, length 1048576 (requested block: offset=189316202496, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189317251072, length 1048576 (requested block: offset=189317251072, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189318299648, length 1048576 (requested block: offset=189318299648, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189319348224, length 1048576 (requested block: offset=189319348224, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189320396800, length 1048576 (requested block: offset=189320396800, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189321445376, length 1048576 (requested block: offset=189321445376, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189322493952, length 1048576 (requested block: offset=189322493952, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189323542528, length 1048576 (requested block: offset=189323542528, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189324591104, length 1048576 (requested block: offset=189324591104, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189325639680, length 1048576 (requested block: offset=189325639680, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189326688256, length 1048576 (requested block: offset=189326688256, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189327736832, length 1048576 (requested block: offset=189327736832, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189328785408, length 1048576 (requested block: offset=189328785408, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189329833984, length 1048576 (requested block: offset=189329833984, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189330882560, length 1048576 (requested block: offset=189330882560, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189331931136, length 1048576 (requested block: offset=189331931136, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189332979712, length 1048576 (requested block: offset=189332979712, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189334028288, length 1048576 (requested block: offset=189334028288, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189335076864, length 1048576 (requested block: offset=189335076864, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189336125440, length 1048576 (requested block: offset=189336125440, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189337174016, length 1048576 (requested block: offset=189337174016, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189338222592, length 1048576 (requested block: offset=189338222592, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189339271168, length 1048576 (requested block: offset=189339271168, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189340319744, length 1048576 (requested block: offset=189340319744, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189341368320, length 1048576 (requested block: offset=189341368320, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189342416896, length 1048576 (requested block: offset=189342416896, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189343465472, length 1048576 (requested block: offset=189343465472, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189344514048, length 1048576 (requested block: offset=189344514048, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189345562624, length 1048576 (requested block: offset=189345562624, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189346611200, length 1048576 (requested block: offset=189346611200, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189347659776, length 1048576 (requested block: offset=189347659776, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189348708352, length 1048576 (requested block: offset=189348708352, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189349756928, length 1048576 (requested block: offset=189349756928, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189350805504, length 1048576 (requested block: offset=189350805504, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189351854080, length 1048576 (requested block: offset=189351854080, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189352902656, length 1048576 (requested block: offset=189352902656, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189353951232, length 1048576 (requested block: offset=189353951232, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189354999808, length 1048576 (requested block: offset=189354999808, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189356048384, length 1048576 (requested block: offset=189356048384, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189357096960, length 1048576 (requested block: offset=189357096960, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189358145536, length 1048576 (requested block: offset=189358145536, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189359194112, length 1048576 (requested block: offset=189359194112, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189360242688, length 1048576 (requested block: offset=189360242688, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189361291264, length 1048576 (requested block: offset=189361291264, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189362339840, length 1048576 (requested block: offset=189362339840, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189363388416, length 1048576 (requested block: offset=189363388416, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189364436992, length 1048576 (requested block: offset=189364436992, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189365485568, length 1048576 (requested block: offset=189365485568, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189366534144, length 1048576 (requested block: offset=189366534144, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189367582720, length 1048576 (requested block: offset=189367582720, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189368631296, length 1048576 (requested block: offset=189368631296, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189369679872, length 1048576 (requested block: offset=189369679872, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189370728448, length 1048576 (requested block: offset=189370728448, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189371777024, length 1048576 (requested block: offset=189371777024, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189372825600, length 1048576 (requested block: offset=189372825600, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189373874176, length 1048576 (requested block: offset=189373874176, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189374922752, length 1048576 (requested block: offset=189374922752, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189375971328, length 1048576 (requested block: offset=189375971328, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189377019904, length 1048576 (requested block: offset=189377019904, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189378068480, length 1048576 (requested block: offset=189378068480, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189379117056, length 1048576 (requested block: offset=189379117056, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189380165632, length 1048576 (requested block: offset=189380165632, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189381214208, length 1048576 (requested block: offset=189381214208, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189382262784, length 1048576 (requested block: offset=189382262784, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189383311360, length 1048576 (requested block: offset=189383311360, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189384359936, length 1048576 (requested block: offset=189384359936, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189385408512, length 1048576 (requested block: offset=189385408512, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189386457088, length 1048576 (requested block: offset=189386457088, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189387505664, length 1048576 (requested block: offset=189387505664, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189388554240, length 1048576 (requested block: offset=189388554240, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189389602816, length 1048576 (requested block: offset=189389602816, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189390651392, length 1048576 (requested block: offset=189390651392, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189391699968, length 1048576 (requested block: offset=189391699968, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189392748544, length 1048576 (requested block: offset=189392748544, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189393797120, length 1048576 (requested block: offset=189393797120, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189394845696, length 1048576 (requested block: offset=189394845696, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189395894272, length 1048576 (requested block: offset=189395894272, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189396942848, length 1048576 (requested block: offset=189396942848, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189397991424, length 1048576 (requested block: offset=189397991424, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189399040000, length 1048576 (requested block: offset=189399040000, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189400088576, length 1048576 (requested block: offset=189400088576, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189401137152, length 1048576 (requested block: offset=189401137152, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189402185728, length 1048576 (requested block: offset=189402185728, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189403234304, length 1048576 (requested block: offset=189403234304, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189404282880, length 1048576 (requested block: offset=189404282880, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189405331456, length 1048576 (requested block: offset=189405331456, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189406380032, length 1048576 (requested block: offset=189406380032, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189407428608, length 1048576 (requested block: offset=189407428608, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189408477184, length 1048576 (requested block: offset=189408477184, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189409525760, length 1048576 (requested block: offset=189409525760, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189410574336, length 1048576 (requested block: offset=189410574336, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189411622912, length 1048576 (requested block: offset=189411622912, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189412671488, length 1048576 (requested block: offset=189412671488, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189413720064, length 1048576 (requested block: offset=189413720064, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189414768640, length 1048576 (requested block: offset=189414768640, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189415817216, length 1048576 (requested block: offset=189415817216, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189416865792, length 1048576 (requested block: offset=189416865792, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189417914368, length 1048576 (requested block: offset=189417914368, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189418962944, length 1048576 (requested block: offset=189418962944, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189420011520, length 1048576 (requested block: offset=189420011520, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189421060096, length 1048576 (requested block: offset=189421060096, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189422108672, length 1048576 (requested block: offset=189422108672, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189423157248, length 1048576 (requested block: offset=189423157248, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189424205824, length 1048576 (requested block: offset=189424205824, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189425254400, length 1048576 (requested block: offset=189425254400, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189426302976, length 1048576 (requested block: offset=189426302976, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189427351552, length 1048576 (requested block: offset=189427351552, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189428400128, length 1048576 (requested block: offset=189428400128, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189429448704, length 1048576 (requested block: offset=189429448704, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189430497280, length 1048576 (requested block: offset=189430497280, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189431545856, length 1048576 (requested block: offset=189431545856, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189432594432, length 1048576 (requested block: offset=189432594432, length=1048576)
+verify: bad magic header 0, wanted acca at file /dev/nvme0n1 offset 189433643008, length 1048576 (requested block: offset=189433643008, length=1048576)
+

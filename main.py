@@ -51,6 +51,9 @@ class NVMeTestGUI:
         # 测试报告路径设置
         self.user_report_path = None
         
+        # SSD与槽位的映射关系，格式: {host_name: {ssd_sn: slot_index}}
+        self.ssd_slot_mapping = {}
+        
         self._setup_signal_handlers()
         self._setup_exit_handlers()
         
@@ -394,7 +397,8 @@ class NVMeTestGUI:
     def _update_progress(self, progress: TestProgress):
         # 更新全局进度信息
         self.window['-CURRENT_TEMP-'].update(f'{progress.current_temperature:.1f}°C')
-        self.window['-CYCLE_PROGRESS-'].update(f'{progress.current_cycle}/{progress.total_cycles}')
+        if hasattr(self.window, '-CYCLE_PROGRESS-'):
+            self.window['-CYCLE_PROGRESS-'].update(f'{progress.current_cycle}/{progress.total_cycles}')
         self.window['-HOLD_TIME-'].update(f'{progress.hold_time}秒')
         
         # 更新SSD信息到GUI
@@ -418,9 +422,12 @@ class NVMeTestGUI:
             return
         
         try:
+            # 获取当前表格数据
+            current_table_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
             # 创建新的表格数据
             new_data = []
-            for host in self.host_manager.hosts:
+            for i, host in enumerate(self.host_manager.hosts):
                 # 构建IP/MAC地址文本
                 ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
                 
@@ -451,8 +458,14 @@ class NVMeTestGUI:
                 else:
                     host_name_with_progress = host_name
                 
+                # 保留当前表格中的SSD列信息
+                ssd_info1 = current_table_data[i][2] if i < len(current_table_data) else ''
+                ssd_info2 = current_table_data[i][3] if i < len(current_table_data) else ''
+                ssd_info3 = current_table_data[i][4] if i < len(current_table_data) else ''
+                ssd_info4 = current_table_data[i][5] if i < len(current_table_data) else ''
+                
                 # 添加到新的表格数据中
-                new_data.append([host_name_with_progress, ip_mac_text, '', '', '', ''])
+                new_data.append([host_name_with_progress, ip_mac_text, ssd_info1, ssd_info2, ssd_info3, ssd_info4])
             
             # 更新表格
             self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
@@ -478,31 +491,6 @@ class NVMeTestGUI:
             # 初始化新的表格数据
             new_table_data = []
             
-            # 初始化SSD信息
-            host_ssd_info = {}
-            for host in self.host_manager.hosts:
-                host_ssd_info[host.name] = ['', '', '', '']  # 每个主板4个SSD槽位
-            
-            # 处理SSD信息
-            for ssd_sn, ssd_info in all_ssd_info.items():
-                if ssd_sn == 'unknown':
-                    continue
-                
-                host_name = ssd_info.get('host')
-                if not host_name:
-                    continue
-                
-                # 简单分配SSD到对应的SSD槽位（实际应用中可能需要更复杂的映射）
-                ssd_slot = 0
-                while ssd_slot < 4 and host_ssd_info[host_name][ssd_slot]:
-                    ssd_slot += 1
-                
-                if ssd_slot < 4:
-                    # 构建SSD信息文本
-                    ssd_info_text = f'SN: {ssd_sn}\n'
-                    ssd_info_text += f'路径: {ssd_info.get("path", "N/A")}\n'
-                    host_ssd_info[host_name][ssd_slot] = ssd_info_text
-            
             # 处理每个主机的信息
             for i, host in enumerate(self.host_manager.hosts):
                 # 保留当前的主板名称（可能包含进度信息）
@@ -511,8 +499,98 @@ class NVMeTestGUI:
                 # 获取IP/MAC地址
                 ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
                 
-                # 获取SSD信息
-                ssd_infos = host_ssd_info.get(host.name, ['', '', '', ''])
+                # 初始化SSD信息列表
+                ssd_infos = ['', '', '', '']
+                
+                # 确保主机的映射关系存在
+                if host.name not in self.ssd_slot_mapping:
+                    self.ssd_slot_mapping[host.name] = {}
+                
+                # 获取当前主机的SSD映射
+                host_mapping = self.ssd_slot_mapping[host.name]
+                
+                # 标记已使用的槽位
+                used_slots = set()
+                
+                # 处理SSD信息
+                for ssd_sn, ssd_info in all_ssd_info.items():
+                    if ssd_sn == 'unknown':
+                        continue
+                    
+                    if ssd_info.get('host') == host.name:
+                        # 确定槽位
+                        if ssd_sn in host_mapping:
+                            # 使用已有的映射槽位
+                            ssd_slot = host_mapping[ssd_sn]
+                        else:
+                            # 分配新的槽位
+                            for slot in range(4):
+                                if slot not in used_slots:
+                                    ssd_slot = slot
+                                    host_mapping[ssd_sn] = slot
+                                    break
+                            else:
+                                # 槽位已满，跳过
+                                continue
+                        
+                        used_slots.add(ssd_slot)
+                        
+                        if ssd_slot < 4:
+                            # 构建SSD信息文本
+                            ssd_info_text = f'SN: {ssd_sn}\n'
+                            ssd_info_text += f'路径: {ssd_info.get("path", "N/A")}\n'
+                            
+                            # 添加测试状态信息
+                            if 'status' in ssd_info:
+                                status = ssd_info['status']
+                                # 根据状态添加标记
+                                if status == 'testing':
+                                    ssd_info_text += f'状态: {status} [测试中]\n'
+                                elif status == 'completed':
+                                    ssd_info_text += f'状态: {status} [已完成]\n'
+                                elif status == 'error':
+                                    ssd_info_text += f'状态: {status} [错误]\n'
+                                else:
+                                    ssd_info_text += f'状态: {status}\n'
+                            else:
+                                ssd_info_text += f'状态: [已连接]\n'
+                            
+                            # 添加温度信息（如果有）
+                            if 'temperature' in ssd_info:
+                                temp = ssd_info['temperature']
+                                if temp is not None:
+                                    # 根据温度添加状态标记
+                                    if temp > 70:
+                                        ssd_info_text += f'温度: {temp}°C [高温警告]\n'
+                                    elif temp > 50:
+                                        ssd_info_text += f'温度: {temp}°C [温度正常]\n'
+                                    else:
+                                        ssd_info_text += f'温度: {temp}°C [温度过低]\n'
+                                else:
+                                    ssd_info_text += f'温度: N/A\n'
+                            
+                            # 添加链路状态（如果有）
+                            if 'link_status' in ssd_info:
+                                link_info = ssd_info['link_status']
+                                ssd_info_text += f'链路状态: {link_info}\n'
+                            
+                            # 添加性能数据
+                            if 'performance' in ssd_info:
+                                perf = ssd_info['performance']
+                                if 'throughput' in perf:
+                                    ssd_info_text += f'吞吐量: {perf["throughput"]}\n'
+                                if 'iops' in perf:
+                                    ssd_info_text += f'IOPS: {perf["iops"]}\n'
+                                if 'latency' in perf:
+                                    ssd_info_text += f'延迟: {perf["latency"]}\n'
+                            
+                            ssd_infos[ssd_slot] = ssd_info_text
+                
+                # 处理未使用的槽位，检查是否有之前的SSD断开连接
+                for ssd_sn, slot in list(host_mapping.items()):
+                    if slot not in used_slots:
+                        # SSD已断开连接，标记为未连接
+                        ssd_infos[slot] = f'SN: {ssd_sn}\n状态: 未连接\n'
                 
                 # 构建新的行数据
                 new_row = [host_name_with_progress, ip_mac_text] + ssd_infos
@@ -543,8 +621,14 @@ class NVMeTestGUI:
                 # 保留当前的主板名称（可能包含进度信息）
                 host_name_with_progress = current_table_data[i][0] if i < len(current_table_data) else host.name
                 
+                # 保留当前表格中的SSD列信息，确保SN信息始终可见
+                ssd_info1 = current_table_data[i][2] if i < len(current_table_data) else ''
+                ssd_info2 = current_table_data[i][3] if i < len(current_table_data) else ''
+                ssd_info3 = current_table_data[i][4] if i < len(current_table_data) else ''
+                ssd_info4 = current_table_data[i][5] if i < len(current_table_data) else ''
+                
                 # 添加到新的表格数据中
-                new_data.append([host_name_with_progress, ip_mac_text, '', '', '', ''])
+                new_data.append([host_name_with_progress, ip_mac_text, ssd_info1, ssd_info2, ssd_info3, ssd_info4])
             
             # 更新表格
             self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
@@ -552,6 +636,204 @@ class NVMeTestGUI:
                 
         except Exception as e:
             pass
+    
+    def _update_table_cell(self, row: int, col: int, value: str) -> bool:
+        """
+        更新单个表格单元格
+        
+        Args:
+            row: 行索引
+            col: 列索引
+            value: 新值
+            
+        Returns:
+            bool: 更新是否成功
+        """
+        try:
+            # 保存当前表格数据作为备份
+            backup_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 获取当前表格数据
+            current_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 检查索引是否有效
+            if row < 0 or row >= len(current_data):
+                self.console_logger.error(f'行索引超出范围: {row}')
+                return False
+            
+            if col < 0 or col >= len(current_data[0]):
+                self.console_logger.error(f'列索引超出范围: {col}')
+                return False
+            
+            # 修改指定单元格
+            new_data = [row.copy() for row in current_data]
+            new_data[row][col] = value
+            
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
+            self.window.refresh()
+            
+            # 比较更新前后的数据
+            diff = self._compare_table_data(current_data, new_data)
+            if diff:
+                self.console_logger.info(f'表格单元格更新成功: 行={row}, 列={col}, 新值={value}')
+                self.console_logger.debug(f'更新差异: {diff}')
+            
+            return True
+            
+        except Exception as e:
+            # 发生异常时回滚到备份状态
+            if 'backup_data' in locals():
+                self.window['-TEST_CONTROL_TABLE-'].update(values=backup_data)
+                self.window.refresh()
+                self.console_logger.info('表格数据已回滚到原始状态')
+            
+            self.console_logger.error(f'更新表格单元格失败: {e}')
+            return False
+    
+    def _compare_table_data(self, old_data: list, new_data: list) -> list:
+        """
+        比较更新前后的表格数据差异
+        
+        Args:
+            old_data: 更新前的数据
+            new_data: 更新后的数据
+            
+        Returns:
+            list: 差异列表，每个元素为 (row, col, old_value, new_value)
+        """
+        diff = []
+        
+        # 遍历所有行
+        for i in range(min(len(old_data), len(new_data))):
+            # 遍历所有列
+            for j in range(min(len(old_data[i]), len(new_data[i]))):
+                if old_data[i][j] != new_data[i][j]:
+                    diff.append((i, j, old_data[i][j], new_data[i][j]))
+        
+        # 处理行数不同的情况
+        if len(old_data) != len(new_data):
+            if len(old_data) > len(new_data):
+                for i in range(len(new_data), len(old_data)):
+                    diff.append((i, 0, old_data[i], None))
+            else:
+                for i in range(len(old_data), len(new_data)):
+                    diff.append((i, 0, None, new_data[i]))
+        
+        return diff
+    
+    def _update_table_row(self, row: int, new_row_data: list) -> bool:
+        """
+        更新整行表格数据
+        
+        Args:
+            row: 行索引
+            new_row_data: 新行数据
+            
+        Returns:
+            bool: 更新是否成功
+        """
+        try:
+            # 保存当前表格数据作为备份
+            backup_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 获取当前表格数据
+            current_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 检查行索引是否有效
+            if row < 0 or row >= len(current_data):
+                self.console_logger.error(f'行索引超出范围: {row}')
+                return False
+            
+            # 检查新行数据长度是否与表格列数匹配
+            if len(new_row_data) != len(current_data[0]):
+                self.console_logger.error(f'新行数据长度不匹配: 期望 {len(current_data[0])}, 实际 {len(new_row_data)}')
+                return False
+            
+            # 替换指定行
+            new_data = [row.copy() for row in current_data]
+            new_data[row] = new_row_data.copy()
+            
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
+            self.window.refresh()
+            
+            # 比较更新前后的数据
+            diff = self._compare_table_data(current_data, new_data)
+            if diff:
+                self.console_logger.info(f'表格行更新成功: 行={row}')
+                self.console_logger.debug(f'更新差异: {diff}')
+            
+            return True
+            
+        except Exception as e:
+            # 发生异常时回滚到备份状态
+            if 'backup_data' in locals():
+                self.window['-TEST_CONTROL_TABLE-'].update(values=backup_data)
+                self.window.refresh()
+                self.console_logger.info('表格数据已回滚到原始状态')
+            
+            self.console_logger.error(f'更新表格行失败: {e}')
+            return False
+    
+    def _update_table_data(self, update_data: dict) -> bool:
+        """
+        批量更新多个表格单元格
+        
+        Args:
+            update_data: 更新数据字典，格式为 {(row, col): new_value}
+            
+        Returns:
+            bool: 更新是否成功
+        """
+        try:
+            # 保存当前表格数据作为备份
+            backup_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 获取当前表格数据
+            current_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 检查更新数据是否为空
+            if not update_data:
+                self.console_logger.warning('更新数据为空')
+                return True
+            
+            # 检查所有索引是否有效
+            for (row, col), value in update_data.items():
+                if row < 0 or row >= len(current_data):
+                    self.console_logger.error(f'行索引超出范围: {row}')
+                    return False
+                
+                if col < 0 or col >= len(current_data[0]):
+                    self.console_logger.error(f'列索引超出范围: {col}')
+                    return False
+            
+            # 批量修改指定单元格
+            new_data = [row.copy() for row in current_data]
+            for (row, col), value in update_data.items():
+                new_data[row][col] = value
+            
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
+            self.window.refresh()
+            
+            # 比较更新前后的数据
+            diff = self._compare_table_data(current_data, new_data)
+            if diff:
+                self.console_logger.info(f'表格数据批量更新成功，共更新 {len(update_data)} 个单元格')
+                self.console_logger.debug(f'更新差异: {diff}')
+            
+            return True
+            
+        except Exception as e:
+            # 发生异常时回滚到备份状态
+            if 'backup_data' in locals():
+                self.window['-TEST_CONTROL_TABLE-'].update(values=backup_data)
+                self.window.refresh()
+                self.console_logger.info('表格数据已回滚到原始状态')
+            
+            self.console_logger.error(f'批量更新表格数据失败: {e}')
+            return False
     
     def _update_chamber_debug(self):
         try:
@@ -1057,6 +1339,9 @@ class NVMeTestGUI:
             print(f"[DEBUG] _connect_selected_hosts 开始执行")
             print(f"[DEBUG] selected_hosts: {selected_hosts}")
             
+            # 显示操作开始信息
+            self._log_to_monitor('正在连接主板，请稍候...', 'info')
+            
             if not self.host_manager:
                 print(f"[DEBUG] host_manager未初始化，开始初始化")
                 self._log_to_monitor('主机管理器未初始化，正在初始化...', 'info')
@@ -1083,16 +1368,23 @@ class NVMeTestGUI:
             
             if success:
                 self._log_to_monitor('主板连接成功', 'info')
+                
+                print(f"[DEBUG] 开始调用 get_selected_ssd_info")
+                self._log_to_monitor('正在获取SSD信息，请稍候...', 'info')
+                
+                all_ssd_info = self.host_manager.get_selected_ssd_info(selected_hosts)
             else:
-                self._log_to_monitor('主板连接失败，尝试获取SSD信息', 'warning')
-            
-            print(f"[DEBUG] 开始调用 get_selected_ssd_info")
-            
-            all_ssd_info = self.host_manager.get_selected_ssd_info(selected_hosts)
+                self._log_to_monitor('主板连接失败，停止操作', 'error')
+                return
             
             print(f"[DEBUG] all_ssd_info: {all_ssd_info}")
             print(f"[DEBUG] all_ssd_info keys: {list(all_ssd_info.keys())}")
             print(f"[DEBUG] all_ssd_info 数量: {len(all_ssd_info)}")
+            
+            if not all_ssd_info:
+                self._log_to_monitor('未获取到SSD信息，可能是连接失败或无SSD设备', 'warning')
+            else:
+                self._log_to_monitor(f'成功获取 {len(all_ssd_info)} 个SSD设备的信息', 'info')
             
             # 只构建一次完整的表格数据
             table_data = []
@@ -1118,10 +1410,19 @@ class NVMeTestGUI:
                         # 初始化SSD信息
                         ssd_info_list = ['', '', '', '']
                         
-                        host_ssd_count = 0
+                        # 确保主机的映射关系存在
+                        if host.name not in self.ssd_slot_mapping:
+                            self.ssd_slot_mapping[host.name] = {}
+                        
+                        # 获取当前主机的SSD映射
+                        host_mapping = self.ssd_slot_mapping[host.name]
+                        
+                        # 标记已使用的槽位
+                        used_slots = set()
+                        
+                        # 首先处理已有映射的SSD
                         for ssd_sn, ssd_info in all_ssd_info.items():
                             if ssd_info.get('host') == host.name and ssd_sn != 'unknown':
-                                host_ssd_count += 1
                                 print(f"[DEBUG] 找到SSD: {ssd_sn}, info: {ssd_info}")
                                 
                                 ssd_path = ssd_info.get('path', '')
@@ -1146,14 +1447,47 @@ class NVMeTestGUI:
                                 # 获取温度信息
                                 temp = host.get_ssd_temperature(ssd_path)
                                 if temp is not None:
-                                    ssd_info_text += f'温度: {temp}°C\n'
+                                    # 根据温度添加状态标记
+                                    if temp > 70:
+                                        ssd_info_text += f'温度: {temp}°C [高温警告]\n'
+                                    elif temp > 50:
+                                        ssd_info_text += f'温度: {temp}°C [温度正常]\n'
+                                    else:
+                                        ssd_info_text += f'温度: {temp}°C [温度过低]\n'
                                 else:
                                     ssd_info_text += f'温度: N/A\n'
                                 
-                                # 将SSD数据分配到对应的槽位
-                                ssd_slot = host_ssd_count - 1
+                                # 添加连接状态标记
+                                ssd_info_text += f'状态: [已连接]\n'
+                                
+                                # 确定槽位
+                                if ssd_sn in host_mapping:
+                                    # 使用已有的映射槽位
+                                    ssd_slot = host_mapping[ssd_sn]
+                                    print(f"[DEBUG] SSD {ssd_sn} 使用已有槽位: {ssd_slot}")
+                                else:
+                                    # 分配新的槽位
+                                    for slot in range(4):
+                                        if slot not in used_slots:
+                                            ssd_slot = slot
+                                            host_mapping[ssd_sn] = slot
+                                            print(f"[DEBUG] SSD {ssd_sn} 分配新槽位: {ssd_slot}")
+                                            break
+                                    else:
+                                        # 槽位已满，跳过
+                                        print(f"[DEBUG] 主机 {host.name} 槽位已满，跳过SSD {ssd_sn}")
+                                        continue
+                                
+                                used_slots.add(ssd_slot)
                                 if ssd_slot < 4:
                                     ssd_info_list[ssd_slot] = ssd_info_text
+                        
+                        # 处理未使用的槽位，检查是否有之前的SSD断开连接
+                        for ssd_sn, slot in list(host_mapping.items()):
+                            if slot not in used_slots:
+                                # SSD已断开连接，标记为未连接
+                                ssd_info_list[slot] = f'SN: {ssd_sn}\n状态: 未连接\n'
+                                print(f"[DEBUG] SSD {ssd_sn} 已断开连接，标记槽位 {slot} 为未连接")
                         
                         # 更新SSD 1-4列
                         for j in range(4):
@@ -1163,11 +1497,26 @@ class NVMeTestGUI:
                         # 更新该主板的所有SSD槽位为未连接状态
                         for j in range(4):
                             table_data[host_index][j+2] = f'{host.name} 未连接\n'
+                            
+                        # 清除该主机的映射关系
+                        if host.name in self.ssd_slot_mapping:
+                            del self.ssd_slot_mapping[host.name]
+                            print(f"[DEBUG] 清除主机 {host.name} 的SSD映射关系")
             
             # 一次性更新表格，避免多次覆盖
             self.window['-TEST_CONTROL_TABLE-'].update(values=table_data)
             self.window.refresh()
             print(f"[DEBUG] GUI更新完成")
+            
+            # GUI更新成功后停止所有后续操作
+            # 停止监控线程
+            self.is_monitoring = False
+            print(f"[DEBUG] 已停止监控线程")
+            
+            return
+            
+            # 显示操作完成信息
+            self._log_to_monitor('主板连接和SSD信息获取完成', 'info')
         except Exception as e:
             print(f"[DEBUG] 异常: {e}")
             print(f"[DEBUG] 异常类型: {type(e).__name__}")
@@ -1175,6 +1524,7 @@ class NVMeTestGUI:
             print(f"[DEBUG] 异常堆栈:\n{traceback.format_exc()}")
             self.console_logger.error(f'连接主板异常: {e}')
             self._log_to_monitor(f'连接主板异常: {e}', 'error')
+            self._log_to_monitor('操作失败，请检查网络连接和主机状态', 'error')
     
     def _start_monitor(self):
         self.is_monitoring = True
@@ -1183,6 +1533,12 @@ class NVMeTestGUI:
     def _monitor_loop(self):
         # 保存上次的主机信息，用于检测变化
         last_host_info = []
+        
+        # 保存上次的SSD状态，用于检测变化
+        last_ssd_status = {}
+        
+        # 计数器，用于控制SSD状态检查的频率
+        check_counter = 0
         
         while self.is_monitoring:
             try:
@@ -1197,6 +1553,46 @@ class NVMeTestGUI:
                     if current_host_info != last_host_info:
                         self._update_host_info()
                         last_host_info = current_host_info.copy()
+                    
+                    # 每10秒检查一次SSD状态
+                    check_counter += 1
+                    if check_counter >= 2:  # 5秒 * 2 = 10秒
+                        check_counter = 0
+                        
+                        # 构建当前SSD状态
+                        current_ssd_status = {}
+                        
+                        # 检查每个主机的SSD状态
+                        for host in self.host_manager.hosts:
+                            if host.ssh_client:
+                                # 获取SSD列表
+                                ssd_list = host.get_ssd_list()
+                                host_ssd_status = {}
+                                
+                                # 检查每个SSD的状态
+                                for ssd_path in ssd_list:
+                                    # 获取SSD温度
+                                    temp = host.get_ssd_temperature(ssd_path)
+                                    
+                                    # 获取链路状态
+                                    try:
+                                        link_status = host.get_ssd_link_status(ssd_path)
+                                        link_info = link_status.get('link', '未知')
+                                    except:
+                                        link_info = '未知'
+                                    
+                                    host_ssd_status[ssd_path] = {
+                                        'temperature': temp,
+                                        'link_status': link_info
+                                    }
+                                
+                                current_ssd_status[host.name] = host_ssd_status
+                        
+                        # 检查SSD状态是否发生变化
+                        if current_ssd_status != last_ssd_status:
+                            # 更新SSD信息
+                            self._update_ssd_info(silent=True)
+                            last_ssd_status = current_ssd_status.copy()
                 
                 time.sleep(5)
             except Exception as e:
@@ -1320,15 +1716,15 @@ class NVMeTestGUI:
                     )
                     
                     if confirm == 'OK':
+                        # 调用连接函数，该函数会在GUI更新完成后返回
                         self._connect_selected_hosts(selected_hosts)
-                        self._log_to_monitor(f'连接操作完成', 'info')
+                        # GUI更新完成后，停止后续操作
                     else:
                         self._log_to_monitor('连接操作已取消', 'warning')
                 else:
                     self._log_to_monitor('未选择主板', 'warning')
                 
-                if self.test_executor:
-                    self.test_executor.set_selected_hosts(selected_hosts)
+                # GUI更新完成后，停止后续操作
             
             elif event == '-SELECT_SCRIPT-':
                 self._select_script()

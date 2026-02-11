@@ -81,10 +81,24 @@ class TestScriptParser:
                 return TestCommand('BIT', {'capacity_percent': 100})
         
         elif command_type == 'CTTW':
-            return TestCommand('CTTW', {})
+            if len(parts) >= 2:
+                capacity_percent = int(parts[1])
+                if 0 <= capacity_percent <= 100:
+                    return TestCommand('CTTW', {'capacity_percent': capacity_percent})
+                else:
+                    raise ValueError('CTTW测试容量百分比必须在0-100之间')
+            else:
+                return TestCommand('CTTW', {'capacity_percent': 100})
         
         elif command_type == 'CTTR':
-            return TestCommand('CTTR', {})
+            if len(parts) >= 2:
+                capacity_percent = int(parts[1])
+                if 0 <= capacity_percent <= 100:
+                    return TestCommand('CTTR', {'capacity_percent': capacity_percent})
+                else:
+                    raise ValueError('CTTR测试容量百分比必须在0-100之间')
+            else:
+                return TestCommand('CTTR', {'capacity_percent': 100})
         
         else:
             raise ValueError(f'未知命令类型: {command_type}')
@@ -114,6 +128,16 @@ class TestScriptParser:
                     capacity = command.params.get('capacity_percent', 100)
                     if capacity < 1 or capacity > 100:
                         errors.append(f'第{i+1}条命令: BIT容量百分比{capacity}超出范围(1-100)')
+                
+                elif command.command_type == 'CTTW':
+                    capacity = command.params.get('capacity_percent', 100)
+                    if capacity < 0 or capacity > 100:
+                        errors.append(f'第{i+1}条命令: CTTW容量百分比{capacity}超出范围(0-100)')
+                
+                elif command.command_type == 'CTTR':
+                    capacity = command.params.get('capacity_percent', 100)
+                    if capacity < 0 or capacity > 100:
+                        errors.append(f'第{i+1}条命令: CTTR容量百分比{capacity}超出范围(0-100)')
             
             if errors:
                 return False, errors

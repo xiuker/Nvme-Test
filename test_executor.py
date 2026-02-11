@@ -8,6 +8,7 @@ from chamber_controller import ChamberController
 from test_host_manager import TestHostManager
 from test_script_parser import TestCommand
 from logger import ConsoleLogger, TestResultLogger
+from test_summary_generator import TestSummaryGenerator
 
 
 class TestProgress:
@@ -92,6 +93,10 @@ class TestExecutor:
         
         self.progress_callbacks = []
         self.log_callbacks = []
+        
+        # 初始化测试总结生成器
+        summary_config = config.get('summary', {})
+        self.summary_generator = TestSummaryGenerator(summary_config)
 
     def add_progress_callback(self, callback: Callable):
         self.progress_callbacks.append(callback)
@@ -480,7 +485,7 @@ class TestExecutor:
         
         return results
 
-    def _run_host_test_cttw(self, host) -> List:
+    def _run_host_test_cttw(self, host, capacity_percent=100) -> List:
         results = []
         ssd_list = host.get_ssd_list()
         
@@ -506,7 +511,7 @@ class TestExecutor:
             
             fio_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
                            f'--direct=1 --name=test --rw=write --filename=$i --verify=crc32c '
-                           f'--do_verify=0 --group_reporting --size=100%')
+                           f'--do_verify=0 --group_reporting --size={capacity_percent}%')
             
             full_fio_command = fio_command.replace('$i', ssd_path)
             self.console_logger.info(f'执行FIO命令: {full_fio_command}')
@@ -518,6 +523,7 @@ class TestExecutor:
             result_content += f'SSD路径: {ssd_path}\n'
             result_content += f'SSD SN: {ssd_sn}\n'
             result_content += f'SSD链路状态: {link_status.get("link", "N/A") if isinstance(link_status, dict) else "获取失败"}\n'
+            result_content += f'测试容量: {capacity_percent}%\n'
             result_content += f'\n{"="*60}\n'
             result_content += f'SMART信息:\n'
             result_content += f'{"="*60}\n'
@@ -544,22 +550,22 @@ class TestExecutor:
                                                    self.test_time, test_item='CTTW', 
                                                    temperature=self.progress.current_temperature)
             
-            return (ssd_sn, exit_status)
+            return (ssd_path, ssd_sn, exit_status)
         
         with ThreadPoolExecutor(max_workers=len(ssd_list)) as executor:
-            futures = {executor.submit(run_ssd_test, ssd_path): ssd_path in ssd_list}
+            future_to_ssd = {executor.submit(run_ssd_test, ssd_path): ssd_path for ssd_path in ssd_list}
             
-            for future in as_completed(futures):
-                ssd_path = futures[future]
+            for future in as_completed(future_to_ssd):
+                ssd_path = future_to_ssd[future]
                 try:
-                    result = future.result()
-                    results.append(result)
+                    ssd_path, ssd_sn, exit_status = future.result()
+                    results.append((ssd_path, ssd_sn, exit_status))
                 except Exception as e:
                     self.console_logger.error(f'SSD {ssd_path} 测试异常: {e}')
         
         return results
 
-    def _run_host_test_cttr(self, host) -> List:
+    def _run_host_test_cttr(self, host, capacity_percent=100) -> List:
         results = []
         ssd_list = host.get_ssd_list()
         
@@ -580,7 +586,7 @@ class TestExecutor:
             
             fio_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
                            f'--direct=0 --name=test --rw=read --filename=$i --verify=crc32c '
-                           f'--do_verify=1 --group_reporting --size=100%')
+                           f'--do_verify=1 --group_reporting --size={capacity_percent}%')
             
             full_fio_command = fio_command.replace('$i', ssd_path)
             self.console_logger.info(f'执行FIO命令: {full_fio_command}')
@@ -592,6 +598,7 @@ class TestExecutor:
             result_content += f'SSD路径: {ssd_path}\n'
             result_content += f'SSD SN: {ssd_sn}\n'
             result_content += f'SSD链路状态: {link_status.get("link", "N/A")}\n'
+            result_content += f'测试容量: {capacity_percent}%\n'
             result_content += f'\n{"="*60}\n'
             result_content += f'SMART信息:\n'
             result_content += f'{"="*60}\n'
@@ -852,11 +859,15 @@ class TestExecutor:
                     for ssd_sn, ssd_info in bit_ssd_info.items():
                         self.console_logger.info(f'[DEBUG] 处理SSD序列号: {ssd_sn}, ssd_info 类型: {type(ssd_info).__name__}')
                         if isinstance(ssd_info, dict):
-                            summary_content = f'\n{"="*60}\n'
-                            summary_content += f'BIT测试总结\n'
-                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                            summary_content += f'{"="*60}\n'
+                            # 使用测试总结生成器生成总结
+                            summary_content = self.summary_generator.generate_test_summary(
+                                test_type='BIT',
+                                ssd_sn=ssd_sn,
+                                start_time=test_start_time,
+                                end_time=test_end_time,
+                                temperature=self.progress.current_temperature,
+                                additional_info=ssd_info
+                            )
                             
                             self.result_logger.log_test_result(ssd_sn, 'BIT', 
                                                                self.progress.current_temperature, 
@@ -873,11 +884,15 @@ class TestExecutor:
                                 if isinstance(ssd_info, dict):
                                     ssd_sn = ssd_info.get('SN', 'unknown')
                                     
-                                    summary_content = f'\n{"="*60}\n'
-                                    summary_content += f'BIT测试总结\n'
-                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                                    summary_content += f'{"="*60}\n'
+                                    # 使用测试总结生成器生成总结
+                                    summary_content = self.summary_generator.generate_test_summary(
+                                        test_type='BIT',
+                                        ssd_sn=ssd_sn,
+                                        start_time=test_start_time,
+                                        end_time=test_end_time,
+                                        temperature=self.progress.current_temperature,
+                                        additional_info=ssd_info
+                                    )
                                     
                                     self.result_logger.log_test_result(ssd_sn, 'BIT', 
                                                                        self.progress.current_temperature, 
@@ -898,11 +913,12 @@ class TestExecutor:
     def execute_cttw_command(self, command: TestCommand) -> bool:
         cttw_config = self.config.get('cttw', {})
         temp_check_interval = cttw_config.get('temperature_check_interval', 30)
+        capacity_percent = command.params.get('capacity_percent', 100)
         
         self.progress.current_test_item = 'CTTW'
         
-        self.console_logger.info('执行CTTW测试: 全盘写测试')
-        self._notify_log('开始CTTW测试: 全盘写测试')
+        self.console_logger.info(f'执行CTTW测试: 全盘写测试 (容量: {capacity_percent}%)')
+        self._notify_log(f'开始CTTW测试: 全盘写测试 (容量: {capacity_percent}%)')
         
         selected_hosts = self._get_selected_hosts()
         selected_host_names = [host.name for host in selected_hosts]
@@ -943,7 +959,7 @@ class TestExecutor:
         cttw_ssd_info = self.host_manager.get_all_ssd_info(selected_hosts=selected_host_names)
         
         with ThreadPoolExecutor(max_workers=len(selected_hosts)) as executor:
-            futures = {executor.submit(self._run_host_test_cttw, host): host for host in selected_hosts}
+            futures = {executor.submit(self._run_host_test_cttw, host, capacity_percent): host for host in selected_hosts}
             
             for future in as_completed(futures):
                 host = futures[future]
@@ -981,11 +997,15 @@ class TestExecutor:
                     # 结构是 {ssd_sn: {ssd_info}}，直接遍历处理
                     for ssd_sn, ssd_info in cttw_ssd_info.items():
                         if isinstance(ssd_info, dict):
-                            summary_content = f'\n{"="*60}\n'
-                            summary_content += f'CTTW测试总结\n'
-                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                            summary_content += f'{"="*60}\n'
+                            # 使用测试总结生成器生成总结
+                            summary_content = self.summary_generator.generate_test_summary(
+                                test_type='CTTW',
+                                ssd_sn=ssd_sn,
+                                start_time=test_start_time,
+                                end_time=test_end_time,
+                                temperature=self.progress.current_temperature,
+                                additional_info=ssd_info
+                            )
                             
                             self.result_logger.log_test_result(ssd_sn, 'CTTW', 
                                                                self.progress.current_temperature, 
@@ -1000,11 +1020,15 @@ class TestExecutor:
                                 if isinstance(ssd_info, dict):
                                     ssd_sn = ssd_info.get('SN', 'unknown')
                                     
-                                    summary_content = f'\n{"="*60}\n'
-                                    summary_content += f'CTTW测试总结\n'
-                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                                    summary_content += f'{"="*60}\n'
+                                    # 使用测试总结生成器生成总结
+                                    summary_content = self.summary_generator.generate_test_summary(
+                                        test_type='CTTW',
+                                        ssd_sn=ssd_sn,
+                                        start_time=test_start_time,
+                                        end_time=test_end_time,
+                                        temperature=self.progress.current_temperature,
+                                        additional_info=ssd_info
+                                    )
                                     
                                     self.result_logger.log_test_result(ssd_sn, 'CTTW', 
                                                                        self.progress.current_temperature, 
@@ -1025,11 +1049,12 @@ class TestExecutor:
     def execute_cttr_command(self, command: TestCommand) -> bool:
         cttr_config = self.config.get('cttr', {})
         temp_check_interval = cttr_config.get('temperature_check_interval', 30)
+        capacity_percent = command.params.get('capacity_percent', 100)
         
         self.progress.current_test_item = 'CTTR'
         
-        self.console_logger.info('执行CTTR测试: 全盘读测试')
-        self._notify_log('开始CTTR测试: 全盘读测试')
+        self.console_logger.info(f'执行CTTR测试: 全盘读测试 (容量: {capacity_percent}%)')
+        self._notify_log(f'开始CTTR测试: 全盘读测试 (容量: {capacity_percent}%)')
         
         selected_hosts = self._get_selected_hosts()
         selected_host_names = [host.name for host in selected_hosts]
@@ -1070,7 +1095,7 @@ class TestExecutor:
         cttr_ssd_info = self.host_manager.get_all_ssd_info(selected_hosts=selected_host_names)
         
         with ThreadPoolExecutor(max_workers=len(selected_hosts)) as executor:
-            futures = {executor.submit(self._run_host_test_cttr, host): host for host in selected_hosts}
+            futures = {executor.submit(self._run_host_test_cttr, host, capacity_percent): host for host in selected_hosts}
             
             for future in as_completed(futures):
                 host = futures[future]
@@ -1108,11 +1133,15 @@ class TestExecutor:
                     # 结构是 {ssd_sn: {ssd_info}}，直接遍历处理
                     for ssd_sn, ssd_info in cttr_ssd_info.items():
                         if isinstance(ssd_info, dict):
-                            summary_content = f'\n{"="*60}\n'
-                            summary_content += f'CTTR测试总结\n'
-                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                            summary_content += f'{"="*60}\n'
+                            # 使用测试总结生成器生成总结
+                            summary_content = self.summary_generator.generate_test_summary(
+                                test_type='CTTR',
+                                ssd_sn=ssd_sn,
+                                start_time=test_start_time,
+                                end_time=test_end_time,
+                                temperature=self.progress.current_temperature,
+                                additional_info=ssd_info
+                            )
                             
                             self.result_logger.log_test_result(ssd_sn, 'CTTR', 
                                                                self.progress.current_temperature, 
@@ -1127,11 +1156,15 @@ class TestExecutor:
                                 if isinstance(ssd_info, dict):
                                     ssd_sn = ssd_info.get('SN', 'unknown')
                                     
-                                    summary_content = f'\n{"="*60}\n'
-                                    summary_content += f'CTTR测试总结\n'
-                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                                    summary_content += f'{"="*60}\n'
+                                    # 使用测试总结生成器生成总结
+                                    summary_content = self.summary_generator.generate_test_summary(
+                                        test_type='CTTR',
+                                        ssd_sn=ssd_sn,
+                                        start_time=test_start_time,
+                                        end_time=test_end_time,
+                                        temperature=self.progress.current_temperature,
+                                        additional_info=ssd_info
+                                    )
                                     
                                     self.result_logger.log_test_result(ssd_sn, 'CTTR', 
                                                                        self.progress.current_temperature, 
