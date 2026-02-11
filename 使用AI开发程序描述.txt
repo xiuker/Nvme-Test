@@ -133,5 +133,10 @@ name的构成：测试时间-测试盘sn-测试项目-测试温度
 
 测试软件需具备版本管理功能，便于记录版本更改
 
+fio 写命令但不校验
+fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=$i --verify=crc32c --do_verify=0  --group_reporting  --size=1G；其中$i为ssd的路径信息，如/dev/nvme0n1,/dev/nvme1n1等
+fio 读命令检验
+fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=$i --verify=crc32c --do_verify=1  --group_reporting  --size=1G；其中$i为ssd的路径信息，如/dev/nvme0n1,/dev/nvme1n1等
+
 
 

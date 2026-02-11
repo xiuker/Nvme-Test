@@ -1,0 +1,299 @@
+PCT测试结果 - 第1轮
+测试开始时间: 2026-02-10 16:53:33
+SSD路径: /dev/nvme1n1
+SSD SN: 202505202T9002
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme1n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 28 °C (301 K, 82 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 1%
+endurance group critical warning summary: 0
+Data Units Read				: 42828561 (21.93 TB)
+Data Units Written			: 61872247 (31.68 TB)
+host_read_commands			: 380596610
+host_write_commands			: 482533230
+controller_busy_time			: 400
+power_cycles				: 580
+power_on_hours				: 71
+unsafe_shutdowns			: 139
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 28 °C (301 K, 82 °F)
+Temperature Sensor 2			: 28 °C (301 K, 82 °F)
+Temperature Sensor 4			: 36 °C (309 K, 96 °F)
+Temperature Sensor 5			: 115 °C (388 K, 239 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 131072
+Thermal Management T2 Total Time	: 11864464
+
+
+============================================================
+FIO执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+
+============================================================
+FIO输出:
+============================================================
+test: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=34085: Tue Feb 10 03:53:56 2026
+  write: IOPS=1924, BW=1925MiB/s (2018MB/s)(1024MiB/532msec); 0 zone resets
+    slat (usec): min=213, max=4818, avg=263.29, stdev=148.64
+    clat (msec): min=34, max=130, avg=63.51, stdev=17.11
+     lat (msec): min=34, max=130, avg=63.77, stdev=17.10
+    clat percentiles (msec):
+     |  1.00th=[   35],  5.00th=[   38], 10.00th=[   42], 20.00th=[   54],
+     | 30.00th=[   64], 40.00th=[   64], 50.00th=[   64], 60.00th=[   65],
+     | 70.00th=[   65], 80.00th=[   65], 90.00th=[   75], 95.00th=[  105],
+     | 99.00th=[  126], 99.50th=[  128], 99.90th=[  130], 99.95th=[  131],
+     | 99.99th=[  131]
+   bw (  MiB/s): min= 1794, max= 1794, per=93.20%, avg=1794.00, stdev= 0.00, samples=1
+   iops        : min= 1794, max= 1794, avg=1794.00, stdev= 0.00, samples=1
+  lat (msec)   : 50=18.65%, 100=75.39%, 250=5.96%
+  cpu          : usr=48.21%, sys=1.88%, ctx=780, majf=0, minf=11
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=0,1024,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+  WRITE: bw=1925MiB/s (2018MB/s), 1925MiB/s-1925MiB/s (2018MB/s-2018MB/s), io=1024MiB (1074MB), run=532-532msec
+
+Disk stats (read/write):
+  nvme1n1: ios=51/5607, sectors=2104/1435392, merge=0/0, ticks=9/299266, in_queue=299276, util=75.05%
+
+PCT测试结果 - 第2轮
+测试开始时间: 2026-02-10 16:54:36
+SSD路径: /dev/nvme0n1
+SSD SN: 202505202T9002
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme0n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 30 °C (303 K, 86 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 1%
+endurance group critical warning summary: 0
+Data Units Read				: 42828570 (21.93 TB)
+Data Units Written			: 61874344 (31.68 TB)
+host_read_commands			: 380596824
+host_write_commands			: 482541422
+controller_busy_time			: 400
+power_cycles				: 581
+power_on_hours				: 71
+unsafe_shutdowns			: 139
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 30 °C (303 K, 86 °F)
+Temperature Sensor 2			: 30 °C (303 K, 86 °F)
+Temperature Sensor 4			: 38 °C (311 K, 100 °F)
+Temperature Sensor 5			: 115 °C (388 K, 239 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 131072
+Thermal Management T2 Total Time	: 11864464
+
+
+============================================================
+FIO读执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+
+============================================================
+FIO读输出:
+============================================================
+test: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=33879: Tue Feb 10 03:54:59 2026
+  read: IOPS=2723, BW=2723MiB/s (2856MB/s)(1024MiB/376msec)
+    slat (usec): min=5, max=490, avg=30.32, stdev=85.95
+    clat (usec): min=3592, max=88253, avg=43346.60, stdev=15240.64
+     lat (usec): min=3610, max=88261, avg=43376.93, stdev=15214.83
+    clat percentiles (usec):
+     |  1.00th=[ 7111],  5.00th=[21890], 10.00th=[23725], 20.00th=[34341],
+     | 30.00th=[42206], 40.00th=[42730], 50.00th=[42730], 60.00th=[42730],
+     | 70.00th=[43779], 80.00th=[45876], 90.00th=[66323], 95.00th=[77071],
+     | 99.00th=[84411], 99.50th=[86508], 99.90th=[87557], 99.95th=[88605],
+     | 99.99th=[88605]
+  lat (msec)   : 4=0.29%, 10=1.46%, 20=2.64%, 50=78.12%, 100=17.48%
+  cpu          : usr=37.33%, sys=8.00%, ctx=715, majf=0, minf=586
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=1024,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=2723MiB/s (2856MB/s), 2723MiB/s-2723MiB/s (2856MB/s-2856MB/s), io=1024MiB (1074MB), run=376-376msec
+
+Disk stats (read/write):
+  nvme0n1: ios=3122/0, sectors=799232/0, merge=0/0, ticks=113957/0, in_queue=113957, util=59.84%
+
+
+============================================================
+FIO写执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+
+============================================================
+FIO写输出:
+============================================================
+test: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=33919: Tue Feb 10 03:55:00 2026
+  write: IOPS=1793, BW=1793MiB/s (1880MB/s)(1024MiB/571msec); 0 zone resets
+    slat (usec): min=198, max=18362, avg=270.93, stdev=566.85
+    clat (msec): min=3, max=154, avg=69.10, stdev=28.02
+     lat (msec): min=3, max=154, avg=69.37, stdev=28.03
+    clat percentiles (msec):
+     |  1.00th=[    9],  5.00th=[   31], 10.00th=[   31], 20.00th=[   43],
+     | 30.00th=[   65], 40.00th=[   67], 50.00th=[   70], 60.00th=[   73],
+     | 70.00th=[   82], 80.00th=[   85], 90.00th=[  107], 95.00th=[  123],
+     | 99.00th=[  148], 99.50th=[  150], 99.90th=[  155], 99.95th=[  155],
+     | 99.99th=[  155]
+   bw (  MiB/s): min= 1762, max= 1762, per=98.25%, avg=1762.00, stdev= 0.00, samples=1
+   iops        : min= 1762, max= 1762, avg=1762.00, stdev= 0.00, samples=1
+  lat (msec)   : 4=0.20%, 10=0.98%, 20=1.46%, 50=21.58%, 100=63.57%
+  lat (msec)   : 250=12.21%
+  cpu          : usr=42.63%, sys=2.81%, ctx=800, majf=0, minf=12
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=0,1024,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+  WRITE: bw=1793MiB/s (1880MB/s), 1793MiB/s-1793MiB/s (1880MB/s-1880MB/s), io=1024MiB (1074MB), run=571-571msec
+
+Disk stats (read/write):
+  nvme0n1: ios=51/5027, sectors=2104/1286912, merge=0/0, ticks=5/308532, in_queue=308538, util=74.50%
+
+PCT测试结果 - 第3轮
+测试开始时间: 2026-02-10 16:55:39
+SSD路径: /dev/nvme0n1
+SSD SN: 202505202T9002
+SSD链路状态: LnkSta:	Speed 8GT/s, Width x4
+
+============================================================
+SMART信息:
+============================================================
+Smart Log for NVME device:nvme0n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 32 °C (305 K, 89 °F)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 1%
+endurance group critical warning summary: 0
+Data Units Read				: 42830675 (21.93 TB)
+Data Units Written			: 61876441 (31.68 TB)
+host_read_commands			: 380605230
+host_write_commands			: 482549614
+controller_busy_time			: 400
+power_cycles				: 582
+power_on_hours				: 71
+unsafe_shutdowns			: 139
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Temperature Sensor 1			: 32 °C (305 K, 89 °F)
+Temperature Sensor 2			: 32 °C (305 K, 89 °F)
+Temperature Sensor 4			: 40 °C (313 K, 104 °F)
+Temperature Sensor 5			: 115 °C (388 K, 239 °F)
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 131072
+Thermal Management T2 Total Time	: 11864464
+
+
+============================================================
+FIO读执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+
+============================================================
+FIO读输出:
+============================================================
+test: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=33877: Tue Feb 10 03:56:03 2026
+  read: IOPS=2716, BW=2716MiB/s (2848MB/s)(1024MiB/377msec)
+    slat (usec): min=5, max=436, avg=30.26, stdev=84.69
+    clat (usec): min=22122, max=84890, avg=43412.83, stdev=10617.40
+     lat (usec): min=22301, max=84919, avg=43443.09, stdev=10578.68
+    clat percentiles (usec):
+     |  1.00th=[22414],  5.00th=[23462], 10.00th=[27395], 20.00th=[41681],
+     | 30.00th=[42206], 40.00th=[42730], 50.00th=[43254], 60.00th=[44303],
+     | 70.00th=[45351], 80.00th=[45876], 90.00th=[49021], 95.00th=[66847],
+     | 99.00th=[79168], 99.50th=[81265], 99.90th=[83362], 99.95th=[84411],
+     | 99.99th=[84411]
+  lat (msec)   : 50=90.23%, 100=9.77%
+  cpu          : usr=37.23%, sys=7.98%, ctx=491, majf=0, minf=589
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=1024,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=2716MiB/s (2848MB/s), 2716MiB/s-2716MiB/s (2848MB/s-2848MB/s), io=1024MiB (1074MB), run=377-377msec
+
+Disk stats (read/write):
+  nvme0n1: ios=3160/0, sectors=808960/0, merge=0/0, ticks=112326/0, in_queue=112326, util=59.84%
+
+
+============================================================
+FIO写执行命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+
+============================================================
+FIO写输出:
+============================================================
+test: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=128
+fio-3.36
+Starting 1 process
+
+test: (groupid=0, jobs=1): err= 0: pid=33917: Tue Feb 10 03:56:04 2026
+  write: IOPS=1780, BW=1781MiB/s (1867MB/s)(1024MiB/575msec); 0 zone resets
+    slat (usec): min=195, max=4809, avg=266.75, stdev=147.99
+    clat (msec): min=2, max=169, avg=69.51, stdev=32.81
+     lat (msec): min=2, max=169, avg=69.78, stdev=32.81
+    clat percentiles (msec):
+     |  1.00th=[    9],  5.00th=[   30], 10.00th=[   34], 20.00th=[   39],
+     | 30.00th=[   53], 40.00th=[   66], 50.00th=[   66], 60.00th=[   68],
+     | 70.00th=[   77], 80.00th=[   92], 90.00th=[  121], 95.00th=[  138],
+     | 99.00th=[  163], 99.50th=[  165], 99.90th=[  169], 99.95th=[  169],
+     | 99.99th=[  169]
+   bw (  MiB/s): min= 1766, max= 1766, per=99.17%, avg=1766.00, stdev= 0.00, samples=1
+   iops        : min= 1766, max= 1766, avg=1766.00, stdev= 0.00, samples=1
+  lat (msec)   : 4=0.39%, 10=0.78%, 20=2.15%, 50=24.61%, 100=55.18%
+  lat (msec)   : 250=16.89%
+  cpu          : usr=44.95%, sys=1.74%, ctx=770, majf=0, minf=10
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.1%, >=64=93.8%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=0,1024,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+  WRITE: bw=1781MiB/s (1867MB/s), 1781MiB/s-1781MiB/s (1867MB/s-1867MB/s), io=1024MiB (1074MB), run=575-575msec
+
+Disk stats (read/write):
+  nvme0n1: ios=51/5366, sectors=2104/1373696, merge=0/0, ticks=5/284749, in_queue=284754, util=74.50%
+

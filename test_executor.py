@@ -21,6 +21,7 @@ class TestProgress:
         self.hold_time = 0
         self.test_results = {}
         self.ssd_status = {}
+        self.host_progress = {}  # 存储每个主板的测试进度
         self.is_running = False
         self.is_paused = False
         self.start_time = None
@@ -33,10 +34,39 @@ class TestProgress:
         self.current_temperature = 0.0
         self.test_results = {}
         self.ssd_status = {}
+        self.host_progress = {}  # 重置主板进度
         self.is_running = False
         self.is_paused = False
         self.start_time = None
         self.elapsed_time = 0
+    
+    def reset_host_progress(self, host_name):
+        """重置指定主板的测试进度"""
+        if host_name in self.host_progress:
+            del self.host_progress[host_name]
+    
+    def update_host_progress(self, host_name, current_command_index=0, current_test_item='', 
+                           current_cycle=0, total_cycles=0, start_time=None):
+        """更新指定主板的测试进度"""
+        if host_name not in self.host_progress:
+            self.host_progress[host_name] = {
+                'current_command_index': current_command_index,
+                'current_test_item': current_test_item,
+                'current_cycle': current_cycle,
+                'total_cycles': total_cycles,
+                'start_time': start_time
+            }
+        else:
+            if current_command_index > 0:
+                self.host_progress[host_name]['current_command_index'] = current_command_index
+            if current_test_item:
+                self.host_progress[host_name]['current_test_item'] = current_test_item
+            if current_cycle > 0:
+                self.host_progress[host_name]['current_cycle'] = current_cycle
+            if total_cycles > 0:
+                self.host_progress[host_name]['total_cycles'] = total_cycles
+            if start_time:
+                self.host_progress[host_name]['start_time'] = start_time
 
 
 class TestExecutor:
@@ -93,30 +123,46 @@ class TestExecutor:
             callback(message, level)
 
     def _check_ssd_consistency(self, current_ssd_info: Dict, test_item: str = 'UNKNOWN') -> bool:
+        print(f"[DEBUG] _check_ssd_consistency 开始执行, test_item={test_item}")
+        print(f"[DEBUG] current_ssd_info 类型: {type(current_ssd_info).__name__}, 长度: {len(current_ssd_info) if hasattr(current_ssd_info, '__len__') else 'N/A'}")
+        
         if not self.initial_ssd_info:
+            print(f"[DEBUG] 初始化 initial_ssd_info")
             self.initial_ssd_info = current_ssd_info
             return True
         
+        print(f"[DEBUG] initial_ssd_info 类型: {type(self.initial_ssd_info).__name__}, 长度: {len(self.initial_ssd_info) if hasattr(self.initial_ssd_info, '__len__') else 'N/A'}")
+        
         for sn, info in current_ssd_info.items():
+            print(f"[DEBUG] 处理 SN: {sn}, info 类型: {type(info).__name__}")
             if sn in self.initial_ssd_info:
                 initial_info = self.initial_ssd_info[sn]
-                if (info.get('MN') != initial_info.get('MN') or 
-                    info.get('VID') != initial_info.get('VID') or
-                    info.get('DID') != initial_info.get('DID')):
-                    self.console_logger.error(f'SSD信息不一致: {sn}')
-                    self.result_logger.log_error(sn, 'SSD_INFO_MISMATCH', 
+                print(f"[DEBUG] 初始信息类型: {type(initial_info).__name__}")
+                # 确保info和initial_info都是字典
+                if isinstance(info, dict) and isinstance(initial_info, dict):
+                    if (info.get('MN') != initial_info.get('MN') or 
+                        info.get('VID') != initial_info.get('VID') or
+                        info.get('DID') != initial_info.get('DID')):
+                        self.console_logger.error(f'SSD信息不一致: {sn}')
+                        self.result_logger.log_error(sn, 'SSD_INFO_MISMATCH', 
                                                f'初始信息: {initial_info}, 当前信息: {info}', 
                                                self.test_time, test_item=test_item, 
                                                temperature=self.progress.current_temperature)
-                    return False
+                        return False
+                else:
+                    self.console_logger.error(f'SSD信息类型错误: {sn}, 初始信息类型: {type(initial_info).__name__}, 当前信息类型: {type(info).__name__}')
+                    self.result_logger.log_error(sn, 'SSD_INFO_TYPE_ERROR', 
+                                               f'初始信息类型: {type(initial_info).__name__}, 当前信息类型: {type(info).__name__}', 
+                                               self.test_time, test_item=test_item, 
+                                               temperature=self.progress.current_temperature)
         
         for sn in self.initial_ssd_info:
             if sn not in current_ssd_info and test_item != 'TEMP':
                 self.console_logger.warning(f'检测到少盘: {sn}')
                 self.result_logger.log_error(sn, 'SSD_MISSING', 
-                                               f'初始SSD列表中存在，但当前检测不到: {sn}', 
-                                               self.test_time, test_item=test_item, 
-                                               temperature=self.progress.current_temperature)
+                                           f'初始SSD列表中存在，但当前检测不到: {sn}', 
+                                           self.test_time, test_item=test_item, 
+                                           temperature=self.progress.current_temperature)
         
         return True
 
@@ -156,22 +202,27 @@ class TestExecutor:
                 
                 for host in self.host_manager.hosts:
                     if host.name == host_name:
+                        # 添加调试代码，查看 ssd_info 的类型
                         ssd_info = host.get_ssd_info(ssd_path)
-                        ssd_sn = ssd_info.get('SN', 'unknown')
-                        
-                        temp_summary = []
-                        temp_summary.append(f'测试开始时间: {start_time.strftime("%Y-%m-%d %H:%M:%S")}')
-                        temp_summary.append(f'测试结束时间: {end_time.strftime("%Y-%m-%d %H:%M:%S")}')
-                        temp_summary.append(f'开始温度: {start_temp}°C')
-                        temp_summary.append(f'结束温度: {end_temp}°C')
-                        if start_temp != 'N/A' and end_temp != 'N/A':
-                            temp_change = end_temp - start_temp
-                            temp_summary.append(f'温度变化: {temp_change:+.1f}°C')
-                        
-                        self.result_logger.log_temperature_data(ssd_sn, temp_summary, self.test_time)
-                        
-                        if key in self.temperature_data:
-                            self.result_logger.log_temperature_monitor_data(ssd_sn, self.temperature_data[key], self.test_time)
+                        self.console_logger.info(f'[DEBUG] _save_temperature_summary - ssd_info 类型: {type(ssd_info).__name__}, 值: {ssd_info}')
+                        if isinstance(ssd_info, dict):
+                            ssd_sn = ssd_info.get('SN', 'unknown')
+                            
+                            temp_summary = []
+                            temp_summary.append(f'测试开始时间: {start_time.strftime("%Y-%m-%d %H:%M:%S")}')
+                            temp_summary.append(f'测试结束时间: {end_time.strftime("%Y-%m-%d %H:%M:%S")}')
+                            temp_summary.append(f'开始温度: {start_temp}°C')
+                            temp_summary.append(f'结束温度: {end_temp}°C')
+                            if start_temp != 'N/A' and end_temp != 'N/A':
+                                temp_change = end_temp - start_temp
+                                temp_summary.append(f'温度变化: {temp_change:+.1f}°C')
+                            
+                            self.result_logger.log_temperature_data(ssd_sn, temp_summary, self.test_time)
+                            
+                            if key in self.temperature_data:
+                                self.result_logger.log_temperature_monitor_data(ssd_sn, self.temperature_data[key], self.test_time)
+                        else:
+                            self.console_logger.error(f'[DEBUG] _save_temperature_summary - ssd_info 不是字典类型: {type(ssd_info).__name__}, 值: {ssd_info}')
                         break
 
     def execute_temp_command(self, command: TestCommand) -> bool:
@@ -230,44 +281,99 @@ class TestExecutor:
             ssd_sn = ssd_info.get('SN', 'unknown')
             
             link_status = host.get_ssd_link_status(ssd_path)
-            link_info = link_status.get('link', '')
-            if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
-                self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}, 链路状态: {link_status}')
-                self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
+            # 确保link_status是一个字典
+            if isinstance(link_status, dict):
+                link_info = link_status.get('link', '')
+                if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
+                    self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}, 链路状态: {link_status}')
+                    self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
                                                f'链路状态异常: {link_status}', 
                                                self.test_time, test_item=test_item, 
                                                temperature=self.progress.current_temperature, cycle=cycle)
+            else:
+                self.console_logger.error(f'获取SSD链路状态失败: {ssd_sn}, 链路状态类型: {type(link_status).__name__}')
+                link_info = 'N/A'
             
             smart_info = host.get_ssd_smart(ssd_path)
-            
-            fio_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
-                                   f'--direct=1 --name=test --rw=write --filename=$i --verify=crc32c '
-                                   f'--do_verify=1 --group_reporting --size={fio_size}')
-            
-            full_fio_command = fio_command.replace('$i', ssd_path)
-            self.console_logger.info(f'执行FIO命令: {full_fio_command}')
-            
-            exit_status, output, error = host.run_fio_test(ssd_path, fio_command)
             
             result_content = f'{test_item}测试结果 - 第{cycle}轮\n'
             result_content += f'测试开始时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n'
             result_content += f'SSD路径: {ssd_path}\n'
             result_content += f'SSD SN: {ssd_sn}\n'
-            result_content += f'SSD链路状态: {link_status.get("link", "N/A")}\n'
+            result_content += f'SSD链路状态: {link_status.get("link", "N/A") if isinstance(link_status, dict) else "获取失败"}\n'
             result_content += f'\n{"="*60}\n'
             result_content += f'SMART信息:\n'
             result_content += f'{"="*60}\n'
             result_content += f'{smart_info}\n'
-            result_content += f'\n{"="*60}\n'
-            result_content += f'FIO执行命令: {full_fio_command}\n'
-            if exit_status != 0:
-                result_content += f'退出状态: {exit_status}\n'
-            result_content += f'\n{"="*60}\n'
-            result_content += f'FIO输出:\n'
-            result_content += f'{"="*60}\n'
-            result_content += f'{output}\n'
-            if error:
-                result_content += f'\n错误:\n{error}\n'
+            
+            # 执行FIO命令
+            if cycle == 1:
+                # 第一轮: 只执行写命令，不校验
+                fio_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
+                               f'--direct=1 --name=test --rw=write --filename=$i --verify=crc32c '
+                               f'--do_verify=0 --group_reporting --size={fio_size}')
+                
+                full_fio_command = fio_command.replace('$i', ssd_path)
+                self.console_logger.info(f'执行FIO命令: {full_fio_command}')
+                
+                exit_status, output, error = host.run_fio_test(ssd_path, fio_command)
+                
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO执行命令: {full_fio_command}\n'
+                if exit_status != 0:
+                    result_content += f'退出状态: {exit_status}\n'
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO输出:\n'
+                result_content += f'{"="*60}\n'
+                result_content += f'{output}\n'
+                if error:
+                    result_content += f'\n错误:\n{error}\n'
+            else:
+                # 非第一轮: 先执行读命令校验，再执行写命令不校验
+                # 1. 执行读命令，带校验
+                read_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
+                               f'--direct=1 --name=test --rw=read --filename=$i --verify=crc32c '
+                               f'--do_verify=1 --group_reporting --size={fio_size}')
+                
+                full_read_command = read_command.replace('$i', ssd_path)
+                self.console_logger.info(f'执行FIO读命令: {full_read_command}')
+                
+                read_exit_status, read_output, read_error = host.run_fio_test(ssd_path, read_command)
+                
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO读执行命令: {full_read_command}\n'
+                if read_exit_status != 0:
+                    result_content += f'退出状态: {read_exit_status}\n'
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO读输出:\n'
+                result_content += f'{"="*60}\n'
+                result_content += f'{read_output}\n'
+                if read_error:
+                    result_content += f'\n错误:\n{read_error}\n'
+                
+                # 2. 执行写命令，不带校验
+                write_command = (f'fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 '
+                                f'--direct=1 --name=test --rw=write --filename=$i --verify=crc32c '
+                                f'--do_verify=0 --group_reporting --size={fio_size}')
+                
+                full_write_command = write_command.replace('$i', ssd_path)
+                self.console_logger.info(f'执行FIO写命令: {full_write_command}')
+                
+                write_exit_status, write_output, write_error = host.run_fio_test(ssd_path, write_command)
+                
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO写执行命令: {full_write_command}\n'
+                if write_exit_status != 0:
+                    result_content += f'退出状态: {write_exit_status}\n'
+                result_content += f'\n{"="*60}\n'
+                result_content += f'FIO写输出:\n'
+                result_content += f'{"="*60}\n'
+                result_content += f'{write_output}\n'
+                if write_error:
+                    result_content += f'\n错误:\n{write_error}\n'
+                
+                # 使用写命令的退出状态作为最终状态
+                exit_status = write_exit_status
             
             filename = custom_filename.get(ssd_sn) if custom_filename and ssd_sn in custom_filename else None
             self.result_logger.log_test_result(ssd_sn, test_item, 
@@ -277,7 +383,7 @@ class TestExecutor:
             if exit_status != 0:
                 self.console_logger.error(f'{test_item}测试失败: {ssd_sn}')
                 self.result_logger.log_error(ssd_sn, f'{test_item}_TEST_FAILED', 
-                                                       f'退出状态: {exit_status}, 错误: {error}', 
+                                                       f'退出状态: {exit_status}', 
                                                        self.test_time, test_item=test_item, 
                                                        temperature=self.progress.current_temperature, cycle=cycle)
             
@@ -304,13 +410,18 @@ class TestExecutor:
             ssd_sn = ssd_info.get('SN', 'unknown')
             
             link_status = host.get_ssd_link_status(ssd_path)
-            link_info = link_status.get('link', '')
-            if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
-                self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}')
-                self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
+            # 确保link_status是一个字典
+            if isinstance(link_status, dict):
+                link_info = link_status.get('link', '')
+                if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
+                    self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}')
+                    self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
                                                f'链路状态异常: {link_status}', 
                                                self.test_time, test_item='BIT', 
                                                temperature=self.progress.current_temperature)
+            else:
+                self.console_logger.error(f'获取SSD链路状态失败: {ssd_sn}, 链路状态类型: {type(link_status).__name__}')
+                link_info = 'N/A'
             
             smart_info = host.get_ssd_smart(ssd_path)
             
@@ -327,7 +438,7 @@ class TestExecutor:
             result_content += f'测试开始时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n'
             result_content += f'SSD路径: {ssd_path}\n'
             result_content += f'SSD SN: {ssd_sn}\n'
-            result_content += f'SSD链路状态: {link_status.get("link", "N/A")}\n'
+            result_content += f'SSD链路状态: {link_status.get("link", "N/A") if isinstance(link_status, dict) else "获取失败"}\n'
             result_content += f'\n{"="*60}\n'
             result_content += f'SMART信息:\n'
             result_content += f'{"="*60}\n'
@@ -378,13 +489,18 @@ class TestExecutor:
             ssd_sn = ssd_info.get('SN', 'unknown')
             
             link_status = host.get_ssd_link_status(ssd_path)
-            link_info = link_status.get('link', '')
-            if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
-                self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}')
-                self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
+            # 确保link_status是一个字典
+            if isinstance(link_status, dict):
+                link_info = link_status.get('link', '')
+                if 'Speed 8GT/s' not in link_info or 'Width x4' not in link_info:
+                    self.console_logger.warning(f'SSD链路不是Gen3x4 (Speed 8GT/s, Width x4): {ssd_sn}')
+                    self.result_logger.log_error(ssd_sn, 'LINK_STATUS_WARNING', 
                                                f'链路状态异常: {link_status}', 
                                                self.test_time, test_item='CTTW', 
                                                temperature=self.progress.current_temperature)
+            else:
+                self.console_logger.error(f'获取SSD链路状态失败: {ssd_sn}, 链路状态类型: {type(link_status).__name__}')
+                link_info = 'N/A'
             
             smart_info = host.get_ssd_smart(ssd_path)
             
@@ -401,7 +517,7 @@ class TestExecutor:
             result_content += f'测试开始时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n'
             result_content += f'SSD路径: {ssd_path}\n'
             result_content += f'SSD SN: {ssd_sn}\n'
-            result_content += f'SSD链路状态: {link_status.get("link", "N/A")}\n'
+            result_content += f'SSD链路状态: {link_status.get("link", "N/A") if isinstance(link_status, dict) else "获取失败"}\n'
             result_content += f'\n{"="*60}\n'
             result_content += f'SMART信息:\n'
             result_content += f'{"="*60}\n'
@@ -525,18 +641,30 @@ class TestExecutor:
         
         self.progress.total_cycles = cycles
         self.progress.current_test_item = 'PCT'
-        self._notify_progress()
         
         self.console_logger.info(f'执行PCT测试: {cycles}轮')
         self._notify_log(f'开始PCT测试: {cycles}轮')
         
         selected_hosts = self._get_selected_hosts()
+        selected_host_names = [host.name for host in selected_hosts]
+        
+        # 更新所有主板的测试项、总轮次和开始时间
+        start_time = datetime.now().strftime('%H:%M:%S')
+        for host_name in selected_host_names:
+            self.progress.update_host_progress(host_name, current_test_item='PCT', total_cycles=cycles, start_time=start_time)
+        
+        self._notify_progress()
         
         for cycle in range(1, cycles + 1):
             if not self.progress.is_running:
                 return False
             
             self.progress.current_cycle = cycle
+            
+            # 更新所有主板的当前轮次
+            for host_name in selected_host_names:
+                self.progress.update_host_progress(host_name, current_cycle=cycle)
+            
             self._notify_progress()
             
             cycle_start_time = datetime.now()
@@ -556,20 +684,29 @@ class TestExecutor:
                 self.console_logger.error('连接主机失败')
                 return False
             
+            print(f"[DEBUG] 调用 get_all_ssd_info, 选中的主机: {selected_host_names}")
             current_ssd_info = self.host_manager.get_all_ssd_info(selected_hosts=selected_host_names)
             
+            print(f"[DEBUG] get_all_ssd_info 返回值类型: {type(current_ssd_info).__name__}, 长度: {len(current_ssd_info) if hasattr(current_ssd_info, '__len__') else 'N/A'}")
+            
+            # 更新SSD状态到进度对象
+            self.progress.ssd_status = current_ssd_info
+            self._notify_progress()
+            
+            print(f"[DEBUG] 调用 _check_ssd_consistency")
             if not self._check_ssd_consistency(current_ssd_info, test_item='PCT'):
                 self.console_logger.error('SSD信息一致性检查失败')
                 self.host_manager.disconnect_all_hosts(selected_hosts=selected_host_names)
                 return False
             
             if cycle == 1:
-                for host_name, ssd_dict in current_ssd_info.items():
-                    for ssd_path, ssd_info in ssd_dict.items():
-                        ssd_sn = ssd_info.get('SN', 'unknown')
+                for ssd_sn, ssd_info in current_ssd_info.items():
+                    if isinstance(ssd_info, dict):
                         file_time = datetime.now().strftime('%Y%m%d_%H%M%S')
                         filename = f'{file_time}-{ssd_sn}-PCT-{self.progress.current_temperature}C.txt'
                         self.pct_first_cycle_filename[ssd_sn] = filename
+                    else:
+                        print(f"[DEBUG] 跳过非字典类型的SSD信息: {ssd_sn}, 类型: {type(ssd_info).__name__}")
             
             with ThreadPoolExecutor(max_workers=len(selected_hosts)) as executor:
                 futures = {executor.submit(self._run_host_test, host, cycle, fio_size, 'PCT', self.pct_first_cycle_filename): host for host in selected_hosts}
@@ -598,10 +735,9 @@ class TestExecutor:
             self.console_logger.info(f'本轮测试耗时: {cycle_duration:.2f}秒')
             
             cycle_ssd_info = self.host_manager.get_all_ssd_info(selected_hosts=selected_host_names)
-            for host_name, ssd_dict in cycle_ssd_info.items():
-                for ssd_path, ssd_info in ssd_dict.items():
-                    ssd_sn = ssd_info.get('SN', 'unknown')
-                    
+            print(f"[DEBUG] cycle_ssd_info 类型: {type(cycle_ssd_info).__name__}, 长度: {len(cycle_ssd_info) if hasattr(cycle_ssd_info, '__len__') else 'N/A'}")
+            for ssd_sn, ssd_info in cycle_ssd_info.items():
+                if isinstance(ssd_info, dict):
                     summary_content = f'\n{"="*60}\n'
                     summary_content += f'第{cycle}轮测试总结\n'
                     summary_content += f'测试结束时间: {cycle_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
@@ -611,7 +747,9 @@ class TestExecutor:
                     filename = self.pct_first_cycle_filename.get(ssd_sn) if ssd_sn in self.pct_first_cycle_filename else None
                     self.result_logger.log_test_result(ssd_sn, 'PCT', 
                                                            self.progress.current_temperature, 
-                                                           summary_content, self.test_time, append=True, custom_filename=filename)
+                                                           summary_content, self.test_time, append=True, filename=filename)
+                else:
+                    print(f"[DEBUG] 跳过非字典类型的SSD信息: {ssd_sn}, 类型: {type(ssd_info).__name__}")
         
         self.console_logger.info(f'PCT测试完成: {cycles}轮')
         self._notify_log(f'PCT测试完成: {cycles}轮')
@@ -623,10 +761,19 @@ class TestExecutor:
         temp_check_interval = bit_config.get('temperature_check_interval', 30)
         
         self.progress.current_test_item = 'BIT'
-        self._notify_progress()
         
         self.console_logger.info(f'执行BIT测试: {capacity_percent}%容量')
         self._notify_log(f'开始BIT测试: {capacity_percent}%容量')
+        
+        selected_hosts = self._get_selected_hosts()
+        selected_host_names = [host.name for host in selected_hosts]
+        
+        # 更新所有主板的测试项和开始时间
+        start_time = datetime.now().strftime('%H:%M:%S')
+        for host_name in selected_host_names:
+            self.progress.update_host_progress(host_name, current_test_item='BIT', start_time=start_time)
+        
+        self._notify_progress()
         
         test_start_time = datetime.now()
         self.console_logger.info(f'测试开始时间: {test_start_time.strftime("%Y-%m-%d %H:%M:%S")}')
@@ -655,6 +802,13 @@ class TestExecutor:
         self._start_temperature_monitor(temp_check_interval)
         
         bit_ssd_info = self.host_manager.get_all_ssd_info(selected_hosts=selected_host_names)
+        
+        # 添加调试代码，查看 bit_ssd_info 的类型和值
+        self.console_logger.info(f'[DEBUG] bit_ssd_info 类型: {type(bit_ssd_info).__name__}')
+        if isinstance(bit_ssd_info, dict):
+            self.console_logger.info(f'[DEBUG] bit_ssd_info 包含的主机: {list(bit_ssd_info.keys())}')
+        else:
+            self.console_logger.error(f'[DEBUG] bit_ssd_info 不是字典类型: {bit_ssd_info}')
         
         with ThreadPoolExecutor(max_workers=len(selected_hosts)) as executor:
             futures = {executor.submit(self._run_host_test_bit, host, capacity_percent): host for host in selected_hosts}
@@ -685,19 +839,57 @@ class TestExecutor:
         self.console_logger.info(f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}')
         self.console_logger.info(f'测试总耗时: {test_duration:.2f}秒')
         
-        for host_name, ssd_dict in bit_ssd_info.items():
-            for ssd_path, ssd_info in ssd_dict.items():
-                ssd_sn = ssd_info.get('SN', 'unknown')
-                
-                summary_content = f'\n{"="*60}\n'
-                summary_content += f'BIT测试总结\n'
-                summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                summary_content += f'{"="*60}\n'
-                
-                self.result_logger.log_test_result(ssd_sn, 'BIT', 
-                                                   self.progress.current_temperature, 
-                                                   summary_content, self.test_time, append=True)
+        # 添加调试代码，查看 bit_ssd_info 的类型和值
+        self.console_logger.info(f'[DEBUG] 开始处理测试结果，bit_ssd_info 类型: {type(bit_ssd_info).__name__}')
+        if isinstance(bit_ssd_info, dict):
+            # 检查 bit_ssd_info 的结构
+            first_key = next(iter(bit_ssd_info.keys()), None)
+            if first_key and isinstance(bit_ssd_info[first_key], dict):
+                first_value = bit_ssd_info[first_key]
+                # 检查是否包含 'SN' 键，判断是否是 SSD 信息字典
+                if 'SN' in first_value:
+                    # 结构是 {ssd_sn: {ssd_info}}，直接遍历处理
+                    for ssd_sn, ssd_info in bit_ssd_info.items():
+                        self.console_logger.info(f'[DEBUG] 处理SSD序列号: {ssd_sn}, ssd_info 类型: {type(ssd_info).__name__}')
+                        if isinstance(ssd_info, dict):
+                            summary_content = f'\n{"="*60}\n'
+                            summary_content += f'BIT测试总结\n'
+                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                            summary_content += f'{"="*60}\n'
+                            
+                            self.result_logger.log_test_result(ssd_sn, 'BIT', 
+                                                               self.progress.current_temperature, 
+                                                               summary_content, self.test_time, append=True)
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                else:
+                    # 原始结构 {host_name: {ssd_path: {ssd_info}}}
+                    for host_name, ssd_dict in bit_ssd_info.items():
+                        self.console_logger.info(f'[DEBUG] 处理主机: {host_name}, ssd_dict 类型: {type(ssd_dict).__name__}')
+                        if isinstance(ssd_dict, dict):
+                            for ssd_path, ssd_info in ssd_dict.items():
+                                self.console_logger.info(f'[DEBUG] 处理SSD路径: {ssd_path}, ssd_info 类型: {type(ssd_info).__name__}')
+                                if isinstance(ssd_info, dict):
+                                    ssd_sn = ssd_info.get('SN', 'unknown')
+                                    
+                                    summary_content = f'\n{"="*60}\n'
+                                    summary_content += f'BIT测试总结\n'
+                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                                    summary_content += f'{"="*60}\n'
+                                    
+                                    self.result_logger.log_test_result(ssd_sn, 'BIT', 
+                                                                       self.progress.current_temperature, 
+                                                                       summary_content, self.test_time, append=True)
+                                else:
+                                    self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_dict 不是字典类型: {ssd_dict}')
+            else:
+                self.console_logger.error(f'[DEBUG] bit_ssd_info 结构异常: {bit_ssd_info}')
+        else:
+            self.console_logger.error(f'[DEBUG] bit_ssd_info 不是字典类型: {bit_ssd_info}')
         
         self.console_logger.info('BIT测试完成')
         self._notify_log('BIT测试完成')
@@ -708,10 +900,19 @@ class TestExecutor:
         temp_check_interval = cttw_config.get('temperature_check_interval', 30)
         
         self.progress.current_test_item = 'CTTW'
-        self._notify_progress()
         
         self.console_logger.info('执行CTTW测试: 全盘写测试')
         self._notify_log('开始CTTW测试: 全盘写测试')
+        
+        selected_hosts = self._get_selected_hosts()
+        selected_host_names = [host.name for host in selected_hosts]
+        
+        # 更新所有主板的测试项和开始时间
+        start_time = datetime.now().strftime('%H:%M:%S')
+        for host_name in selected_host_names:
+            self.progress.update_host_progress(host_name, current_test_item='CTTW', start_time=start_time)
+        
+        self._notify_progress()
         
         test_start_time = datetime.now()
         self.console_logger.info(f'测试开始时间: {test_start_time.strftime("%Y-%m-%d %H:%M:%S")}')
@@ -770,19 +971,52 @@ class TestExecutor:
         self.console_logger.info(f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}')
         self.console_logger.info(f'测试总耗时: {test_duration:.2f}秒')
         
-        for host_name, ssd_dict in cttw_ssd_info.items():
-            for ssd_path, ssd_info in ssd_dict.items():
-                ssd_sn = ssd_info.get('SN', 'unknown')
-                
-                summary_content = f'\n{"="*60}\n'
-                summary_content += f'CTTW测试总结\n'
-                summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                summary_content += f'{"="*60}\n'
-                
-                self.result_logger.log_test_result(ssd_sn, 'CTTW', 
-                                                   self.progress.current_temperature, 
-                                                   summary_content, self.test_time, append=True)
+        # 检查 cttw_ssd_info 的结构
+        if isinstance(cttw_ssd_info, dict):
+            first_key = next(iter(cttw_ssd_info.keys()), None)
+            if first_key and isinstance(cttw_ssd_info[first_key], dict):
+                first_value = cttw_ssd_info[first_key]
+                # 检查是否包含 'SN' 键，判断是否是 SSD 信息字典
+                if 'SN' in first_value:
+                    # 结构是 {ssd_sn: {ssd_info}}，直接遍历处理
+                    for ssd_sn, ssd_info in cttw_ssd_info.items():
+                        if isinstance(ssd_info, dict):
+                            summary_content = f'\n{"="*60}\n'
+                            summary_content += f'CTTW测试总结\n'
+                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                            summary_content += f'{"="*60}\n'
+                            
+                            self.result_logger.log_test_result(ssd_sn, 'CTTW', 
+                                                               self.progress.current_temperature, 
+                                                               summary_content, self.test_time, append=True)
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                else:
+                    # 原始结构 {host_name: {ssd_path: {ssd_info}}}
+                    for host_name, ssd_dict in cttw_ssd_info.items():
+                        if isinstance(ssd_dict, dict):
+                            for ssd_path, ssd_info in ssd_dict.items():
+                                if isinstance(ssd_info, dict):
+                                    ssd_sn = ssd_info.get('SN', 'unknown')
+                                    
+                                    summary_content = f'\n{"="*60}\n'
+                                    summary_content += f'CTTW测试总结\n'
+                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                                    summary_content += f'{"="*60}\n'
+                                    
+                                    self.result_logger.log_test_result(ssd_sn, 'CTTW', 
+                                                                       self.progress.current_temperature, 
+                                                                       summary_content, self.test_time, append=True)
+                                else:
+                                    self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_dict 不是字典类型: {ssd_dict}')
+            else:
+                self.console_logger.error(f'[DEBUG] cttw_ssd_info 结构异常: {cttw_ssd_info}')
+        else:
+            self.console_logger.error(f'[DEBUG] cttw_ssd_info 不是字典类型: {cttw_ssd_info}')
         
         self.console_logger.info('CTTW测试完成')
         self._notify_log('CTTW测试完成')
@@ -793,10 +1027,19 @@ class TestExecutor:
         temp_check_interval = cttr_config.get('temperature_check_interval', 30)
         
         self.progress.current_test_item = 'CTTR'
-        self._notify_progress()
         
         self.console_logger.info('执行CTTR测试: 全盘读测试')
         self._notify_log('开始CTTR测试: 全盘读测试')
+        
+        selected_hosts = self._get_selected_hosts()
+        selected_host_names = [host.name for host in selected_hosts]
+        
+        # 更新所有主板的测试项和开始时间
+        start_time = datetime.now().strftime('%H:%M:%S')
+        for host_name in selected_host_names:
+            self.progress.update_host_progress(host_name, current_test_item='CTTR', start_time=start_time)
+        
+        self._notify_progress()
         
         test_start_time = datetime.now()
         self.console_logger.info(f'测试开始时间: {test_start_time.strftime("%Y-%m-%d %H:%M:%S")}')
@@ -855,19 +1098,52 @@ class TestExecutor:
         self.console_logger.info(f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}')
         self.console_logger.info(f'测试总耗时: {test_duration:.2f}秒')
         
-        for host_name, ssd_dict in cttr_ssd_info.items():
-            for ssd_path, ssd_info in ssd_dict.items():
-                ssd_sn = ssd_info.get('SN', 'unknown')
-                
-                summary_content = f'\n{"="*60}\n'
-                summary_content += f'CTTR测试总结\n'
-                summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
-                summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
-                summary_content += f'{"="*60}\n'
-                
-                self.result_logger.log_test_result(ssd_sn, 'CTTR', 
-                                                   self.progress.current_temperature, 
-                                                   summary_content, self.test_time, append=True)
+        # 检查 cttr_ssd_info 的结构
+        if isinstance(cttr_ssd_info, dict):
+            first_key = next(iter(cttr_ssd_info.keys()), None)
+            if first_key and isinstance(cttr_ssd_info[first_key], dict):
+                first_value = cttr_ssd_info[first_key]
+                # 检查是否包含 'SN' 键，判断是否是 SSD 信息字典
+                if 'SN' in first_value:
+                    # 结构是 {ssd_sn: {ssd_info}}，直接遍历处理
+                    for ssd_sn, ssd_info in cttr_ssd_info.items():
+                        if isinstance(ssd_info, dict):
+                            summary_content = f'\n{"="*60}\n'
+                            summary_content += f'CTTR测试总结\n'
+                            summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                            summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                            summary_content += f'{"="*60}\n'
+                            
+                            self.result_logger.log_test_result(ssd_sn, 'CTTR', 
+                                                               self.progress.current_temperature, 
+                                                               summary_content, self.test_time, append=True)
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                else:
+                    # 原始结构 {host_name: {ssd_path: {ssd_info}}}
+                    for host_name, ssd_dict in cttr_ssd_info.items():
+                        if isinstance(ssd_dict, dict):
+                            for ssd_path, ssd_info in ssd_dict.items():
+                                if isinstance(ssd_info, dict):
+                                    ssd_sn = ssd_info.get('SN', 'unknown')
+                                    
+                                    summary_content = f'\n{"="*60}\n'
+                                    summary_content += f'CTTR测试总结\n'
+                                    summary_content += f'测试结束时间: {test_end_time.strftime("%Y-%m-%d %H:%M:%S")}\n'
+                                    summary_content += f'测试总耗时: {test_duration:.2f}秒\n'
+                                    summary_content += f'{"="*60}\n'
+                                    
+                                    self.result_logger.log_test_result(ssd_sn, 'CTTR', 
+                                                                       self.progress.current_temperature, 
+                                                                       summary_content, self.test_time, append=True)
+                                else:
+                                    self.console_logger.error(f'[DEBUG] ssd_info 不是字典类型: {ssd_info}')
+                        else:
+                            self.console_logger.error(f'[DEBUG] ssd_dict 不是字典类型: {ssd_dict}')
+            else:
+                self.console_logger.error(f'[DEBUG] cttr_ssd_info 结构异常: {cttr_ssd_info}')
+        else:
+            self.console_logger.error(f'[DEBUG] cttr_ssd_info 不是字典类型: {cttr_ssd_info}')
         
         self.console_logger.info('CTTR测试完成')
         self._notify_log('CTTR测试完成')
@@ -882,12 +1158,25 @@ class TestExecutor:
         self.console_logger.info(f'开始执行测试脚本，共{len(commands)}条命令')
         self._notify_log(f'开始执行测试脚本，共{len(commands)}条命令')
         
+        selected_hosts = self._get_selected_hosts()
+        host_names = [host.name for host in selected_hosts]
+        
+        # 初始化所有选中主板的进度
+        for host_name in host_names:
+            self.progress.update_host_progress(host_name, current_command_index=1)
+        
         for i, command in enumerate(commands):
             if not self.progress.is_running:
                 self.console_logger.info('测试已停止')
                 break
             
-            self.progress.current_command_index = i + 1
+            current_command_index = i + 1
+            self.progress.current_command_index = current_command_index
+            
+            # 更新所有主板的当前命令索引
+            for host_name in host_names:
+                self.progress.update_host_progress(host_name, current_command_index=current_command_index)
+            
             self._notify_progress()
             
             success = False
@@ -909,6 +1198,8 @@ class TestExecutor:
                 return False
         
         self.progress.is_running = False
+        self._notify_progress()
+        
         self.console_logger.info('测试脚本执行完成')
         self._notify_log('测试脚本执行完成')
         return True

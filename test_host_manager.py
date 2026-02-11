@@ -189,18 +189,27 @@ class TestHost:
         link_info = {}
         
         try:
+            print(f"[DEBUG] get_ssd_link_status 开始执行: {self.name}, {ssd_path}")
             exit_status, output, error = self.execute_command(f'lspci -vvv -d ::0108')
+            
+            print(f"[DEBUG] 执行命令结果: exit_status={exit_status}, output长度={len(output) if output else 0}, error={error}")
             
             if exit_status == 0:
                 lines = output.split('\n')
-                for line in lines:
+                print(f"[DEBUG] 输出行数: {len(lines)}")
+                for i, line in enumerate(lines):
                     if 'LnkSta:' in line:
+                        print(f"[DEBUG] 找到LnkSta行 ({i}): {line.strip()}")
                         link_info['link'] = line.strip()
                         break
+            else:
+                print(f"[DEBUG] 命令执行失败: {error}")
         except Exception as e:
+            print(f"[DEBUG] 异常: {e}")
             if self.logger:
                 self.logger.warning(f'获取SSD链路状态失败 [{self.name}] {ssd_path}: {e}')
         
+        print(f"[DEBUG] 最终link_info: {link_info}, 类型: {type(link_info).__name__}")
         if self.logger:
             self.logger.info(f'获取SSD链路状态成功 [{self.name}] {ssd_path}: {link_info}')
         return link_info

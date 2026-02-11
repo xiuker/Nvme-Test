@@ -1650,3 +1650,2320 @@
 2026-01-26 09:44:47 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
 2026-01-26 09:44:47 - nvme_test_console - INFO - 开始清理所有资源，共0个
 2026-01-26 09:44:47 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 09:54:13 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 09:54:14 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 09:54:14 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 09:54:14 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 09:54:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.14MB, VMS=342.90MB
+2026-01-26 09:54:39 - nvme_test_console - ERROR - 温箱串口连接失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-01-26 09:54:39 - nvme_test_console - ERROR - 连接串口失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-01-26 09:54:46 - nvme_test_console - ERROR - 温箱串口连接失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-01-26 09:54:46 - nvme_test_console - ERROR - 连接串口失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-01-26 09:55:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.65MB, VMS=342.79MB
+2026-01-26 09:56:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.68MB, VMS=342.76MB
+2026-01-26 09:57:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.61MB, VMS=342.59MB
+2026-01-26 09:58:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.61MB, VMS=342.59MB
+2026-01-26 09:59:14 - nvme_test_console - DEBUG - 内存使用: RSS=121.77MB, VMS=342.62MB
+2026-01-26 10:00:08 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 10:00:08 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 10:00:09 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 10:00:14 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 10:00:14 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 10:00:14 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 10:00:14 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 10:05:00 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 10:05:01 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 10:05:01 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 10:05:01 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 10:05:01 - nvme_test_console - DEBUG - 内存使用: RSS=122.66MB, VMS=343.47MB
+2026-01-26 10:05:54 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 10:05:54 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 10:05:56 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 10:06:01 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 10:06:01 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 10:06:01 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 10:06:01 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 10:16:50 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 10:16:50 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 10:16:50 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 10:16:50 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 10:16:50 - nvme_test_console - DEBUG - 内存使用: RSS=122.13MB, VMS=343.92MB
+2026-01-26 10:17:50 - nvme_test_console - DEBUG - 内存使用: RSS=122.32MB, VMS=343.91MB
+2026-01-26 10:18:50 - nvme_test_console - DEBUG - 内存使用: RSS=122.36MB, VMS=343.91MB
+2026-01-26 10:19:36 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 10:19:36 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 10:19:40 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 10:19:45 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 10:19:45 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 10:19:45 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 10:19:45 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 10:20:33 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 10:20:34 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 10:20:34 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 10:20:34 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 10:20:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.49MB, VMS=343.44MB
+2026-01-26 10:21:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.57MB, VMS=343.31MB
+2026-01-26 10:22:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.57MB, VMS=343.31MB
+2026-01-26 10:23:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.49MB, VMS=343.13MB
+2026-01-26 10:24:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.49MB, VMS=343.13MB
+2026-01-26 10:25:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.65MB, VMS=343.17MB
+2026-01-26 10:26:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.39MB, VMS=343.17MB
+2026-01-26 10:27:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.35MB, VMS=343.10MB
+2026-01-26 10:28:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.35MB, VMS=343.10MB
+2026-01-26 10:29:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.38MB, VMS=343.10MB
+2026-01-26 10:30:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.47MB, VMS=343.17MB
+2026-01-26 10:31:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.47MB, VMS=343.17MB
+2026-01-26 10:32:34 - nvme_test_console - DEBUG - 内存使用: RSS=119.43MB, VMS=343.10MB
+2026-01-26 10:32:49 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 10:32:49 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 10:32:54 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 10:32:59 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 10:32:59 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 10:32:59 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 10:32:59 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 10:33:09 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 10:33:09 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 10:33:09 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 10:33:09 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 10:33:09 - nvme_test_console - DEBUG - 内存使用: RSS=122.45MB, VMS=343.27MB
+2026-01-26 10:34:05 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 10:34:05 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 10:34:09 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 10:34:09 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 10:34:09 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 10:34:09 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 10:34:09 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 10:39:54 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 10:39:55 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 10:39:55 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 10:39:55 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 10:39:55 - nvme_test_console - DEBUG - 内存使用: RSS=109.67MB, VMS=338.02MB
+2026-01-26 10:40:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.76MB, VMS=344.66MB
+2026-01-26 10:41:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.76MB, VMS=344.66MB
+2026-01-26 10:42:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.68MB, VMS=344.49MB
+2026-01-26 10:43:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.68MB, VMS=344.49MB
+2026-01-26 10:44:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=344.49MB
+2026-01-26 10:45:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.84MB, VMS=344.52MB
+2026-01-26 10:46:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:47:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:48:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:49:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.84MB, VMS=344.52MB
+2026-01-26 10:50:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.84MB, VMS=344.52MB
+2026-01-26 10:51:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:52:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:53:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:54:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:55:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:56:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:57:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 10:58:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=344.49MB
+2026-01-26 10:59:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=344.49MB
+2026-01-26 11:00:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:01:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:02:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:03:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:04:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:05:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:06:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:07:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=344.45MB
+2026-01-26 11:08:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:09:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:10:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:11:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:12:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:13:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:14:55 - nvme_test_console - DEBUG - 内存使用: RSS=122.81MB, VMS=344.45MB
+2026-01-26 11:15:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.17MB, VMS=344.45MB
+2026-01-26 11:16:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.26MB, VMS=344.45MB
+2026-01-26 11:17:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.31MB, VMS=344.45MB
+2026-01-26 11:18:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.32MB, VMS=344.45MB
+2026-01-26 11:19:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.32MB, VMS=344.45MB
+2026-01-26 11:20:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.34MB, VMS=344.49MB
+2026-01-26 11:21:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.34MB, VMS=344.49MB
+2026-01-26 11:22:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.32MB, VMS=344.45MB
+2026-01-26 11:23:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.32MB, VMS=344.45MB
+2026-01-26 11:24:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.32MB, VMS=344.45MB
+2026-01-26 11:25:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.34MB, VMS=344.49MB
+2026-01-26 11:26:55 - nvme_test_console - DEBUG - 内存使用: RSS=123.34MB, VMS=344.49MB
+2026-01-26 11:27:12 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 11:27:12 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:27:15 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:27:20 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:27:20 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 11:27:20 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:27:20 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:29:57 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:29:57 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:29:57 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:29:57 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:29:57 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 0
+2026-01-26 11:29:57 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:29:57 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:31:35 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:31:35 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:31:35 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:31:35 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:31:35 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 0
+2026-01-26 11:31:35 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:31:35 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:35:28 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:35:29 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 11:35:29 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 11:35:29 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 11:35:29 - nvme_test_console - DEBUG - 内存使用: RSS=110.34MB, VMS=338.54MB
+2026-01-26 11:36:29 - nvme_test_console - DEBUG - 内存使用: RSS=123.55MB, VMS=345.23MB
+2026-01-26 11:37:29 - nvme_test_console - DEBUG - 内存使用: RSS=123.57MB, VMS=345.23MB
+2026-01-26 11:38:29 - nvme_test_console - DEBUG - 内存使用: RSS=123.53MB, VMS=345.05MB
+2026-01-26 11:39:29 - nvme_test_console - DEBUG - 内存使用: RSS=123.55MB, VMS=345.05MB
+2026-01-26 11:40:29 - nvme_test_console - DEBUG - 内存使用: RSS=123.69MB, VMS=345.05MB
+2026-01-26 11:41:29 - nvme_test_console - DEBUG - 内存使用: RSS=120.48MB, VMS=345.05MB
+2026-01-26 11:42:08 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 11:42:08 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:42:09 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:42:14 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:42:14 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 11:42:14 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:42:14 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:43:59 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:43:59 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:43:59 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:43:59 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:43:59 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 0
+2026-01-26 11:43:59 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:43:59 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:44:16 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:44:16 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 11:44:16 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 11:44:16 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 11:44:16 - nvme_test_console - DEBUG - 内存使用: RSS=108.80MB, VMS=336.18MB
+2026-01-26 11:45:16 - nvme_test_console - DEBUG - 内存使用: RSS=108.79MB, VMS=336.05MB
+2026-01-26 11:46:16 - nvme_test_console - DEBUG - 内存使用: RSS=121.93MB, VMS=342.86MB
+2026-01-26 11:47:16 - nvme_test_console - DEBUG - 内存使用: RSS=121.99MB, VMS=342.62MB
+2026-01-26 11:47:55 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 11:47:55 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 11:47:56 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 11:48:01 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 11:48:01 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 11:48:01 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 11:48:01 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 11:48:34 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 11:48:35 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 11:48:35 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 11:48:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.72MB, VMS=342.55MB
+2026-01-26 11:48:35 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 11:49:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.82MB, VMS=342.52MB
+2026-01-26 11:50:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.86MB, VMS=342.52MB
+2026-01-26 11:51:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.78MB, VMS=342.34MB
+2026-01-26 11:52:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.79MB, VMS=342.34MB
+2026-01-26 11:53:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.95MB, VMS=342.38MB
+2026-01-26 11:54:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.96MB, VMS=342.38MB
+2026-01-26 11:55:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.93MB, VMS=342.30MB
+2026-01-26 11:56:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.95MB, VMS=342.30MB
+2026-01-26 11:57:35 - nvme_test_console - DEBUG - 内存使用: RSS=121.95MB, VMS=342.30MB
+2026-01-26 11:58:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.01MB, VMS=342.38MB
+2026-01-26 11:59:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=342.38MB
+2026-01-26 12:00:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.03MB, VMS=342.34MB
+2026-01-26 12:01:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=342.30MB
+2026-01-26 12:02:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=342.30MB
+2026-01-26 12:03:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=342.30MB
+2026-01-26 12:04:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=342.30MB
+2026-01-26 12:05:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.04MB, VMS=342.30MB
+2026-01-26 12:06:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:07:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:08:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:09:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:10:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:11:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:12:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:13:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:14:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:15:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:16:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=342.30MB
+2026-01-26 12:17:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:18:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:19:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:20:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:21:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:22:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:23:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:24:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:25:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.06MB, VMS=342.30MB
+2026-01-26 12:26:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.34MB
+2026-01-26 12:27:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.10MB, VMS=342.34MB
+2026-01-26 12:28:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:29:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:30:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:31:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:32:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:33:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:34:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:35:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:36:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:37:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:38:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.08MB, VMS=342.30MB
+2026-01-26 12:39:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:40:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:41:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:42:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:43:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:44:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:45:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:46:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:47:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:48:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:49:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:50:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:51:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:52:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:53:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:54:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:55:35 - nvme_test_console - DEBUG - 内存使用: RSS=122.09MB, VMS=342.30MB
+2026-01-26 12:56:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 12:57:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 12:58:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 12:59:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:00:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:01:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:02:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:03:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:04:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:05:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.84MB, VMS=342.30MB
+2026-01-26 13:06:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:07:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:08:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:09:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:10:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:11:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:12:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:13:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:14:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:15:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:16:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:17:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:18:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:19:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:20:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:21:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:22:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:23:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:24:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:25:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:26:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:27:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:28:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:29:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:30:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:31:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:32:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:33:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:34:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:35:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:36:35 - nvme_test_console - DEBUG - 内存使用: RSS=118.85MB, VMS=342.30MB
+2026-01-26 13:37:35 - nvme_test_console - DEBUG - 内存使用: RSS=120.02MB, VMS=342.45MB
+2026-01-26 13:38:00 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 13:38:00 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:38:05 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:38:10 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:38:10 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:38:10 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:38:10 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:39:59 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:40:00 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:40:00 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:40:00 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:40:00 - nvme_test_console - DEBUG - 内存使用: RSS=109.05MB, VMS=336.40MB
+2026-01-26 13:41:00 - nvme_test_console - DEBUG - 内存使用: RSS=122.41MB, VMS=343.24MB
+2026-01-26 13:41:47 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-01-26 13:41:47 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-01-26 13:41:47 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-01-26 13:41:47 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-01-26 13:41:47 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 13:41:47 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-01-26 13:41:47 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-01-26 13:41:47 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-01-26 13:41:47 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-01-26 13:41:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-01-26 13:41:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 13:41:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 13:42:00 - nvme_test_console - DEBUG - 内存使用: RSS=123.57MB, VMS=343.89MB
+2026-01-26 13:43:00 - nvme_test_console - DEBUG - 内存使用: RSS=123.48MB, VMS=343.72MB
+2026-01-26 13:44:00 - nvme_test_console - DEBUG - 内存使用: RSS=123.49MB, VMS=343.72MB
+2026-01-26 13:44:09 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 13:44:09 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:44:10 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:44:15 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:44:15 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:44:15 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:44:15 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-01-26 13:44:15 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:46:44 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:46:44 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:46:44 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:46:44 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:46:45 - nvme_test_console - DEBUG - 内存使用: RSS=121.97MB, VMS=343.83MB
+2026-01-26 13:47:20 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:47:25 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:47:30 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:47:35 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:47:40 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:47:43 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:47:44 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:47:44 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:47:44 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:47:44 - nvme_test_console - DEBUG - 内存使用: RSS=121.92MB, VMS=342.83MB
+2026-01-26 13:48:21 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:48:24 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:48:29 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:48:29 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:48:34 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:48:34 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:48:34 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:48:34 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:48:34 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:48:34 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:48:34 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:48:34 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 0
+2026-01-26 13:48:34 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:48:34 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:48:56 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:48:57 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:48:57 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:48:57 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:48:57 - nvme_test_console - DEBUG - 内存使用: RSS=122.28MB, VMS=343.11MB
+2026-01-26 13:49:49 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 13:49:49 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:49:53 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:49:57 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:49:57 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:49:57 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:49:57 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:50:23 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:50:24 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:50:24 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:50:24 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:50:24 - nvme_test_console - DEBUG - 内存使用: RSS=109.07MB, VMS=336.21MB
+2026-01-26 13:51:10 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:51:15 - nvme_test_console - INFO - 收到信号 2，准备退出...
+2026-01-26 13:51:20 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:51:59 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:52:00 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:52:00 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:52:00 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:52:00 - nvme_test_console - DEBUG - 内存使用: RSS=122.23MB, VMS=343.05MB
+2026-01-26 13:52:22 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-01-26 13:52:22 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-01-26 13:52:22 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-01-26 13:52:22 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-01-26 13:52:22 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 13:52:22 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-01-26 13:52:22 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-01-26 13:52:22 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 13:52:22 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 13:53:00 - nvme_test_console - DEBUG - 内存使用: RSS=123.57MB, VMS=343.48MB
+2026-01-26 13:54:00 - nvme_test_console - DEBUG - 内存使用: RSS=123.59MB, VMS=343.51MB
+2026-01-26 13:54:55 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 13:54:55 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:54:56 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:55:00 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:55:00 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:55:00 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:55:00 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-01-26 13:55:00 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 13:55:12 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 13:55:12 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 13:55:12 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 13:55:12 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 13:55:12 - nvme_test_console - DEBUG - 内存使用: RSS=108.99MB, VMS=336.30MB
+2026-01-26 13:56:03 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-01-26 13:56:03 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-01-26 13:56:03 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-01-26 13:56:03 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-01-26 13:56:03 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 13:56:03 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-01-26 13:56:03 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-01-26 13:56:03 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-01-26 13:56:03 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-01-26 13:56:03 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-01-26 13:56:03 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 13:56:03 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 13:56:03 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 13:56:04 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 13:56:12 - nvme_test_console - DEBUG - 内存使用: RSS=123.82MB, VMS=344.11MB
+2026-01-26 13:56:43 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 13:56:43 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 13:56:47 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 13:56:52 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 13:56:52 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 13:56:52 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 13:56:52 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-01-26 13:56:52 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:01:39 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:01:39 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:01:39 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:01:39 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:01:39 - nvme_test_console - DEBUG - 内存使用: RSS=109.13MB, VMS=336.21MB
+2026-01-26 14:02:39 - nvme_test_console - DEBUG - 内存使用: RSS=109.17MB, VMS=336.07MB
+2026-01-26 14:02:51 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 14:02:51 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:02:55 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:03:00 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:03:00 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:03:00 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:03:00 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:03:48 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:03:48 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:03:48 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:03:48 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:03:48 - nvme_test_console - DEBUG - 内存使用: RSS=122.02MB, VMS=343.06MB
+2026-01-26 14:03:55 - nvme_test_console - INFO - 开始连接选中的主板，共4台
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接主板列表: ['test_host_1', 'test_host_2', 'test_host_3', 'test_host_4']
+2026-01-26 14:03:55 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-01-26 14:03:55 - nvme_test_console - INFO - 正在连接主板: test_host_2 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_2 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接测试主机成功: test_host_2 (192.168.1.124)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 主板连接成功: test_host_2
+2026-01-26 14:03:55 - nvme_test_console - INFO - 正在连接主板: test_host_3 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_3 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接测试主机成功: test_host_3 (192.168.1.124)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 主板连接成功: test_host_3
+2026-01-26 14:03:55 - nvme_test_console - INFO - 正在连接主板: test_host_4 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_4 (192.168.1.124:22)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-01-26 14:03:55 - nvme_test_console - INFO - 连接测试主机成功: test_host_4 (192.168.1.124)
+2026-01-26 14:03:55 - nvme_test_console - INFO - 主板连接成功: test_host_4
+2026-01-26 14:03:55 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-01-26 14:03:55 - nvme_test_console - INFO - 获取选中的主板SSD信息，共4台
+2026-01-26 14:03:55 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-01-26 14:03:55 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 14:03:55 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 14:03:55 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_2]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_2] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_2] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_3]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_3] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_3] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_4]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_4] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_4] /dev/nvme0n1: {'VID': '0x7526', 'SN': '202512048T9003', 'MN': '202512048T9003.'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_4] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 14:03:56 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_4] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-01-26 14:04:48 - nvme_test_console - DEBUG - 内存使用: RSS=123.70MB, VMS=344.87MB
+2026-01-26 14:05:48 - nvme_test_console - DEBUG - 内存使用: RSS=123.70MB, VMS=344.87MB
+2026-01-26 14:06:48 - nvme_test_console - DEBUG - 内存使用: RSS=123.62MB, VMS=344.69MB
+2026-01-26 14:07:48 - nvme_test_console - DEBUG - 内存使用: RSS=123.64MB, VMS=344.69MB
+2026-01-26 14:08:48 - nvme_test_console - DEBUG - 内存使用: RSS=123.84MB, VMS=344.77MB
+2026-01-26 14:09:06 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 14:09:06 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:09:09 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:09:14 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:09:14 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:09:14 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:09:14 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-01-26 14:09:14 - nvme_test_console - INFO - 断开测试主机连接: test_host_2
+2026-01-26 14:09:14 - nvme_test_console - INFO - 断开测试主机连接: test_host_3
+2026-01-26 14:09:14 - nvme_test_console - INFO - 断开测试主机连接: test_host_4
+2026-01-26 14:09:14 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:13:16 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:13:16 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:13:16 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:13:16 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:13:16 - nvme_test_console - DEBUG - 内存使用: RSS=121.98MB, VMS=342.78MB
+2026-01-26 14:14:16 - nvme_test_console - DEBUG - 内存使用: RSS=122.27MB, VMS=342.88MB
+2026-01-26 14:15:10 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 14:15:10 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:15:11 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:15:13 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:15:13 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:15:13 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:15:13 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:15:13 - nvme_test_console - DEBUG - 内存使用: RSS=122.60MB, VMS=343.36MB
+2026-01-26 14:15:16 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:15:16 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:15:16 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:15:16 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:16:13 - nvme_test_console - DEBUG - 内存使用: RSS=123.02MB, VMS=343.73MB
+2026-01-26 14:16:38 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 14:16:38 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:16:38 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:16:43 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:16:43 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:16:43 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:16:43 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:17:34 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:17:34 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:17:34 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:17:34 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:17:34 - nvme_test_console - DEBUG - 内存使用: RSS=109.24MB, VMS=336.47MB
+2026-01-26 14:18:34 - nvme_test_console - DEBUG - 内存使用: RSS=109.28MB, VMS=336.33MB
+2026-01-26 14:19:34 - nvme_test_console - DEBUG - 内存使用: RSS=109.34MB, VMS=336.33MB
+2026-01-26 14:20:34 - nvme_test_console - DEBUG - 内存使用: RSS=109.30MB, VMS=336.23MB
+2026-01-26 14:21:34 - nvme_test_console - DEBUG - 内存使用: RSS=109.30MB, VMS=336.23MB
+2026-01-26 14:22:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.56MB, VMS=343.05MB
+2026-01-26 14:23:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.51MB, VMS=342.95MB
+2026-01-26 14:24:34 - nvme_test_console - DEBUG - 内存使用: RSS=122.47MB, VMS=342.82MB
+2026-01-26 14:24:53 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-26 14:24:53 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:24:54 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:24:59 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:24:59 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:24:59 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:24:59 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:25:22 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:25:22 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:25:22 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:25:22 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:25:22 - nvme_test_console - DEBUG - 内存使用: RSS=108.92MB, VMS=336.19MB
+2026-01-26 14:26:22 - nvme_test_console - DEBUG - 内存使用: RSS=108.98MB, VMS=336.05MB
+2026-01-26 14:27:22 - nvme_test_console - DEBUG - 内存使用: RSS=109.02MB, VMS=336.05MB
+2026-01-26 14:28:22 - nvme_test_console - DEBUG - 内存使用: RSS=109.00MB, VMS=335.95MB
+2026-01-26 14:29:22 - nvme_test_console - DEBUG - 内存使用: RSS=109.01MB, VMS=335.95MB
+2026-01-26 14:30:17 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:30:17 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:30:22 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:30:22 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:30:22 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:30:22 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:31:12 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:31:13 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:31:13 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:31:13 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:31:13 - nvme_test_console - DEBUG - 内存使用: RSS=109.21MB, VMS=336.34MB
+2026-01-26 14:32:13 - nvme_test_console - DEBUG - 内存使用: RSS=109.25MB, VMS=336.21MB
+2026-01-26 14:33:13 - nvme_test_console - DEBUG - 内存使用: RSS=109.30MB, VMS=336.21MB
+2026-01-26 14:33:32 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:33:33 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:33:38 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:33:38 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:33:38 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:33:38 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:35:27 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:35:27 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:35:27 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:35:27 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:35:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.29MB, VMS=336.63MB
+2026-01-26 14:36:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.33MB, VMS=336.50MB
+2026-01-26 14:37:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.37MB, VMS=336.50MB
+2026-01-26 14:38:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.33MB, VMS=336.39MB
+2026-01-26 14:39:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.35MB, VMS=336.39MB
+2026-01-26 14:40:27 - nvme_test_console - DEBUG - 内存使用: RSS=109.49MB, VMS=336.43MB
+2026-01-26 14:40:59 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-26 14:41:02 - nvme_test_console - INFO - 实时监控已停止
+2026-01-26 14:41:07 - nvme_test_console - INFO - 内存监控已停止
+2026-01-26 14:41:07 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-01-26 14:41:07 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-01-26 14:41:07 - nvme_test_console - INFO - 资源清理完成
+2026-01-26 14:43:26 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-26 14:43:26 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-26 14:43:26 - nvme_test_console - INFO - 内存监控已启动
+2026-01-26 14:43:26 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-26 14:43:26 - nvme_test_console - DEBUG - 内存使用: RSS=122.50MB, VMS=343.40MB
+2026-01-26 14:44:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.65MB, VMS=343.82MB
+2026-01-26 14:45:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.66MB, VMS=343.82MB
+2026-01-26 14:46:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.58MB, VMS=343.68MB
+2026-01-26 14:47:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.62MB, VMS=343.75MB
+2026-01-26 14:48:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.73MB, VMS=343.72MB
+2026-01-26 14:49:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.74MB, VMS=343.72MB
+2026-01-26 14:50:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.70MB, VMS=343.65MB
+2026-01-26 14:51:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:52:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:53:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.73MB, VMS=343.68MB
+2026-01-26 14:54:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.73MB, VMS=343.68MB
+2026-01-26 14:55:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:56:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:57:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:58:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.69MB, VMS=343.61MB
+2026-01-26 14:59:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.64MB
+2026-01-26 15:00:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.77MB, VMS=343.65MB
+2026-01-26 15:01:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:02:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:03:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:04:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:05:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:06:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:07:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:08:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:09:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:10:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:11:26 - nvme_test_console - DEBUG - 内存使用: RSS=128.75MB, VMS=343.61MB
+2026-01-26 15:12:26 - nvme_test_console - DEBUG - 内存使用: RSS=116.70MB, VMS=343.61MB
+2026-01-26 15:13:26 - nvme_test_console - DEBUG - 内存使用: RSS=116.70MB, VMS=343.61MB
+2026-01-26 15:14:26 - nvme_test_console - DEBUG - 内存使用: RSS=116.70MB, VMS=343.61MB
+2026-01-26 15:15:26 - nvme_test_console - DEBUG - 内存使用: RSS=116.70MB, VMS=343.61MB
+2026-01-26 15:16:26 - nvme_test_console - DEBUG - 内存使用: RSS=116.70MB, VMS=343.61MB
+2026-01-26 15:17:26 - nvme_test_console - DEBUG - 内存使用: RSS=88.78MB, VMS=343.61MB
+2026-01-26 15:18:26 - nvme_test_console - DEBUG - 内存使用: RSS=88.78MB, VMS=343.61MB
+2026-01-26 15:19:26 - nvme_test_console - DEBUG - 内存使用: RSS=88.78MB, VMS=343.61MB
+2026-01-26 15:20:26 - nvme_test_console - DEBUG - 内存使用: RSS=88.78MB, VMS=343.61MB
+2026-01-26 15:21:26 - nvme_test_console - DEBUG - 内存使用: RSS=88.78MB, VMS=343.61MB
+2026-01-26 15:22:26 - nvme_test_console - DEBUG - 内存使用: RSS=78.15MB, VMS=343.61MB
+2026-01-26 15:23:26 - nvme_test_console - DEBUG - 内存使用: RSS=78.15MB, VMS=343.61MB
+2026-01-26 15:24:26 - nvme_test_console - DEBUG - 内存使用: RSS=78.15MB, VMS=343.61MB
+2026-01-26 15:25:26 - nvme_test_console - DEBUG - 内存使用: RSS=78.15MB, VMS=343.61MB
+2026-01-26 15:26:26 - nvme_test_console - DEBUG - 内存使用: RSS=78.23MB, VMS=343.61MB
+2026-01-26 15:27:26 - nvme_test_console - DEBUG - 内存使用: RSS=76.89MB, VMS=343.61MB
+2026-01-26 15:28:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.33MB, VMS=343.61MB
+2026-01-26 15:29:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.33MB, VMS=343.61MB
+2026-01-26 15:30:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.33MB, VMS=343.61MB
+2026-01-26 15:31:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-26 15:32:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-26 15:33:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-26 15:34:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-26 15:35:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-26 15:36:26 - nvme_test_console - DEBUG - 内存使用: RSS=67.34MB, VMS=343.61MB
+2026-01-31 14:42:47 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-01-31 14:42:48 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-01-31 14:42:48 - nvme_test_console - INFO - 内存监控已启动
+2026-01-31 14:42:48 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-01-31 14:42:48 - nvme_test_console - DEBUG - 内存使用: RSS=122.73MB, VMS=343.16MB
+2026-01-31 14:43:12 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-01-31 14:43:12 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-01-31 14:43:13 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 15:31:08 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 15:31:09 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 15:31:09 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 15:31:09 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 15:31:09 - nvme_test_console - DEBUG - 内存使用: RSS=122.55MB, VMS=343.19MB
+2026-02-02 15:32:09 - nvme_test_console - DEBUG - 内存使用: RSS=122.93MB, VMS=343.32MB
+2026-02-02 15:33:09 - nvme_test_console - DEBUG - 内存使用: RSS=122.93MB, VMS=343.29MB
+2026-02-02 15:34:09 - nvme_test_console - DEBUG - 内存使用: RSS=122.86MB, VMS=343.11MB
+2026-02-02 15:58:46 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 15:58:46 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 15:58:46 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 15:58:46 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 15:58:46 - nvme_test_console - DEBUG - 内存使用: RSS=109.37MB, VMS=336.48MB
+2026-02-02 15:59:46 - nvme_test_console - DEBUG - 内存使用: RSS=122.89MB, VMS=344.11MB
+2026-02-02 16:12:23 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 16:12:23 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 16:12:23 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 16:12:23 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 16:12:23 - nvme_test_console - DEBUG - 内存使用: RSS=122.05MB, VMS=343.00MB
+2026-02-02 16:12:40 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-02 16:12:40 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-02 16:12:40 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-02 16:12:40 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:12:40 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:12:40 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:12:40 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-02 16:12:40 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-02 16:12:40 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-02 16:12:40 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:12:40 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:12:40 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:13:23 - nvme_test_console - DEBUG - 内存使用: RSS=166.64MB, VMS=358.57MB
+2026-02-02 16:14:15 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:14:15 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:14:15 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:14:15 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:14:15 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:14:15 - nvme_test_console - INFO - 测试脚本验证通过
+2026-02-02 16:14:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.36MB, VMS=357.46MB
+2026-02-02 16:15:09 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:15:09 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:15:09 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:15:09 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:15:09 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:15:09 - nvme_test_console - INFO - 测试脚本验证通过
+2026-02-02 16:15:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.52MB, VMS=357.39MB
+2026-02-02 16:16:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.29MB, VMS=357.03MB
+2026-02-02 16:17:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.55MB, VMS=357.03MB
+2026-02-02 16:18:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.59MB, VMS=356.99MB
+2026-02-02 16:19:23 - nvme_test_console - DEBUG - 内存使用: RSS=165.60MB, VMS=356.95MB
+2026-02-02 16:19:27 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-02 16:19:27 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-02 16:19:28 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:19:33 - nvme_test_console - INFO - 内存监控已停止
+2026-02-02 16:19:33 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-02 16:19:33 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-02 16:19:33 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:19:33 - nvme_test_console - INFO - 资源清理完成
+2026-02-02 16:22:52 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 16:22:52 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 16:22:52 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 16:22:52 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 16:22:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.40MB, VMS=343.41MB
+2026-02-02 16:23:02 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-02 16:23:02 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-02 16:23:02 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-02 16:23:02 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:23:02 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:23:02 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:23:02 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-02 16:23:02 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-02 16:23:02 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-02 16:23:02 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:23:02 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:23:02 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:23:04 - nvme_test_console - ERROR - 读取测试脚本失败: [Errno 2] No such file or directory: ''
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:23:11 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:23:11 - nvme_test_console - INFO - 测试脚本验证通过
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:23:11 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:23:11 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:23:13 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-02 16:23:13 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-02 16:23:13 - nvme_test_console - INFO - 实时监控已启动
+2026-02-02 16:23:13 - nvme_test_console - INFO - 开始执行测试脚本，共4条命令
+2026-02-02 16:23:13 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-02 16:23:13 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-02 16:23:13 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 16:23:13
+2026-02-02 16:23:13 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:23:52 - nvme_test_console - DEBUG - 内存使用: RSS=165.63MB, VMS=357.91MB
+2026-02-02 16:23:53 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 16:23:53 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:23:53 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 16:23:53 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 16:23:53 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 16:23:53 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:23:53 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 16:23:53 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:23:53 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:23:53 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:23:53 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 16:23:53 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 16:23:53 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:23:53 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:23:53 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:23:53 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-02 16:23:53 - nvme_test_console - ERROR - 测试执行异常: 'str' object has no attribute 'get'
+2026-02-02 16:23:58 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:24:25 - nvme_test_console - INFO - 测试停止信号已发送
+2026-02-02 16:24:48 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-02 16:24:48 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-02 16:24:52 - nvme_test_console - DEBUG - 内存使用: RSS=163.30MB, VMS=355.22MB
+2026-02-02 16:24:52 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:24:57 - nvme_test_console - INFO - 内存监控已停止
+2026-02-02 16:24:57 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-02 16:24:57 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:24:57 - nvme_test_console - INFO - 资源清理完成
+2026-02-02 16:24:57 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-02 16:24:57 - nvme_test_console - INFO - 线程池已关闭
+2026-02-02 16:43:49 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 16:43:50 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 16:43:50 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 16:43:50 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 16:43:50 - nvme_test_console - DEBUG - 内存使用: RSS=122.48MB, VMS=344.31MB
+2026-02-02 16:44:01 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:44:01 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:44:01 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:44:01 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:44:01 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:44:06 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:44:06 - nvme_test_console - INFO - 测试脚本验证通过
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:44:06 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:44:06 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:44:12 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-02 16:44:12 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-02 16:44:12 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-02 16:44:12 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:44:12 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:44:12 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:44:12 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-02 16:44:12 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-02 16:44:12 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-02 16:44:12 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:44:12 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:44:12 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:44:14 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-02 16:44:14 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-02 16:44:14 - nvme_test_console - INFO - 实时监控已启动
+2026-02-02 16:44:14 - nvme_test_console - INFO - 开始执行测试脚本，共4条命令
+2026-02-02 16:44:14 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-02 16:44:14 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-02 16:44:14 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 16:44:14
+2026-02-02 16:44:14 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:44:50 - nvme_test_console - DEBUG - 内存使用: RSS=165.63MB, VMS=358.74MB
+2026-02-02 16:44:54 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 16:44:54 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:44:54 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 16:44:54 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 16:44:54 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 16:44:54 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:44:54 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 16:44:54 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:44:54 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:44:54 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:44:54 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 16:44:54 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 16:44:54 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:44:54 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:44:55 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:44:55 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-02 16:44:55 - nvme_test_console - ERROR - 测试执行异常: 'str' object has no attribute 'get'
+2026-02-02 16:44:59 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:45:50 - nvme_test_console - DEBUG - 内存使用: RSS=165.84MB, VMS=358.70MB
+2026-02-02 16:46:50 - nvme_test_console - DEBUG - 内存使用: RSS=165.50MB, VMS=358.18MB
+2026-02-02 16:47:50 - nvme_test_console - DEBUG - 内存使用: RSS=165.51MB, VMS=358.21MB
+2026-02-02 16:48:50 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=358.18MB
+2026-02-02 16:49:14 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-02 16:49:14 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-02 16:49:15 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:49:20 - nvme_test_console - INFO - 内存监控已停止
+2026-02-02 16:49:20 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-02 16:49:20 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:49:20 - nvme_test_console - INFO - 资源清理完成
+2026-02-02 16:49:20 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-02 16:49:20 - nvme_test_console - INFO - 线程池已关闭
+2026-02-02 16:49:26 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 16:49:26 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 16:49:26 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 16:49:26 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 16:49:26 - nvme_test_console - DEBUG - 内存使用: RSS=122.45MB, VMS=343.42MB
+2026-02-02 16:49:35 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 16:49:35 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-02 16:49:35 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-02 16:49:35 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-02 16:49:35 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-02 16:49:37 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-02 16:49:37 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-02 16:49:37 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-02 16:49:37 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:49:37 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:49:37 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:49:37 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-02 16:49:37 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-02 16:49:37 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-02 16:49:37 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:49:37 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:49:37 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:49:39 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-02 16:49:39 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-02 16:49:39 - nvme_test_console - INFO - 实时监控已启动
+2026-02-02 16:49:39 - nvme_test_console - INFO - 开始执行测试脚本，共4条命令
+2026-02-02 16:49:39 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-02 16:49:39 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-02 16:49:39 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 16:49:39
+2026-02-02 16:49:39 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:50:19 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 16:50:19 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:50:19 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 16:50:19 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 16:50:19 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 16:50:19 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:50:19 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 16:50:19 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:50:19 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:50:19 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:50:19 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 16:50:19 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 16:50:19 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:50:19 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:50:19 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:50:19 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-02 16:50:19 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:50:20 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:50:20 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:50:20 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 16:50:20 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 16:50:21 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 16:50:21 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 16:50:21 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 16:50:21 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 16:50:21 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 16:50:21 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 16:50:21 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 16:50:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.50MB, VMS=357.51MB
+2026-02-02 16:50:36 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 16:50:36 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 16:50:40 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 16:50:40 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 16:50:40 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:50:40 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 16:50:40
+2026-02-02 16:50:40 - nvme_test_console - INFO - 本轮测试耗时: 61.08秒
+2026-02-02 16:50:40 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:50:40 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:50:40 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:50:40 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 16:50:40 - nvme_test_console - INFO - PCT测试第2/3轮
+2026-02-02 16:50:40 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 16:50:40
+2026-02-02 16:50:40 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:51:20 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 16:51:20 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:51:20 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 16:51:20 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 16:51:20 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 16:51:20 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:51:20 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 16:51:20 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:51:20 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:51:20 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:51:20 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 16:51:20 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 16:51:20 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:51:20 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:51:20 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:51:20 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-02 16:51:21 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:51:21 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:51:21 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:51:21 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 16:51:21 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 16:51:22 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 16:51:22 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 16:51:22 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 16:51:22 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 16:51:22 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 16:51:22 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 16:51:22 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 16:51:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.74MB, VMS=357.55MB
+2026-02-02 16:51:37 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 16:51:37 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 16:51:41 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 16:51:41 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 16:51:41 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:51:41 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 16:51:41
+2026-02-02 16:51:41 - nvme_test_console - INFO - 本轮测试耗时: 61.10秒
+2026-02-02 16:51:41 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:51:41 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:51:41 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:51:41 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 16:51:41 - nvme_test_console - INFO - PCT测试第3/3轮
+2026-02-02 16:51:41 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 16:51:41
+2026-02-02 16:51:41 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:51:55 - nvme_test_console - INFO - 测试停止信号已发送
+2026-02-02 16:52:21 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 16:52:21 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:52:21 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 16:52:21 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 16:52:21 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 16:52:21 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 16:52:21 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 16:52:21 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 16:52:21 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 16:52:21 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 16:52:21 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 16:52:21 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 16:52:21 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 16:52:22 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 16:52:22 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 16:52:23 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 16:52:23 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 16:52:23 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 16:52:24 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 16:52:24 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 16:52:24 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 16:52:24 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 16:52:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.45MB, VMS=357.05MB
+2026-02-02 16:52:31 - nvme_test_console - INFO - 测试停止信号已发送
+2026-02-02 16:52:39 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 16:52:39 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 16:52:43 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 16:52:43 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 16:52:43 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 16:52:43 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 16:52:43
+2026-02-02 16:52:43 - nvme_test_console - INFO - 本轮测试耗时: 61.23秒
+2026-02-02 16:52:43 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 16:52:43 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:52:43 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 16:52:43 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 16:52:43 - nvme_test_console - INFO - PCT测试完成: 3轮
+2026-02-02 16:52:43 - nvme_test_console - INFO - 测试已停止
+2026-02-02 16:52:43 - nvme_test_console - INFO - 测试脚本执行完成
+2026-02-02 16:52:43 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260202_164939\report.html
+2026-02-02 16:52:44 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 16:53:01 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 16:53:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.43MB, VMS=356.98MB
+2026-02-02 16:54:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.64MB, VMS=356.94MB
+2026-02-02 16:55:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.70MB, VMS=356.94MB
+2026-02-02 16:56:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.68MB, VMS=356.87MB
+2026-02-02 16:57:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.71MB, VMS=356.90MB
+2026-02-02 16:58:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.66MB, VMS=356.83MB
+2026-02-02 16:59:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=356.90MB
+2026-02-02 17:00:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=356.87MB
+2026-02-02 17:01:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.70MB, VMS=356.83MB
+2026-02-02 17:02:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.70MB, VMS=356.80MB
+2026-02-02 17:03:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=356.84MB
+2026-02-02 17:04:26 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=356.84MB
+2026-02-02 17:04:33 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-02 17:04:33 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-02 17:04:37 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 17:04:42 - nvme_test_console - INFO - 内存监控已停止
+2026-02-02 17:04:42 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-02 17:04:42 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 17:04:42 - nvme_test_console - INFO - 资源清理完成
+2026-02-02 17:04:42 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-02 17:04:42 - nvme_test_console - INFO - 线程池已关闭
+2026-02-02 17:07:54 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-02 17:07:54 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-02 17:07:54 - nvme_test_console - INFO - 内存监控已启动
+2026-02-02 17:07:54 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-02 17:07:54 - nvme_test_console - DEBUG - 内存使用: RSS=122.50MB, VMS=344.14MB
+2026-02-02 17:07:59 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 17:07:59 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 17:07:59 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 17:07:59 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 17:07:59 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 17:07:59 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 17:07:59 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 17:07:59 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 17:08:54 - nvme_test_console - DEBUG - 内存使用: RSS=123.73MB, VMS=345.57MB
+2026-02-02 17:09:03 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 17:09:23 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-02 17:09:23 - nvme_test_console - ERROR - 解析命令失败 [行9]: ; BIT 10, 错误: 未知命令类型: ;
+2026-02-02 17:09:23 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-02 17:09:23 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-02 17:09:23 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-02 17:09:41 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-02 17:09:41 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-02 17:09:41 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-02 17:09:41 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 17:09:41 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 17:09:41 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 17:09:41 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-02 17:09:41 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:09:41 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:09:46 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-02 17:09:47 - nvme_test_console - DEBUG - 创建新线程: Thread-8 (_run_test), 当前线程数: 2
+2026-02-02 17:09:47 - nvme_test_console - INFO - 实时监控已启动
+2026-02-02 17:09:47 - nvme_test_console - INFO - 开始执行测试脚本，共1条命令
+2026-02-02 17:09:47 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-02 17:09:47 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-02 17:09:47 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 17:09:47
+2026-02-02 17:09:47 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 17:09:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.76MB, VMS=358.62MB
+2026-02-02 17:10:27 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 17:10:27 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:10:27 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 17:10:27 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 17:10:27 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 17:10:27 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:10:27 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 17:10:27 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 17:10:27 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 17:10:27 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 17:10:27 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 17:10:27 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 17:10:27 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-02 17:10:27 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:10:27 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:10:29 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 17:10:29 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 17:10:29 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 17:10:29 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 17:10:29 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 17:10:29 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 17:10:29 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 17:10:44 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 17:10:44 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 17:10:48 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 17:10:48 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 17:10:48 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 17:10:48 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 17:10:48
+2026-02-02 17:10:48 - nvme_test_console - INFO - 本轮测试耗时: 61.26秒
+2026-02-02 17:10:48 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:10:48 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:10:48 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:10:48 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 17:10:48 - nvme_test_console - INFO - PCT测试第2/3轮
+2026-02-02 17:10:48 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 17:10:48
+2026-02-02 17:10:48 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 17:10:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.96MB, VMS=358.51MB
+2026-02-02 17:11:28 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 17:11:28 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:11:28 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 17:11:28 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 17:11:28 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 17:11:28 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:11:28 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 17:11:28 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 17:11:28 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 17:11:28 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 17:11:28 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 17:11:28 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 17:11:28 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:11:28 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 17:11:29 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:11:29 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-02 17:11:29 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:11:31 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 17:11:31 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 17:11:31 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 17:11:31 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 17:11:31 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 17:11:31 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 17:11:31 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 17:11:46 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 17:11:46 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 17:11:50 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 17:11:50 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 17:11:50 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 17:11:50 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 17:11:50
+2026-02-02 17:11:50 - nvme_test_console - INFO - 本轮测试耗时: 61.69秒
+2026-02-02 17:11:50 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:11:50 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:11:50 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:11:50 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 17:11:50 - nvme_test_console - INFO - PCT测试第3/3轮
+2026-02-02 17:11:50 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-02 17:11:50
+2026-02-02 17:11:50 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-02 17:11:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.73MB, VMS=358.12MB
+2026-02-02 17:12:30 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-02 17:12:30 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:12:30 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-02 17:12:30 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-02 17:12:30 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-02 17:12:30 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-02 17:12:30 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-02 17:12:30 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-02 17:12:30 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-02 17:12:30 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-02 17:12:30 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-02 17:12:30 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-02 17:12:30 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-02 17:12:31 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:12:31 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-02 17:12:31 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-02 17:12:32 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-02 17:12:32 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-02 17:12:32 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-02 17:12:32 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-02 17:12:32 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-02 17:12:32 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-02 17:12:32 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-02 17:12:47 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-02 17:12:47 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-02 17:12:51 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-02 17:12:51 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-02 17:12:51 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 17:12:51 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-02 17:12:51
+2026-02-02 17:12:51 - nvme_test_console - INFO - 本轮测试耗时: 61.24秒
+2026-02-02 17:12:51 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-02 17:12:51 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:12:51 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-02 17:12:51 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-02 17:12:51 - nvme_test_console - INFO - PCT测试完成: 3轮
+2026-02-02 17:12:51 - nvme_test_console - INFO - 测试脚本执行完成
+2026-02-02 17:12:51 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260202_170946\report.html
+2026-02-02 17:12:52 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 17:12:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.94MB, VMS=358.15MB
+2026-02-02 17:13:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.94MB, VMS=358.15MB
+2026-02-02 17:14:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.99MB, VMS=358.12MB
+2026-02-02 17:15:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.98MB, VMS=358.06MB
+2026-02-02 17:16:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.96MB, VMS=358.02MB
+2026-02-02 17:17:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.98MB, VMS=358.02MB
+2026-02-02 17:18:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.98MB, VMS=358.02MB
+2026-02-02 17:19:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.96MB, VMS=357.99MB
+2026-02-02 17:20:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.96MB, VMS=357.99MB
+2026-02-02 17:21:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.95MB, VMS=357.95MB
+2026-02-02 17:22:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.97MB, VMS=357.99MB
+2026-02-02 17:23:54 - nvme_test_console - DEBUG - 内存使用: RSS=165.95MB, VMS=357.95MB
+2026-02-02 17:24:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.34MB, VMS=357.86MB
+2026-02-02 17:25:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.31MB, VMS=357.82MB
+2026-02-02 17:26:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.31MB, VMS=357.82MB
+2026-02-02 17:27:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.31MB, VMS=357.82MB
+2026-02-02 17:28:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.31MB, VMS=357.82MB
+2026-02-02 17:29:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.37MB, VMS=357.86MB
+2026-02-02 17:30:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:31:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:32:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:33:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:34:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.38MB, VMS=357.86MB
+2026-02-02 17:35:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:36:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:37:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:38:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.35MB, VMS=357.82MB
+2026-02-02 17:39:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.41MB, VMS=357.86MB
+2026-02-02 17:40:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.39MB, VMS=357.82MB
+2026-02-02 17:41:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.39MB, VMS=357.82MB
+2026-02-02 17:42:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.39MB, VMS=357.82MB
+2026-02-02 17:43:54 - nvme_test_console - DEBUG - 内存使用: RSS=160.39MB, VMS=357.82MB
+2026-02-02 17:44:13 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-02 17:44:13 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-02 17:44:15 - nvme_test_console - INFO - 实时监控已停止
+2026-02-02 17:44:20 - nvme_test_console - INFO - 内存监控已停止
+2026-02-02 17:44:20 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-02 17:44:20 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-02 17:44:20 - nvme_test_console - INFO - 资源清理完成
+2026-02-02 17:44:20 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-02 17:44:20 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 11:35:30 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 11:35:31 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 11:35:31 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 11:35:31 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 11:35:31 - nvme_test_console - DEBUG - 内存使用: RSS=122.25MB, VMS=343.12MB
+2026-02-10 11:36:31 - nvme_test_console - DEBUG - 内存使用: RSS=122.22MB, VMS=343.00MB
+2026-02-10 11:37:31 - nvme_test_console - DEBUG - 内存使用: RSS=122.22MB, VMS=343.00MB
+2026-02-10 11:38:31 - nvme_test_console - DEBUG - 内存使用: RSS=122.17MB, VMS=342.83MB
+2026-02-10 11:39:31 - nvme_test_console - DEBUG - 内存使用: RSS=122.17MB, VMS=342.83MB
+2026-02-10 11:39:35 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 11:39:35 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 11:39:36 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 11:39:41 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 11:39:41 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 11:39:41 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 11:39:41 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 11:39:41 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 11:42:19 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 11:42:20 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 11:42:20 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 11:42:20 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 11:42:20 - nvme_test_console - DEBUG - 内存使用: RSS=122.92MB, VMS=343.53MB
+2026-02-10 11:42:49 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 11:42:49 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 11:42:50 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 11:42:55 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 11:42:55 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 11:42:55 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 11:42:55 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 11:42:55 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 11:43:51 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 11:43:52 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 11:43:52 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 11:43:52 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 11:43:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.43MB, VMS=343.06MB
+2026-02-10 11:44:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.72MB, VMS=343.19MB
+2026-02-10 11:45:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.72MB, VMS=343.19MB
+2026-02-10 11:46:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.64MB, VMS=343.02MB
+2026-02-10 11:47:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.64MB, VMS=342.98MB
+2026-02-10 11:48:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=343.02MB
+2026-02-10 11:49:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=343.02MB
+2026-02-10 11:50:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.78MB, VMS=342.95MB
+2026-02-10 11:51:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.78MB, VMS=342.95MB
+2026-02-10 11:52:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.78MB, VMS=342.95MB
+2026-02-10 11:53:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=343.02MB
+2026-02-10 11:54:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.82MB, VMS=343.02MB
+2026-02-10 11:55:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 11:56:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 11:57:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 11:58:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 11:59:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:00:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:01:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:02:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:03:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=342.98MB
+2026-02-10 12:04:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=342.98MB
+2026-02-10 12:05:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:06:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:07:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:08:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:09:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:10:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:11:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:12:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:13:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:14:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:15:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:16:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:17:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:18:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:19:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:20:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:21:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:22:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:23:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:24:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:25:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:26:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:27:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:28:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:29:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:30:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:31:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:32:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:33:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:34:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:35:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:36:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:37:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:38:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:39:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:40:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:41:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:42:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:43:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:44:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:45:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:46:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:47:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:48:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:49:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:50:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:51:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:52:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:53:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:54:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:55:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:56:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:57:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:58:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 12:59:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:00:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:01:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:02:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:03:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:04:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:05:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:06:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:07:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:08:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:09:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:10:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:11:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:12:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:13:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:14:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:15:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:16:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:17:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:18:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:19:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:20:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:21:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:22:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:23:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:24:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:25:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:26:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:27:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:28:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:29:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:30:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:31:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:32:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:33:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:34:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:35:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:36:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.79MB, VMS=342.95MB
+2026-02-10 13:37:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=342.95MB
+2026-02-10 13:38:52 - nvme_test_console - DEBUG - 内存使用: RSS=122.80MB, VMS=342.95MB
+2026-02-10 13:39:39 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 13:39:39 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 13:39:42 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 13:39:47 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 13:39:47 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 13:39:47 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 13:39:47 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 13:39:47 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 13:40:06 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 13:40:07 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 13:40:07 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 13:40:07 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 13:40:07 - nvme_test_console - DEBUG - 内存使用: RSS=109.78MB, VMS=336.82MB
+2026-02-10 13:40:43 - nvme_test_console - ERROR - 温箱串口连接失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-02-10 13:40:43 - nvme_test_console - ERROR - 连接串口失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-02-10 13:40:58 - nvme_test_console - ERROR - 温箱串口连接失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-02-10 13:40:58 - nvme_test_console - ERROR - 连接串口失败: could not open port 'COM18': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)
+2026-02-10 13:41:07 - nvme_test_console - DEBUG - 内存使用: RSS=123.33MB, VMS=343.88MB
+2026-02-10 13:42:07 - nvme_test_console - DEBUG - 内存使用: RSS=123.38MB, VMS=343.85MB
+2026-02-10 13:43:07 - nvme_test_console - DEBUG - 内存使用: RSS=123.30MB, VMS=343.67MB
+2026-02-10 13:44:07 - nvme_test_console - DEBUG - 内存使用: RSS=123.30MB, VMS=343.67MB
+2026-02-10 13:44:35 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 13:44:35 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 13:44:37 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 13:44:42 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 13:44:42 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 13:44:42 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 13:44:42 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 13:44:42 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 13:45:44 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 13:45:44 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 13:45:44 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 13:45:44 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 13:45:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.16MB, VMS=343.00MB
+2026-02-10 13:46:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.47MB, VMS=343.10MB
+2026-02-10 13:47:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.47MB, VMS=343.10MB
+2026-02-10 13:48:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.39MB, VMS=342.92MB
+2026-02-10 13:49:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.39MB, VMS=342.92MB
+2026-02-10 13:50:45 - nvme_test_console - DEBUG - 内存使用: RSS=122.56MB, VMS=342.96MB
+2026-02-10 13:51:39 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 13:51:39 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 13:51:40 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 13:51:45 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 13:51:45 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 13:51:45 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 13:51:45 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 13:51:45 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 13:51:47 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 13:51:48 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 13:51:48 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 13:51:48 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 13:51:48 - nvme_test_console - DEBUG - 内存使用: RSS=109.28MB, VMS=336.43MB
+2026-02-10 13:52:48 - nvme_test_console - DEBUG - 内存使用: RSS=122.59MB, VMS=343.37MB
+2026-02-10 13:53:10 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 13:53:10 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 13:53:13 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 13:53:18 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 13:53:18 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 13:53:18 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 13:53:18 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 13:53:18 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 16:18:42 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 16:18:42 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 16:18:42 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 16:18:42 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 16:18:42 - nvme_test_console - DEBUG - 内存使用: RSS=122.45MB, VMS=343.33MB
+2026-02-10 16:19:42 - nvme_test_console - DEBUG - 内存使用: RSS=122.49MB, VMS=343.25MB
+2026-02-10 16:20:22 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 16:20:22 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 16:20:23 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 16:20:28 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 16:20:28 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 16:20:28 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 16:20:28 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 16:20:28 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 16:20:37 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 16:20:38 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 16:20:38 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 16:20:38 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 16:20:38 - nvme_test_console - DEBUG - 内存使用: RSS=122.14MB, VMS=343.07MB
+2026-02-10 16:21:38 - nvme_test_console - DEBUG - 内存使用: RSS=122.43MB, VMS=343.17MB
+2026-02-10 16:21:47 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-10 16:21:47 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-10 16:21:47 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-10 16:21:47 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:21:47 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:21:48 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:21:48 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-10 16:21:48 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-10 16:21:48 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-10 16:21:48 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:21:48 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:21:48 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:22:38 - nvme_test_console - DEBUG - 内存使用: RSS=128.12MB, VMS=343.93MB
+2026-02-10 16:23:28 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-10 16:23:28 - nvme_test_console - ERROR - 解析命令失败 [行9]: ; BIT 10, 错误: 未知命令类型: ;
+2026-02-10 16:23:28 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-10 16:23:28 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-10 16:23:28 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-10 16:23:36 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-10 16:23:36 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-10 16:23:37 - nvme_test_console - INFO - 实时监控已启动
+2026-02-10 16:23:37 - nvme_test_console - INFO - 开始执行测试脚本，共1条命令
+2026-02-10 16:23:37 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-10 16:23:37 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-10 16:23:37 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:23:37
+2026-02-10 16:23:37 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:23:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.46MB, VMS=356.76MB
+2026-02-10 16:24:17 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:24:17 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:24:17 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:24:17 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:24:17 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:24:17 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:24:17 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:24:17 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:24:17 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:24:17 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:24:17 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:24:17 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:24:17 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:24:17 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:24:18 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:24:18 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:24:18 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:24:18 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:24:18 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:24:18 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:24:18 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:24:33 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:24:33 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:24:37 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:24:37 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:24:37 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:24:37 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:24:37
+2026-02-10 16:24:37 - nvme_test_console - INFO - 本轮测试耗时: 60.56秒
+2026-02-10 16:24:37 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:24:37 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:24:37 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:24:37 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:24:37 - nvme_test_console - INFO - PCT测试第2/3轮
+2026-02-10 16:24:37 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:24:37
+2026-02-10 16:24:37 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:24:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.72MB, VMS=356.72MB
+2026-02-10 16:25:17 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:25:17 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:25:17 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:25:17 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:25:17 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:25:17 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:25:17 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:25:17 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:25:17 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:25:17 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:25:17 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:25:17 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:25:17 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:25:17 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:25:18 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:25:18 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:25:19 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:25:19 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:25:19 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:25:19 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:25:20 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:25:20 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:25:20 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:25:20 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:25:35 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:25:35 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:25:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.69MB, VMS=356.39MB
+2026-02-10 16:25:39 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:25:39 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:25:39 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:25:39 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:25:39
+2026-02-10 16:25:39 - nvme_test_console - INFO - 本轮测试耗时: 61.28秒
+2026-02-10 16:25:39 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:25:39 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:25:39 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:25:39 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:25:39 - nvme_test_console - INFO - PCT测试第3/3轮
+2026-02-10 16:25:39 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:25:39
+2026-02-10 16:25:39 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:26:19 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:26:19 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:26:19 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:26:19 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:26:19 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:26:19 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:26:19 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:26:19 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:26:19 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:26:19 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:26:19 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:26:19 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD信息完成，共1个SSD
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1']
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:26:19 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:26:19 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:26:20 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:26:21 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:26:21 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:26:21 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:26:21 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:26:21 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:26:21 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:26:21 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:26:36 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:26:36 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:26:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.71MB, VMS=356.39MB
+2026-02-10 16:26:40 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:26:40 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:26:40 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:26:40 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:26:40
+2026-02-10 16:26:40 - nvme_test_console - INFO - 本轮测试耗时: 61.39秒
+2026-02-10 16:26:40 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:26:40 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:26:40 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:26:40 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:26:40 - nvme_test_console - INFO - PCT测试完成: 3轮
+2026-02-10 16:26:40 - nvme_test_console - INFO - 测试脚本执行完成
+2026-02-10 16:26:40 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260210_162336\report.html
+2026-02-10 16:26:42 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 16:27:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.65MB, VMS=356.24MB
+2026-02-10 16:28:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.70MB, VMS=356.21MB
+2026-02-10 16:29:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.73MB, VMS=356.21MB
+2026-02-10 16:30:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.77MB, VMS=356.25MB
+2026-02-10 16:31:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.77MB, VMS=356.25MB
+2026-02-10 16:32:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.70MB, VMS=356.12MB
+2026-02-10 16:33:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.73MB, VMS=356.18MB
+2026-02-10 16:34:38 - nvme_test_console - DEBUG - 内存使用: RSS=165.73MB, VMS=356.16MB
+2026-02-10 16:35:38 - nvme_test_console - DEBUG - 内存使用: RSS=161.47MB, VMS=356.12MB
+2026-02-10 16:36:38 - nvme_test_console - DEBUG - 内存使用: RSS=162.92MB, VMS=356.25MB
+2026-02-10 16:37:38 - nvme_test_console - DEBUG - 内存使用: RSS=162.91MB, VMS=356.22MB
+2026-02-10 16:37:44 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 16:37:44 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 16:37:48 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 16:37:53 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 16:37:53 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 16:37:53 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:37:53 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 16:37:53 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-10 16:37:53 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 16:37:59 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 16:38:00 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 16:38:00 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 16:38:00 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 16:38:00 - nvme_test_console - DEBUG - 内存使用: RSS=122.12MB, VMS=343.04MB
+2026-02-10 16:38:14 - nvme_test_console - ERROR - 生成测试报告失败: 'NoneType' object has no attribute 'test_time'
+2026-02-10 16:39:00 - nvme_test_console - DEBUG - 内存使用: RSS=122.45MB, VMS=343.18MB
+2026-02-10 16:40:00 - nvme_test_console - DEBUG - 内存使用: RSS=122.45MB, VMS=343.14MB
+2026-02-10 16:40:05 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 16:40:05 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 16:40:05 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 16:40:10 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 16:40:10 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 16:40:10 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 16:40:10 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 1
+2026-02-10 16:40:10 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 16:41:56 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 16:41:57 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 16:41:57 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 16:41:57 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 16:41:57 - nvme_test_console - DEBUG - 内存使用: RSS=121.98MB, VMS=342.97MB
+2026-02-10 16:42:02 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:42:13 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-10 16:42:13 - nvme_test_console - ERROR - 解析命令失败 [行9]: ; BIT 10, 错误: 未知命令类型: ;
+2026-02-10 16:42:13 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-10 16:42:13 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-10 16:42:13 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-10 16:42:15 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行9]: ; BIT 10, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-10 16:42:15 - nvme_test_console - INFO - 测试脚本验证通过
+2026-02-10 16:42:15 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行9]: ; BIT 10, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-10 16:42:15 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-10 16:42:39 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-10 16:42:39 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-10 16:42:39 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-10 16:42:39 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:42:39 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:42:40 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:42:40 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-10 16:42:40 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:42:40 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:42:54 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-10 16:42:54 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-10 16:42:54 - nvme_test_console - INFO - 实时监控已启动
+2026-02-10 16:42:54 - nvme_test_console - INFO - 开始执行测试脚本，共1条命令
+2026-02-10 16:42:54 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-10 16:42:55 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-10 16:42:55 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:42:55
+2026-02-10 16:42:55 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:42:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.09MB, VMS=357.02MB
+2026-02-10 16:43:35 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:43:35 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:43:35 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:43:35 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:43:35 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:43:35 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:43:35 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:43:35 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:43:35 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:43:35 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:43:35 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:43:35 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:43:35 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:43:35 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:43:35 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:43:39 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:43:39 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:43:39 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:43:39 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:43:39 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:43:39 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:43:39 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:43:54 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:43:54 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:43:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.34MB, VMS=356.97MB
+2026-02-10 16:43:58 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:43:58 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:43:58 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:43:58 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:43:58
+2026-02-10 16:43:58 - nvme_test_console - INFO - 本轮测试耗时: 63.60秒
+2026-02-10 16:43:58 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:43:58 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:43:58 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:43:58 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:43:58 - nvme_test_console - INFO - PCT测试第2/3轮
+2026-02-10 16:43:58 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:43:58
+2026-02-10 16:43:58 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:44:38 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:44:38 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:44:38 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:44:38 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:44:38 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:44:38 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:44:38 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:44:38 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:44:38 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:44:38 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:44:38 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:44:38 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:44:38 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:44:38 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:44:39 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:44:39 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:44:39 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:44:40 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:44:40 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:44:42 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:44:42 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:44:42 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:44:42 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:44:42 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:44:42 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:44:42 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:44:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.04MB, VMS=356.47MB
+2026-02-10 16:44:57 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:44:57 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:45:01 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:45:01 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:45:01 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:45:01 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:45:01
+2026-02-10 16:45:01 - nvme_test_console - INFO - 本轮测试耗时: 62.61秒
+2026-02-10 16:45:01 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:45:01 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:45:01 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:45:01 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:45:01 - nvme_test_console - INFO - PCT测试第3/3轮
+2026-02-10 16:45:01 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:45:01
+2026-02-10 16:45:01 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:45:41 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:45:41 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:45:41 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:45:41 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:45:41 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:45:41 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:45:41 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:45:41 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:45:41 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:45:41 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:45:41 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:45:41 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:45:41 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:45:41 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:45:41 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:45:41 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:45:41 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:45:42 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:45:42 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:45:42 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:45:42 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:45:43 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:45:46 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:45:46 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:45:46 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:45:46 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:45:46 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:45:46 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:45:46 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:45:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.08MB, VMS=356.47MB
+2026-02-10 16:46:01 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:46:01 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:46:05 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:46:05 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:46:05 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:46:05 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:46:05
+2026-02-10 16:46:05 - nvme_test_console - INFO - 本轮测试耗时: 63.58秒
+2026-02-10 16:46:05 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:46:05 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:46:05 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:46:05 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:46:05 - nvme_test_console - INFO - PCT测试完成: 3轮
+2026-02-10 16:46:05 - nvme_test_console - INFO - 测试脚本执行完成
+2026-02-10 16:46:05 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260210_164254\report.html
+2026-02-10 16:46:09 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 16:46:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.25MB, VMS=356.39MB
+2026-02-10 16:47:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.31MB, VMS=356.37MB
+2026-02-10 16:48:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.32MB, VMS=356.33MB
+2026-02-10 16:49:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.13MB, VMS=356.43MB
+2026-02-10 16:50:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.09MB, VMS=356.36MB
+2026-02-10 16:51:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.12MB, VMS=356.36MB
+2026-02-10 16:52:02 - nvme_test_console - DEBUG - 解析命令成功 [行8]: TestCommand(PCT, {'cycles': 3})
+2026-02-10 16:52:02 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-10 16:52:02 - nvme_test_console - DEBUG - 解析命令成功 [行10]: TestCommand(CTTW, {})
+2026-02-10 16:52:02 - nvme_test_console - DEBUG - 解析命令成功 [行11]: TestCommand(CTTR, {})
+2026-02-10 16:52:02 - nvme_test_console - INFO - 测试脚本解析完成，共解析4条命令
+2026-02-10 16:52:07 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:52:45 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-10 16:52:45 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-10 16:52:45 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-10 16:52:45 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:52:45 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:52:45 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:52:45 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-10 16:52:45 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:52:45 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:52:45 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-10 16:52:52 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-10 16:52:52 - nvme_test_console - DEBUG - 创建新线程: Thread-16 (_run_test), 当前线程数: 3
+2026-02-10 16:52:52 - nvme_test_console - INFO - 实时监控已启动
+2026-02-10 16:52:52 - nvme_test_console - INFO - 开始执行测试脚本，共4条命令
+2026-02-10 16:52:52 - nvme_test_console - INFO - 执行PCT测试: 3轮
+2026-02-10 16:52:52 - nvme_test_console - INFO - PCT测试第1/3轮
+2026-02-10 16:52:52 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:52:52
+2026-02-10 16:52:52 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:52:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.26MB, VMS=356.59MB
+2026-02-10 16:53:32 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:53:32 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:53:32 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:53:32 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:53:32 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:53:32 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:53:32 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:53:32 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:53:32 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:53:32 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:53:32 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:53:32 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:53:32 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:53:33 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:53:33 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:53:33 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:53:36 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:53:36 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:53:36 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:53:36 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:53:36 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:53:36 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:53:36 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:53:51 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:53:51 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:53:55 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:53:55 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:53:55 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:53:55 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:53:55
+2026-02-10 16:53:55 - nvme_test_console - INFO - 本轮测试耗时: 62.46秒
+2026-02-10 16:53:55 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:53:55 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:53:55 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:53:55 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:53:55 - nvme_test_console - INFO - PCT测试第2/3轮
+2026-02-10 16:53:55 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:53:55
+2026-02-10 16:53:55 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:53:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.23MB, VMS=356.50MB
+2026-02-10 16:54:35 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:54:35 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:54:35 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:54:35 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:54:35 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:54:35 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:54:35 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:54:35 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:54:35 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:54:35 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:54:35 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:54:35 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:54:35 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:54:36 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:54:36 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:54:36 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:54:36 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:54:36 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:54:36 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:54:36 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:54:37 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:54:39 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:54:39 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:54:39 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:54:39 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:54:39 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:54:39 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:54:39 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:54:54 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:54:54 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:54:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.27MB, VMS=356.50MB
+2026-02-10 16:54:58 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:54:58 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:54:58 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:54:58 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:54:58
+2026-02-10 16:54:58 - nvme_test_console - INFO - 本轮测试耗时: 63.56秒
+2026-02-10 16:54:58 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:54:58 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:54:58 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:54:58 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:54:59 - nvme_test_console - INFO - PCT测试第3/3轮
+2026-02-10 16:54:59 - nvme_test_console - INFO - 本轮测试开始时间: 2026-02-10 16:54:59
+2026-02-10 16:54:59 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:55:39 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:55:39 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:55:39 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:55:39 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:55:39 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:55:39 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:55:39 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:55:39 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:55:39 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:55:39 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:55:39 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:55:39 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:55:39 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:55:39 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:55:39 - nvme_test_console - INFO - 执行FIO读命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=read --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=1G
+2026-02-10 16:55:40 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:55:40 - nvme_test_console - INFO - 执行FIO写命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=0 --group_reporting --size=1G
+2026-02-10 16:55:42 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 16:55:42 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 16:55:42 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 16:55:42 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 16:55:42 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 16:55:42 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 16:55:42 - nvme_test_console - INFO - 已发送关机命令到: test_host_1
+2026-02-10 16:55:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.29MB, VMS=356.51MB
+2026-02-10 16:55:57 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 16:55:57 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 16:56:01 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 16:56:01 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 16:56:01 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 16:56:01 - nvme_test_console - INFO - 本轮测试结束时间: 2026-02-10 16:56:01
+2026-02-10 16:56:01 - nvme_test_console - INFO - 本轮测试耗时: 62.74秒
+2026-02-10 16:56:01 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:56:01 - nvme_test_console - ERROR - 执行命令失败 [test_host_1]: ls /dev/nvme*n1, 错误: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:56:01 - nvme_test_console - ERROR - 获取SSD列表失败 [test_host_1]: 'NoneType' object has no attribute 'open_session'
+2026-02-10 16:56:01 - nvme_test_console - INFO - 获取SSD信息完成，共0个SSD
+2026-02-10 16:56:01 - nvme_test_console - INFO - PCT测试完成: 3轮
+2026-02-10 16:56:01 - nvme_test_console - INFO - 执行BIT测试: 10%容量
+2026-02-10 16:56:02 - nvme_test_console - INFO - 测试开始时间: 2026-02-10 16:56:02
+2026-02-10 16:56:02 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 16:56:42 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 16:56:42 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 16:56:42 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 16:56:42 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 16:56:42 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 16:56:42 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 16:56:42 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 16:56:42 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 16:56:42 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 16:56:42 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 16:56:42 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 16:56:43 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:56:43 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 16:56:43 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 16:56:43 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 16:56:43 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=10%
+2026-02-10 16:56:43 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=10%
+2026-02-10 16:56:57 - nvme_test_console - DEBUG - 内存使用: RSS=166.41MB, VMS=356.73MB
+2026-02-10 16:57:12 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:57:43 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:57:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.39MB, VMS=356.61MB
+2026-02-10 16:58:13 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:58:43 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:58:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.36MB, VMS=356.53MB
+2026-02-10 16:59:13 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:59:43 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 16:59:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.36MB, VMS=356.53MB
+2026-02-10 17:00:13 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 17:00:43 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 17:00:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.36MB, VMS=356.53MB
+2026-02-10 17:01:14 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 17:01:40 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 17:01:44 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme1n1', '/dev/nvme0n1']
+2026-02-10 17:01:44 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:01:44 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:01:44 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 17:01:44 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 17:01:44 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 17:01:44 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 17:01:44 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 17:01:57 - nvme_test_console - DEBUG - 内存使用: RSS=165.23MB, VMS=356.24MB
+2026-02-10 17:01:59 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 17:01:59 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 17:02:03 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 17:02:03 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 17:02:03 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 17:02:03 - nvme_test_console - INFO - 测试结束时间: 2026-02-10 17:01:44
+2026-02-10 17:02:03 - nvme_test_console - INFO - 测试总耗时: 342.33秒
+2026-02-10 17:02:03 - nvme_test_console - ERROR - 测试执行异常: 'str' object has no attribute 'get'
+2026-02-10 17:02:07 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 17:02:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.73MB, VMS=356.19MB
+2026-02-10 17:03:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.73MB, VMS=356.19MB
+2026-02-10 17:04:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.71MB, VMS=356.15MB
+2026-02-10 17:05:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.71MB, VMS=356.18MB
+2026-02-10 17:06:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.71MB, VMS=356.15MB
+2026-02-10 17:07:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.71MB, VMS=356.15MB
+2026-02-10 17:08:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.69MB, VMS=356.12MB
+2026-02-10 17:09:18 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260210_165252\report.html
+2026-02-10 17:09:57 - nvme_test_console - DEBUG - 内存使用: RSS=164.72MB, VMS=356.18MB
+2026-02-10 17:10:15 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 17:10:15 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 17:10:17 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 17:10:22 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 17:10:22 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 17:10:22 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 17:10:22 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 17:10:22 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 3
+2026-02-10 17:10:22 - nvme_test_console - INFO - 线程池已关闭
+2026-02-10 17:33:58 - nvme_test_console - INFO - 配置文件加载成功: ./config.ini
+2026-02-10 17:33:59 - nvme_test_console - INFO - NVMe SSD测试系统启动
+2026-02-10 17:33:59 - nvme_test_console - INFO - 内存监控已启动
+2026-02-10 17:33:59 - nvme_test_console - DEBUG - 创建新线程: Thread-3 (_monitor_loop), 当前线程数: 1
+2026-02-10 17:33:59 - nvme_test_console - DEBUG - 内存使用: RSS=121.89MB, VMS=342.84MB
+2026-02-10 17:34:42 - nvme_test_console - ERROR - 解析命令失败 [行8]: ; PCT 3, 错误: 未知命令类型: ;
+2026-02-10 17:34:42 - nvme_test_console - DEBUG - 解析命令成功 [行9]: TestCommand(BIT, {'capacity_percent': 10})
+2026-02-10 17:34:42 - nvme_test_console - ERROR - 解析命令失败 [行10]: ; CTTW, 错误: 未知命令类型: ;
+2026-02-10 17:34:42 - nvme_test_console - ERROR - 解析命令失败 [行11]: ; CTTR, 错误: 未知命令类型: ;
+2026-02-10 17:34:42 - nvme_test_console - INFO - 测试脚本解析完成，共解析1条命令
+2026-02-10 17:34:45 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 17:34:59 - nvme_test_console - DEBUG - 内存使用: RSS=164.30MB, VMS=355.62MB
+2026-02-10 17:35:59 - nvme_test_console - DEBUG - 内存使用: RSS=164.51MB, VMS=355.63MB
+2026-02-10 17:36:59 - nvme_test_console - DEBUG - 内存使用: RSS=164.17MB, VMS=355.11MB
+2026-02-10 17:37:59 - nvme_test_console - DEBUG - 内存使用: RSS=164.18MB, VMS=355.14MB
+2026-02-10 17:38:59 - nvme_test_console - DEBUG - 内存使用: RSS=164.38MB, VMS=355.14MB
+2026-02-10 17:39:02 - nvme_test_console - INFO - 开始连接选中的主板，共1台
+2026-02-10 17:39:02 - nvme_test_console - INFO - 连接主板列表: ['test_host_1']
+2026-02-10 17:39:02 - nvme_test_console - INFO - 正在连接主板: test_host_1 (192.168.1.124:22)
+2026-02-10 17:39:02 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 17:39:02 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 17:39:02 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 17:39:02 - nvme_test_console - INFO - 主板连接成功: test_host_1
+2026-02-10 17:39:02 - nvme_test_console - INFO - 所有选中的主板连接成功
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取选中的主板SSD信息，共1台
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 17:39:02 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 17:39:06 - nvme_test_console - INFO - 选择测试主板: test_host_1
+2026-02-10 17:39:06 - nvme_test_console - DEBUG - 创建新线程: Thread-6 (_run_test), 当前线程数: 2
+2026-02-10 17:39:06 - nvme_test_console - INFO - 实时监控已启动
+2026-02-10 17:39:06 - nvme_test_console - INFO - 开始执行测试脚本，共1条命令
+2026-02-10 17:39:06 - nvme_test_console - INFO - 执行BIT测试: 10%容量
+2026-02-10 17:39:06 - nvme_test_console - INFO - 测试开始时间: 2026-02-10 17:39:06
+2026-02-10 17:39:06 - nvme_test_console - INFO - 发送WOL命令成功: test_host_1
+2026-02-10 17:39:46 - nvme_test_console - INFO - 开始等待主机上线，超时时间: 40秒，检查间隔: 2秒
+2026-02-10 17:39:46 - nvme_test_console - INFO - 等待主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 17:39:46 - nvme_test_console - INFO - 主机状态检查 - 在线: ['test_host_1'], 离线: []
+2026-02-10 17:39:46 - nvme_test_console - INFO - 所有选中的测试主机已上线
+2026-02-10 17:39:46 - nvme_test_console - INFO - 开始连接主机，共1台
+2026-02-10 17:39:46 - nvme_test_console - INFO - 连接主机列表: ['test_host_1(192.168.1.124)']
+2026-02-10 17:39:46 - nvme_test_console - INFO - 正在连接主机: test_host_1 (192.168.1.124)
+2026-02-10 17:39:46 - nvme_test_console - INFO - 尝试连接测试主机 (第1/3次): test_host_1 (192.168.1.124:22)
+2026-02-10 17:39:46 - nvme_test_console - INFO - 连接参数: 用户名=root, 超时=30秒
+2026-02-10 17:39:46 - nvme_test_console - INFO - 连接测试主机成功: test_host_1 (192.168.1.124)
+2026-02-10 17:39:46 - nvme_test_console - INFO - 主机连接成功: test_host_1 (192.168.1.124)
+2026-02-10 17:39:46 - nvme_test_console - INFO - 所有选中的测试主机连接成功
+2026-02-10 17:39:46 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 17:39:46 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:46 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:39:46 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:39:46 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息，共1台主机
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息完成，共2个SSD
+2026-02-10 17:39:47 - nvme_test_console - INFO - [DEBUG] bit_ssd_info 类型: dict
+2026-02-10 17:39:47 - nvme_test_console - INFO - [DEBUG] bit_ssd_info 包含的主机: ['202505202T9005', '202505202T9002']
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme0n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD链路状态成功 [test_host_1] /dev/nvme1n1: {'link': 'LnkSta:\tSpeed 8GT/s, Width x4'}
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme0n1
+2026-02-10 17:39:47 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme0n1 --verify=crc32c --do_verify=1 --group_reporting --size=10%
+2026-02-10 17:39:47 - nvme_test_console - INFO - 获取SSD SMART信息成功 [test_host_1] /dev/nvme1n1
+2026-02-10 17:39:47 - nvme_test_console - INFO - 执行FIO命令: fio --ioengine=libaio --bs=1M --iodepth=128 --numjobs=1 --direct=1 --name=test --rw=write --filename=/dev/nvme1n1 --verify=crc32c --do_verify=1 --group_reporting --size=10%
+2026-02-10 17:39:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.29MB, VMS=356.57MB
+2026-02-10 17:40:17 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:40:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:40:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.34MB, VMS=356.61MB
+2026-02-10 17:41:17 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:41:47 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:41:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.29MB, VMS=356.50MB
+2026-02-10 17:42:18 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:42:48 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:42:57 - nvme_test_console - INFO - test_host_1 测试完成
+2026-02-10 17:42:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.20MB, VMS=356.32MB
+2026-02-10 17:43:02 - nvme_test_console - INFO - 获取SSD列表成功 [test_host_1]: ['/dev/nvme0n1', '/dev/nvme1n1']
+2026-02-10 17:43:02 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme0n1: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:43:02 - nvme_test_console - INFO - [DEBUG] _save_temperature_summary - ssd_info 类型: dict, 值: {'VID': '0x1f17', 'SN': '202505202T9005', 'MN': '0'}
+2026-02-10 17:43:02 - nvme_test_console - INFO - 获取SSD信息成功 [test_host_1] /dev/nvme1n1: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:43:02 - nvme_test_console - INFO - [DEBUG] _save_temperature_summary - ssd_info 类型: dict, 值: {'VID': '0x1f17', 'SN': '202505202T9002', 'MN': '0'}
+2026-02-10 17:43:02 - nvme_test_console - INFO - 开始关机，共1台
+2026-02-10 17:43:02 - nvme_test_console - INFO - 关机主机列表: ['test_host_1']
+2026-02-10 17:43:02 - nvme_test_console - INFO - 发送关机命令成功 [test_host_1]
+2026-02-10 17:43:02 - nvme_test_console - INFO - 主机关机成功: test_host_1
+2026-02-10 17:43:02 - nvme_test_console - INFO - 所有选中的测试主机已发送关机命令
+2026-02-10 17:43:17 - nvme_test_console - INFO - 开始等待主机关机，超时时间: 15秒，检查间隔: 2秒
+2026-02-10 17:43:17 - nvme_test_console - INFO - 等待主机列表: ['test_host_1']
+2026-02-10 17:43:21 - nvme_test_console - INFO - 主机状态检查 - 已关机: ['test_host_1'], 仍在线: []
+2026-02-10 17:43:21 - nvme_test_console - INFO - 所有选中的测试主机已关机
+2026-02-10 17:43:21 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 17:43:21 - nvme_test_console - INFO - 测试结束时间: 2026-02-10 17:43:02
+2026-02-10 17:43:21 - nvme_test_console - INFO - 测试总耗时: 235.64秒
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 开始处理测试结果，bit_ssd_info 类型: dict
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理主机: 202505202T9005, ssd_dict 类型: dict
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: VID, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 0x1f17
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: SN, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 202505202T9005
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: MN, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 0
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: host, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: test_host_1
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: path, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: /dev/nvme0n1
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理主机: 202505202T9002, ssd_dict 类型: dict
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: VID, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 0x1f17
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: SN, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 202505202T9002
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: MN, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: 0
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: host, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: test_host_1
+2026-02-10 17:43:21 - nvme_test_console - INFO - [DEBUG] 处理SSD路径: path, ssd_info 类型: str
+2026-02-10 17:43:21 - nvme_test_console - ERROR - [DEBUG] ssd_info 不是字典类型: /dev/nvme1n1
+2026-02-10 17:43:21 - nvme_test_console - INFO - BIT测试完成
+2026-02-10 17:43:21 - nvme_test_console - INFO - 测试脚本执行完成
+2026-02-10 17:43:21 - nvme_test_console - INFO - HTML报告生成成功: D:\desktop\applets\新建文件夹\nvme_test_log\20260210_173906\report.html
+2026-02-10 17:43:26 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 17:43:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.18MB, VMS=356.19MB
+2026-02-10 17:44:59 - nvme_test_console - DEBUG - 内存使用: RSS=165.18MB, VMS=356.19MB
+2026-02-10 17:45:52 - nvme_test_console - INFO - NVMe SSD测试系统关闭
+2026-02-10 17:45:52 - nvme_test_console - INFO - 程序退出，执行清理...
+2026-02-10 17:45:54 - nvme_test_console - INFO - 实时监控已停止
+2026-02-10 17:45:59 - nvme_test_console - INFO - 内存监控已停止
+2026-02-10 17:45:59 - nvme_test_console - INFO - 开始清理所有资源，共0个
+2026-02-10 17:45:59 - nvme_test_console - INFO - 断开测试主机连接: test_host_1
+2026-02-10 17:45:59 - nvme_test_console - INFO - 资源清理完成
+2026-02-10 17:45:59 - nvme_test_console - INFO - 开始关闭线程池，当前线程数: 2
+2026-02-10 17:45:59 - nvme_test_console - INFO - 线程池已关闭

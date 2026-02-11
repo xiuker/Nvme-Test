@@ -48,6 +48,9 @@ class NVMeTestGUI:
         self.resource_cleaner.set_logger(self.console_logger)
         self.memory_monitor = MemoryMonitor(logger=self.console_logger)
         
+        # 测试报告路径设置
+        self.user_report_path = None
+        
         self._setup_signal_handlers()
         self._setup_exit_handlers()
         
@@ -58,7 +61,26 @@ class NVMeTestGUI:
         self.window['-CURRENT_COM-'].update(serial_config['port'])
         self.window['-STATUS-'].update('串口状态: 已关闭')
         
+        # 初始化主机管理器，获取并显示MAC/IP地址
+        self._init_host_manager()
+        self._update_host_info()
+        
         self.console_logger.info('NVMe SSD测试系统启动')
+        
+        # 读取默认报告路径并显示
+        default_report_path = self.config['logging']['test_log_dir']
+        # 转换为绝对路径
+        default_report_path = os.path.abspath(default_report_path)
+        
+        # 确保默认报告目录存在
+        if not os.path.exists(default_report_path):
+            try:
+                os.makedirs(default_report_path, exist_ok=True)
+                self.console_logger.info(f'已创建默认报告目录: {default_report_path}')
+            except Exception as e:
+                self.console_logger.error(f'创建默认报告目录失败: {e}')
+        
+        self.window['-REPORT_PATH-'].update(default_report_path)
         
         self.memory_monitor.start()
 
@@ -87,11 +109,22 @@ class NVMeTestGUI:
     def _signal_handler(self, signum, frame):
         self.console_logger.info(f'收到信号 {signum}，准备退出...')
         self._cleanup()
+        
+        # 收到信号时关闭线程池
+        if self.thread_pool:
+            self.thread_pool.shutdown(wait=True, timeout=5)
+            self.console_logger.info('线程池已关闭')
+        
         sys.exit(0)
 
     def _cleanup_on_exit(self):
         self.console_logger.info('程序退出，执行清理...')
         self._cleanup()
+        
+        # 程序退出时关闭线程池
+        if self.thread_pool:
+            self.thread_pool.shutdown(wait=True, timeout=5)
+            self.console_logger.info('线程池已关闭')
 
     def _cleanup(self):
         try:
@@ -110,9 +143,6 @@ class NVMeTestGUI:
             if self.memory_monitor:
                 self.memory_monitor.stop()
             
-            if self.thread_pool:
-                self.thread_pool.shutdown(wait=True, timeout=5)
-            
             if self.resource_cleaner:
                 self.resource_cleaner.cleanup_all()
             
@@ -128,7 +158,7 @@ class NVMeTestGUI:
             self.console_logger.error(f'清理资源时发生错误: {e}')
 
     def _create_window(self):
-        chamber_frame = [
+        chamber_controls_frame = [
             [sg.Text('当前COM口:', size=(10, 1)), sg.Text('COM18', key='-CURRENT_COM-', size=(8, 1), text_color='dark blue')],
             [sg.Text('温箱温度:', size=(8, 1)), sg.Text('0.0°C', key='-CHAMBER_TEMP-', size=(5, 1), text_color='dark blue'),
              sg.Text('保温倒计时:', size=(12, 1)), sg.Text('0秒', key='-HOLD_TIME-', size=(10, 1), text_color='dark blue')],
@@ -144,6 +174,10 @@ class NVMeTestGUI:
              sg.Button('停止温箱', key='-STOP_CHAMBER-', size=(12, 1))],
             
             [sg.Checkbox('串口Debug', default=False, key='-CHAMBER_DEBUG-')]
+        ]
+        
+        chamber_log_frame = [
+            [sg.Multiline('', key='-CHAMBER_LOG-', size=(80, 80), disabled=True, autoscroll=True)]
         ]
 
         test_script_frame = [
@@ -172,48 +206,10 @@ class NVMeTestGUI:
              sg.Button('暂停测试', key='-PAUSE_TEST-', size=(12, 1), button_color=('black', 'orange')),
              sg.Button('停止测试', key='-STOP_TEST-', size=(12, 1), button_color=('black', 'red'))],
             [sg.HSeparator()],
-            [sg.Text('当前命令:', size=(12, 1)), 
-             sg.Text('0/0', key='-COMMAND_PROGRESS-', size=(10, 1), text_color='dark blue')],
-            [sg.Text('当前测试项:', size=(12, 1)), 
-             sg.Text('无', key='-CURRENT_TEST_ITEM-', size=(15, 1), text_color='dark blue')],
             [sg.Text('当前温度:', size=(12, 1)), 
              sg.Text('0.0°C', key='-CURRENT_TEMP-', size=(10, 1), text_color='dark blue')],
-            [sg.Text('测试轮次:', size=(12, 1)), 
-             sg.Text('0/0', key='-CYCLE_PROGRESS-', size=(10, 1), text_color='dark blue')]
         ]
         
-        ssd_info_frame_1 = [
-            [sg.Multiline('', key='-SSD_INFO_1-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        ssd_info_frame_2 = [
-            [sg.Multiline('', key='-SSD_INFO_2-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        ssd_info_frame_3 = [
-            [sg.Multiline('', key='-SSD_INFO_3-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        ssd_info_frame_4 = [
-            [sg.Multiline('', key='-SSD_INFO_4-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        host_info_frame_1 = [
-            [sg.Multiline('', key='-HOST_INFO_1-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        host_info_frame_2 = [
-            [sg.Multiline('', key='-HOST_INFO_2-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        host_info_frame_3 = [
-            [sg.Multiline('', key='-HOST_INFO_3-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-        
-        host_info_frame_4 = [
-            [sg.Multiline('', key='-HOST_INFO_4-', size=(40, 10), disabled=True, autoscroll=True)]
-        ]
-
         monitor_frame = [
             [sg.Text('实时监控日志', size=(20, 1), justification='center')],
             [sg.HSeparator()],
@@ -225,7 +221,9 @@ class NVMeTestGUI:
             [sg.HSeparator()],
             [sg.Button('生成HTML报告', key='-GENERATE_REPORT-', size=(15, 1)),
              sg.Button('打开报告', key='-OPEN_REPORT-', size=(15, 1))],
-            [sg.Text('报告路径:', size=(10, 1)), 
+            [sg.Button('选择存储路径', key='-SELECT_REPORT_PATH-', size=(15, 1)),
+             sg.Button('打开路径', key='-OPEN_REPORT_DIR-', size=(15, 1))],
+            [sg.Text('测试报告路径:', size=(10, 1)), 
              sg.Input(key='-REPORT_PATH-', size=(30, 1), readonly=True)]
         ]
 
@@ -234,31 +232,59 @@ class NVMeTestGUI:
             [sg.Frame('测试控制', test_control_frame, size=(300, 300))],
             [sg.Frame('测试报告', report_frame, size=(300, 150))]
         ]
-
-        middle_column = [
-            [sg.Frame('test_host_1 SSD信息', ssd_info_frame_1, size=(350, 180))],
-            [sg.Frame('test_host_2 SSD信息', ssd_info_frame_2, size=(350, 180))],
-            [sg.Frame('test_host_3 SSD信息', ssd_info_frame_3, size=(350, 180))],
-            [sg.Frame('test_host_4 SSD信息', ssd_info_frame_4, size=(350, 180))]
+        # 重新设计：一大张表格形式，横向标题为IP/MAC，SSD1，SSD2，SSD3，SSD4，纵向标题为主板1-4
+        
+        # 表格列定义
+        table_columns = ['主板名称', 'IP/MAC地址', 'SSD 1', 'SSD 2', 'SSD 3', 'SSD 4']
+        
+        # 初始表格数据
+        table_data = [
+            ['test_host_1', '', '', '', '', ''],
+            ['test_host_2', '', '', '', '', ''],
+            ['test_host_3', '', '', '', '', ''],
+            ['test_host_4', '', '', '', '', '']
         ]
         
-        right_column = [
-            [sg.Frame('test_host_1 主板信息', host_info_frame_1, size=(350, 150))],
-            [sg.Frame('test_host_2 主板信息', host_info_frame_2, size=(350, 150))],
-            [sg.Frame('test_host_3 主板信息', host_info_frame_3, size=(350, 150))],
-            [sg.Frame('test_host_4 主板信息', host_info_frame_4, size=(350, 150))]
+        # 创建大表格
+        test_control_table = sg.Table(
+            values=table_data,
+            headings=table_columns,
+            key='-TEST_CONTROL_TABLE-',
+            auto_size_columns=False,
+            col_widths=[15, 25, 30, 30, 30, 30],
+            justification='left',
+            size=(None, 15),
+            enable_events=False,
+            vertical_scroll_only=False,
+            border_width=1,  # 添加边框
+            row_height=120,    # 增加行高（纵向间距）
+            alternating_row_color='#f0f0f0',  # 添加交替行颜色，增强可读性
+            background_color='white',  # 背景色
+            text_color='black',  # 文字颜色
+            header_background_color='#e0e0e0',  # 表头背景色
+            header_text_color='black',  # 表头文字颜色
+            header_font=('Arial', 10, 'bold')  # 表头字体
+        )
+        
+        # 测试控制内容：只包含一个大表格
+        test_control_content = [
+            [test_control_table]
         ]
 
-        chamber_tab = [
-            [sg.Frame('温箱控制', chamber_frame, size=(400, 300))]
+        right_column = [
+            [sg.Column(test_control_content)]
+            # , scrollable=True, vertical_scroll_only=True, size=(None, 700))]
         ]
 
         test_control_tab = [
             [sg.Column(left_column, element_justification='c'),
              sg.VSeparator(),
-             sg.Column(middle_column, element_justification='c'),
-             sg.VSeparator(),
              sg.Column(right_column, element_justification='c')]
+        ]
+
+        chamber_tab = [
+            [sg.Frame('温箱串口操作', chamber_controls_frame, size=(350, 350)),
+            sg.Frame('温箱操作记录', chamber_log_frame, size=(350, 350))]
         ]
 
         layout = [
@@ -284,6 +310,12 @@ class NVMeTestGUI:
             self.window['-MONITOR_LOG-'].update(background_color='#ffffcc')
         else:
             self.window['-MONITOR_LOG-'].update(background_color='#ccffcc')
+    
+    def _log_chamber_operation(self, message: str):
+        timestamp = datetime.now().strftime('%H:%M:%S')
+        log_message = f'[{timestamp}] {message}\n'
+        
+        self.window['-CHAMBER_LOG-'].print(log_message, end='')
 
     def _init_chamber_controller(self):
         try:
@@ -333,7 +365,8 @@ class NVMeTestGUI:
             if has_temp_command:
                 if not self.chamber_controller:
                     if not self._init_chamber_controller():
-                        return False
+                        self._log_to_monitor('温箱控制器初始化失败，但将继续执行测试（不包含温度控制）', 'warning')
+                        self.chamber_controller = None
             else:
                 self.chamber_controller = None
             
@@ -359,11 +392,18 @@ class NVMeTestGUI:
             return False
 
     def _update_progress(self, progress: TestProgress):
-        self.window['-COMMAND_PROGRESS-'].update(f'{progress.current_command_index}/{progress.total_commands}')
-        self.window['-CURRENT_TEST_ITEM-'].update(progress.current_test_item)
+        # 更新全局进度信息
         self.window['-CURRENT_TEMP-'].update(f'{progress.current_temperature:.1f}°C')
         self.window['-CYCLE_PROGRESS-'].update(f'{progress.current_cycle}/{progress.total_cycles}')
         self.window['-HOLD_TIME-'].update(f'{progress.hold_time}秒')
+        
+        # 更新SSD信息到GUI
+        if hasattr(progress, 'ssd_status') and progress.ssd_status:
+            self._update_ssd_info(ssd_info=progress.ssd_status)
+        
+        # 更新主机进度信息到表格
+        if hasattr(progress, 'host_progress') and progress.host_progress:
+            self._update_host_info_with_progress(progress.host_progress)
         
         if progress.is_running:
             self.window['-STATUS-'].update('测试运行中...')
@@ -371,30 +411,115 @@ class NVMeTestGUI:
             self.window['-STATUS-'].update('测试已暂停')
         else:
             self.window['-STATUS-'].update('测试停止')
-
-    def _update_ssd_info(self, silent: bool = False):
+    
+    def _update_host_info_with_progress(self, host_progress: Dict):
+        """更新主机信息，包含测试进度"""
         if not self.host_manager:
             return
         
         try:
-            all_ssd_info = self.host_manager.get_all_ssd_info(silent=silent)
+            # 创建新的表格数据
+            new_data = []
+            for host in self.host_manager.hosts:
+                # 构建IP/MAC地址文本
+                ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
+                
+                # 构建主板名称，包含测试进度
+                host_name = host.name
+                if host.name in host_progress:
+                    progress = host_progress[host.name]
+                    current_command = progress.get('current_command_index', 0)
+                    total_commands = self.test_executor.progress.total_commands if hasattr(self, 'test_executor') else 0
+                    current_test_item = progress.get('current_test_item', '')
+                    current_cycle = progress.get('current_cycle', 0)
+                    total_cycles = progress.get('total_cycles', 0)
+                    
+                    # 构建进度信息
+                    progress_info = f'({current_command}/{total_commands} - {current_test_item}'
+                    # 只有 PCT 测试需要显示轮次信息
+                    if total_cycles > 0 and current_test_item == 'PCT':
+                        progress_info += f' - {current_cycle}/{total_cycles}'
+                    progress_info += ')'
+                    
+                    # 添加开始时间信息
+                    start_time = progress.get('start_time', '')
+                    if start_time:
+                        progress_info += f'\n开始时间: {start_time}'
+                    
+                    # 主板名称与进度信息换行显示
+                    host_name_with_progress = f'{host_name}\n{progress_info}'
+                else:
+                    host_name_with_progress = host_name
+                
+                # 添加到新的表格数据中
+                new_data.append([host_name_with_progress, ip_mac_text, '', '', '', ''])
             
-            for i, host in enumerate(self.host_manager.hosts, 1):
-                info_text = f'主板: {host.name}\n'
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
+            self.window.refresh()
                 
-                host_ssd_count = 0
-                for ssd_sn, ssd_info in all_ssd_info.items():
-                    if ssd_info.get('host') == host.name and ssd_sn != 'unknown':
-                        host_ssd_count += 1
-                        info_text += f'SSD SN: {ssd_sn}\n'
-                        info_text += f'  路径: {ssd_info.get("path", "N/A")}\n'
-                        info_text += '-' * 30 + '\n'
-                
-                if host_ssd_count == 0:
-                    info_text += f'{host.name} 未找到SSD信息\n'
-                
-                self.window[f'-SSD_INFO_{i}-'].update(info_text)
+        except Exception as e:
+            pass
+
+    def _update_ssd_info(self, silent: bool = False, ssd_info: Optional[Dict] = None):
+        if not self.host_manager:
+            return
+        
+        try:
+            # 如果提供了SSD信息，就使用它；否则从host_manager获取
+            if ssd_info:
+                all_ssd_info = ssd_info
+            else:
+                all_ssd_info = self.host_manager.get_all_ssd_info(silent=silent)
             
+            # 获取当前表格数据
+            current_table_data = self.window['-TEST_CONTROL_TABLE-'].get()
+            
+            # 初始化新的表格数据
+            new_table_data = []
+            
+            # 初始化SSD信息
+            host_ssd_info = {}
+            for host in self.host_manager.hosts:
+                host_ssd_info[host.name] = ['', '', '', '']  # 每个主板4个SSD槽位
+            
+            # 处理SSD信息
+            for ssd_sn, ssd_info in all_ssd_info.items():
+                if ssd_sn == 'unknown':
+                    continue
+                
+                host_name = ssd_info.get('host')
+                if not host_name:
+                    continue
+                
+                # 简单分配SSD到对应的SSD槽位（实际应用中可能需要更复杂的映射）
+                ssd_slot = 0
+                while ssd_slot < 4 and host_ssd_info[host_name][ssd_slot]:
+                    ssd_slot += 1
+                
+                if ssd_slot < 4:
+                    # 构建SSD信息文本
+                    ssd_info_text = f'SN: {ssd_sn}\n'
+                    ssd_info_text += f'路径: {ssd_info.get("path", "N/A")}\n'
+                    host_ssd_info[host_name][ssd_slot] = ssd_info_text
+            
+            # 处理每个主机的信息
+            for i, host in enumerate(self.host_manager.hosts):
+                # 保留当前的主板名称（可能包含进度信息）
+                host_name_with_progress = current_table_data[i][0] if i < len(current_table_data) else host.name
+                
+                # 获取IP/MAC地址
+                ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
+                
+                # 获取SSD信息
+                ssd_infos = host_ssd_info.get(host.name, ['', '', '', ''])
+                
+                # 构建新的行数据
+                new_row = [host_name_with_progress, ip_mac_text] + ssd_infos
+                new_table_data.append(new_row)
+            
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_table_data)
             self.window.refresh()
                 
         except Exception as e:
@@ -406,28 +531,23 @@ class NVMeTestGUI:
             return
         
         try:
-            host_info_list = []
-            for i, host in enumerate(self.host_manager.hosts, 1):
-                host_info_text = f'主板名称: {host.name}\n'
-                host_info_text += f'IP地址: {host.ip}\n'
-                host_info_text += f'MAC地址: {host.mac}\n'
-                host_info_text += f'端口: {host.port}\n'
-                host_info_text += f'用户名: {host.username}\n'
-                host_info_text += f'连接超时: {host.connect_timeout}秒\n'
-                host_info_text += f'命令超时: {host.command_timeout}秒\n'
-                
-                is_online = host.is_online()
-                status = '在线' if is_online else '离线'
-                host_info_text += f'状态: {status}\n'
-                
-                host_info_list.append((i, host_info_text))
+            # 获取当前表格数据
+            current_table_data = self.window['-TEST_CONTROL_TABLE-'].get()
             
-            for i, host_info_text in host_info_list:
-                try:
-                    self.window[f'-HOST_INFO_{i}-'].update(host_info_text)
-                except:
-                    pass
+            # 创建新的表格数据
+            new_data = []
+            for i, host in enumerate(self.host_manager.hosts):
+                # 构建IP/MAC地址文本
+                ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
+                
+                # 保留当前的主板名称（可能包含进度信息）
+                host_name_with_progress = current_table_data[i][0] if i < len(current_table_data) else host.name
+                
+                # 添加到新的表格数据中
+                new_data.append([host_name_with_progress, ip_mac_text, '', '', '', ''])
             
+            # 更新表格
+            self.window['-TEST_CONTROL_TABLE-'].update(values=new_data)
             self.window.refresh()
                 
         except Exception as e:
@@ -507,39 +627,49 @@ class NVMeTestGUI:
             
             if self.chamber_controller.serial_conn:
                 self._log_to_monitor('串口已处于连接状态', 'warning')
+                self._log_chamber_operation('串口已处于连接状态')
                 return
             
+            self._log_chamber_operation(f'正在连接串口: {self.chamber_controller.port}')
             self.chamber_controller._connect()
             if self.chamber_controller.serial_conn:
                 self._log_to_monitor(f'温箱串口已连接: {self.chamber_controller.port}', 'info')
+                self._log_chamber_operation(f'温箱串口已连接: {self.chamber_controller.port}')
                 self.console_logger.info(f'温箱串口已连接: {self.chamber_controller.port}')
                 self.window['-STATUS-'].update(f'串口状态: 已连接({self.chamber_controller.port})')
             else:
                 self._log_to_monitor('串口连接失败', 'error')
+                self._log_chamber_operation('串口连接失败')
                 self.console_logger.error('串口连接失败')
                 self.window['-STATUS-'].update(f'串口状态: 连接失败')
         except Exception as e:
             self.console_logger.error(f'连接串口失败: {e}')
             self._log_to_monitor(f'连接串口失败: {e}', 'error')
+            self._log_chamber_operation(f'连接串口失败: {e}')
             self.window['-STATUS-'].update(f'串口状态: 连接失败')
     
     def _close_serial(self):
         try:
             if not self.chamber_controller:
                 self._log_to_monitor('温箱控制器未初始化', 'warning')
+                self._log_chamber_operation('温箱控制器未初始化')
                 return
             
             if not self.chamber_controller.serial_conn:
                 self._log_to_monitor('串口已处于关闭状态', 'warning')
+                self._log_chamber_operation('串口已处于关闭状态')
                 return
             
+            self._log_chamber_operation('正在关闭串口')
             self.chamber_controller._disconnect()
             self._log_to_monitor('温箱串口已关闭', 'info')
+            self._log_chamber_operation('温箱串口已关闭')
             self.console_logger.info('温箱串口已关闭')
             self.window['-STATUS-'].update('串口状态: 已关闭')
         except Exception as e:
             self.console_logger.error(f'关闭串口失败: {e}')
             self._log_to_monitor(f'关闭串口失败: {e}', 'error')
+            self._log_chamber_operation(f'关闭串口失败: {e}')
             self.window['-STATUS-'].update(f'串口状态: 关闭失败')
     
     def _update_button_states(self):
@@ -564,52 +694,68 @@ class NVMeTestGUI:
         
         if not self.chamber_controller.serial_conn:
             self._log_to_monitor('串口未连接，无法启动温箱', 'error')
+            self._log_chamber_operation('串口未连接，无法启动温箱')
             return
         
+        self._log_chamber_operation('正在启动温箱')
         success = self.chamber_controller.start_chamber()
         if success:
             self._log_to_monitor('温箱启动成功', 'info')
+            self._log_chamber_operation('温箱启动成功')
         else:
             self._log_to_monitor('温箱启动失败', 'error')
+            self._log_chamber_operation('温箱启动失败')
 
     def _stop_chamber(self):
         if not self.chamber_controller:
             self._log_to_monitor('温箱控制器未初始化', 'warning')
+            self._log_chamber_operation('温箱控制器未初始化')
             return
         
         if not self.chamber_controller.serial_conn:
             self._log_to_monitor('串口未连接，无法停止温箱', 'error')
+            self._log_chamber_operation('串口未连接，无法停止温箱')
             return
         
+        self._log_chamber_operation('正在停止温箱')
         success = self.chamber_controller.stop_chamber()
         if success:
             self._log_to_monitor('温箱停止成功', 'info')
+            self._log_chamber_operation('温箱停止成功')
         else:
             self._log_to_monitor('温箱停止失败', 'error')
+            self._log_chamber_operation('温箱停止失败')
 
     def _read_temperature(self):
         if not self.chamber_controller:
             self._log_to_monitor('温箱控制器未初始化', 'error')
+            self._log_chamber_operation('温箱控制器未初始化')
             return
         
         if not self.chamber_controller.serial_conn:
             self._log_to_monitor('串口未连接，无法读取温度', 'error')
+            self._log_chamber_operation('串口未连接，无法读取温度')
             return
         
+        self._log_chamber_operation('正在读取温箱温度')
         temperature = self.chamber_controller.read_temperature()
         if temperature is not None:
             self.window['-CHAMBER_TEMP-'].update(f'{temperature:.1f}°C')
             self._log_to_monitor(f'当前温箱温度: {temperature:.1f}°C', 'info')
+            self._log_chamber_operation(f'当前温箱温度: {temperature:.1f}°C')
         else:
             self._log_to_monitor('读取温度失败', 'error')
+            self._log_chamber_operation('读取温度失败')
 
     def _set_temperature(self):
         if not self.chamber_controller:
             self._log_to_monitor('温箱控制器未初始化', 'warning')
+            self._log_chamber_operation('温箱控制器未初始化')
             return
         
         if not self.chamber_controller.serial_conn:
             self._log_to_monitor('串口未连接，无法设定温度', 'error')
+            self._log_chamber_operation('串口未连接，无法设定温度')
             return
         
         temp_input = self.window['-TEMP_INPUT-'].get()
@@ -618,19 +764,25 @@ class NVMeTestGUI:
             
             if temperature < -60:
                 self._log_to_monitor(f'温度过低，最低温度限制为-60°C', 'warning')
+                self._log_chamber_operation(f'温度过低，最低温度限制为-60°C')
                 return
             
             if temperature > 150:
                 self._log_to_monitor(f'温度过高，最高温度限制为150°C', 'warning')
+                self._log_chamber_operation(f'温度过高，最高温度限制为150°C')
                 return
             
+            self._log_chamber_operation(f'正在设定温箱温度: {temperature}°C')
             success = self.chamber_controller.set_temperature(temperature)
             if success:
                 self._log_to_monitor(f'设定温度成功: {temperature}°C', 'info')
+                self._log_chamber_operation(f'设定温度成功: {temperature}°C')
             else:
                 self._log_to_monitor('设定温度失败', 'error')
+                self._log_chamber_operation('设定温度失败')
         except ValueError:
             self._log_to_monitor('温度输入无效', 'error')
+            self._log_chamber_operation('温度输入无效')
 
     def _load_script(self):
         script_path = self.window['-SCRIPT_PATH-'].get()
@@ -650,7 +802,14 @@ class NVMeTestGUI:
         
         is_valid, errors = parser.validate_script(script_path)
         if is_valid:
-            self._log_to_monitor('测试脚本验证通过', 'info')
+            # 验证通过后，解析脚本获取命令条数
+            commands = parser.parse_script(script_path)
+            if commands:
+                self.test_commands = commands
+                self.window['-COMMAND_COUNT-'].update(str(len(commands)))
+                self._log_to_monitor(f'测试脚本验证通过，共{len(commands)}条命令', 'info')
+            else:
+                self._log_to_monitor('测试脚本验证通过但解析失败', 'warning')
         else:
             error_msg = '测试脚本验证失败:\n' + '\n'.join(errors)
             self._log_to_monitor(error_msg, 'error')
@@ -777,10 +936,24 @@ class NVMeTestGUI:
         try:
             test_time = self.test_executor.test_time
             test_log_dir = self.config['logging']['test_log_dir']
+            # 转换为绝对路径
+            test_log_dir = os.path.abspath(test_log_dir)
             
             analysis_result = self.test_analyzer.analyze_test_result(test_time, test_log_dir)
             
-            report_path = os.path.join(test_log_dir, test_time, 'report.html')
+            # 使用用户选择的存储路径或默认路径
+            if self.user_report_path:
+                report_path = os.path.join(self.user_report_path, f'report_{test_time}.html')
+            else:
+                report_path = os.path.join(test_log_dir, test_time, 'report.html')
+            
+            # 转换为绝对路径
+            report_path = os.path.abspath(report_path)
+            
+            # 确保报告目录存在
+            report_dir = os.path.dirname(report_path)
+            os.makedirs(report_dir, exist_ok=True)
+            
             success = self.html_generator.generate_report(analysis_result, report_path)
             
             if success:
@@ -791,6 +964,58 @@ class NVMeTestGUI:
         except Exception as e:
             self.console_logger.error(f'生成测试报告失败: {e}')
             self._log_to_monitor(f'生成测试报告失败: {e}', 'error')
+    
+    def _select_report_path(self):
+        try:
+            # 使用绝对路径作为初始文件夹
+            initial_folder = self.user_report_path if self.user_report_path else os.path.abspath('./')
+            
+            folder_path = sg.popup_get_folder(
+                '选择测试报告存储路径',
+                initial_folder=initial_folder,
+                no_titlebar=True
+            )
+            
+            if folder_path:
+                # 转换为绝对路径
+                folder_path = os.path.abspath(folder_path)
+                self.user_report_path = folder_path
+                # 更新输入框显示当前选择的路径
+                self.window['-REPORT_PATH-'].update(folder_path)
+                self._log_to_monitor(f'已选择报告存储路径: {folder_path}', 'info')
+            else:
+                self._log_to_monitor('未选择报告存储路径', 'warning')
+        except Exception as e:
+            self.console_logger.error(f'选择报告存储路径失败: {e}')
+            self._log_to_monitor(f'选择报告存储路径失败: {e}', 'error')
+    
+    def _open_report_dir(self):
+        report_path = self.window['-REPORT_PATH-'].get()
+        if not report_path:
+            self._log_to_monitor('报告路径未设置', 'warning')
+            return
+        
+        # 确保路径存在
+        if not os.path.exists(report_path):
+            # 尝试创建目录
+            try:
+                os.makedirs(report_path, exist_ok=True)
+                self._log_to_monitor(f'已创建目录: {report_path}', 'info')
+                os.startfile(report_path)
+            except Exception as e:
+                self._log_to_monitor(f'打开路径失败: {e}', 'error')
+            return
+        
+        # 路径存在，区分文件和目录
+        if os.path.isfile(report_path):
+            # 如果是文件路径，打开其所在目录
+            report_dir = os.path.dirname(report_path)
+            os.startfile(report_dir)
+            self._log_to_monitor(f'已打开文件所在目录: {report_dir}', 'info')
+        else:
+            # 如果是目录路径，直接打开目录
+            os.startfile(report_path)
+            self._log_to_monitor(f'已打开目录: {report_path}', 'info')
 
     def _open_report(self):
         report_path = self.window['-REPORT_PATH-'].get()
@@ -869,60 +1094,80 @@ class NVMeTestGUI:
             print(f"[DEBUG] all_ssd_info keys: {list(all_ssd_info.keys())}")
             print(f"[DEBUG] all_ssd_info 数量: {len(all_ssd_info)}")
             
+            # 只构建一次完整的表格数据
+            table_data = []
+            for host_item in self.host_manager.hosts:
+                ip_mac_text = f'IP: {host_item.ip}\nMAC: {host_item.mac}'
+                table_data.append([host_item.name, ip_mac_text, '', '', '', ''])
+            
+            # 遍历所有主机，更新对应的数据
             for i, host in enumerate(self.host_manager.hosts, 1):
                 print(f"[DEBUG] 处理 host[{i}]: name={host.name}")
                 
-                if host.name in selected_hosts:
-                    print(f"[DEBUG] host {host.name} 在 selected_hosts 中")
-                    
-                    info_text = f'主板: {host.name}\n'
-                    
-                    host_ssd_count = 0
-                    for ssd_sn, ssd_info in all_ssd_info.items():
-                        if ssd_info.get('host') == host.name and ssd_sn != 'unknown':
-                            host_ssd_count += 1
-                            print(f"[DEBUG] 找到SSD: {ssd_sn}, info: {ssd_info}")
-                            
-                            info_text += f'SSD SN: {ssd_sn}\n'
-                            
-                            ssd_path = ssd_info.get('path', '')
-                            print(f"[DEBUG] ssd_path: {ssd_path}")
-                            
-                            try:
-                                link_status = host.get_ssd_link_status(ssd_path)
-                                print(f"[DEBUG] link_status: {link_status}")
-                                link_info = link_status.get('link', 'N/A')
-                                if link_info == 'N/A' or not link_info:
-                                    link_info = '未知'
-                                info_text += f'  链路状态: {link_info}\n'
-                            except Exception as e:
-                                print(f"[DEBUG] 获取链路状态异常: {e}")
-                                info_text += f'  链路状态: 获取失败\n'
-                            
-                            smart_info = host.get_ssd_smart(ssd_path)
-                            print(f"[DEBUG] smart_info: {smart_info}")
-                            temp = host.get_ssd_temperature(ssd_path)
-                            if temp is not None:
-                                info_text += f'  温度: {temp}°C\n'
-                            else:
-                                info_text += f'  温度: N/A\n'
-                            info_text += '-' * 30 + '\n'
-                    
-                    if host_ssd_count == 0:
-                        info_text += f'{host.name} 未找到SSD信息\n'
-                    
-                    print(f"[DEBUG] info_text: {repr(info_text)}")
-                    
-                    gui_key = f'-SSD_INFO_{i}-'
-                    print(f"[DEBUG] 更新GUI key: {gui_key}")
-                    print(f"[DEBUG] 更新内容: {repr(info_text)}")
-                    self.window[gui_key].update(info_text)
-                    self.window.refresh()
-                    print(f"[DEBUG] GUI更新完成")
-                else:
-                    print(f"[DEBUG] host {host.name} 不在 selected_hosts 中")
-                    gui_key = f'-SSD_INFO_{i}-'
-                    self.window[gui_key].update(f'{host.name} 未连接')
+                # 查找当前主板在表格中的索引
+                host_index = None
+                for idx, row in enumerate(table_data):
+                    if row[0] == host.name:
+                        host_index = idx
+                        break
+                
+                if host_index is not None:
+                    if host.name in selected_hosts:
+                        print(f"[DEBUG] host {host.name} 在 selected_hosts 中")
+                        
+                        # 初始化SSD信息
+                        ssd_info_list = ['', '', '', '']
+                        
+                        host_ssd_count = 0
+                        for ssd_sn, ssd_info in all_ssd_info.items():
+                            if ssd_info.get('host') == host.name and ssd_sn != 'unknown':
+                                host_ssd_count += 1
+                                print(f"[DEBUG] 找到SSD: {ssd_sn}, info: {ssd_info}")
+                                
+                                ssd_path = ssd_info.get('path', '')
+                                print(f"[DEBUG] ssd_path: {ssd_path}")
+                                
+                                # 构建SSD信息文本
+                                ssd_info_text = f'SN: {ssd_sn}\n'
+                                ssd_info_text += f'路径: {ssd_path}\n'
+                                
+                                # 获取链路状态
+                                try:
+                                    link_status = host.get_ssd_link_status(ssd_path)
+                                    print(f"[DEBUG] link_status: {link_status}")
+                                    link_info = link_status.get('link', 'N/A')
+                                    if link_info == 'N/A' or not link_info:
+                                        link_info = '未知'
+                                    ssd_info_text += f'链路状态: {link_info}\n'
+                                except Exception as e:
+                                    print(f"[DEBUG] 获取链路状态异常: {e}")
+                                    ssd_info_text += f'链路状态: 获取失败\n'
+                                
+                                # 获取温度信息
+                                temp = host.get_ssd_temperature(ssd_path)
+                                if temp is not None:
+                                    ssd_info_text += f'温度: {temp}°C\n'
+                                else:
+                                    ssd_info_text += f'温度: N/A\n'
+                                
+                                # 将SSD数据分配到对应的槽位
+                                ssd_slot = host_ssd_count - 1
+                                if ssd_slot < 4:
+                                    ssd_info_list[ssd_slot] = ssd_info_text
+                        
+                        # 更新SSD 1-4列
+                        for j in range(4):
+                            table_data[host_index][j+2] = ssd_info_list[j]
+                    else:
+                        print(f"[DEBUG] host {host.name} 不在 selected_hosts 中")
+                        # 更新该主板的所有SSD槽位为未连接状态
+                        for j in range(4):
+                            table_data[host_index][j+2] = f'{host.name} 未连接\n'
+            
+            # 一次性更新表格，避免多次覆盖
+            self.window['-TEST_CONTROL_TABLE-'].update(values=table_data)
+            self.window.refresh()
+            print(f"[DEBUG] GUI更新完成")
         except Exception as e:
             print(f"[DEBUG] 异常: {e}")
             print(f"[DEBUG] 异常类型: {type(e).__name__}")
@@ -936,10 +1181,22 @@ class NVMeTestGUI:
         self.monitor_thread = self.thread_pool.submit(self._monitor_loop)
 
     def _monitor_loop(self):
+        # 保存上次的主机信息，用于检测变化
+        last_host_info = []
+        
         while self.is_monitoring:
             try:
                 if self.host_manager:
-                    self._update_host_info()
+                    # 构建当前主机信息
+                    current_host_info = []
+                    for host in self.host_manager.hosts:
+                        ip_mac_text = f'IP: {host.ip}\nMAC: {host.mac}'
+                        current_host_info.append([host.name, ip_mac_text])
+                    
+                    # 只有当主机信息发生变化时才更新表格
+                    if current_host_info != last_host_info:
+                        self._update_host_info()
+                        last_host_info = current_host_info.copy()
                 
                 time.sleep(5)
             except Exception as e:
@@ -1099,6 +1356,12 @@ class NVMeTestGUI:
             
             elif event == '-OPEN_REPORT-':
                 self._open_report()
+            
+            elif event == '-SELECT_REPORT_PATH-':
+                self._select_report_path()
+            
+            elif event == '-OPEN_REPORT_DIR-':
+                self._open_report_dir()
         
         self.window.close()
         self.console_logger.info('NVMe SSD测试系统关闭')
